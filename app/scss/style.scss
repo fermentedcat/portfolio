@@ -1,0 +1,69 @@
+body {
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    header {
+        height: 25vh;
+        background-color: rgb(243, 236, 227);
+        h1 {
+            text-transform: uppercase;
+            font-size: 5em;
+            position: fixed;
+            top: 0.6em;
+            left: 0.8em;
+        }
+    }
+    nav {
+        button {
+            position: fixed;
+            left: 0.5em;
+            top: 45%;
+            text-decoration: none;
+            color: black;
+            font-size: 1.5em;
+            font-weight: 900;
+            background-color: transparent;
+            border: none;
+            z-index: 1;
+        }
+        button:hover {
+            color: gold;
+        }
+        button:focus {
+            outline: none;
+            border: none;
+        }
+        div.menu {
+            width: 60vw;
+            left: 0vw;
+            position: fixed;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            display: grid;
+            grid-template-columns: 16vw 1fr 2em;
+            grid-template-rows: 30vh 1fr 10vh;
+            ul {
+                grid-column: 2;
+                grid-row: 2;
+                list-style-type: none;
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 1.5em;
+                }
+                a:hover {
+                    color: gold;
+                }
+            }
+            transition: all 1s ease-in-out;
+        }
+        div.closed {
+            left: -60vw;
+        }
+    }
+    main {
+        background-color: rgb(231, 231, 231);
+        // display: grid;
+        // grid-template-rows: 3fr 8fr;
+        // overflow: scroll;
+    }
+}
