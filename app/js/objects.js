@@ -10,20 +10,53 @@ var aboutMe = {
     short: "I'm a curious and creative aspiring Fullstack developer based in Stockholm.<br>Currently in my first year of Nackademin's 2-year higher vocational education program."
 }
 
-let menu_items = [
+let pageMenu = [
     {
-        name: "home",
-        page: "index.html"
+        name: "Home",
+        content: {
+            intro: "",
+            images: ""
+        }
     },
     {
-        name: "portfolio",
-        page: "index.html"
+        name: "Portfolio",
+        content: {
+            intro: "",
+            images: ""
+        }
     },
     {
-        name: "about",
-        page: "index.html"
+        name: "About",
+        content: {
+            intro: "",
+            info: "",
+            images: ""
+        }
     },
     {
-        name: "contact",
-        page: "index.html"
+        name: "Contact",
+        content: {
+            intro: "",
+            images: ""
+        }
     }];
+
+let pageContent = document.querySelector(".pageContent");
+
+
+class Page {
+    constructor(page) {
+        this.name = page.name;
+        this.pageContent = page.pageContent;
+    }
+    loadPage() {
+        while (pageContent.firstChild) {
+            pageContent.removeChild(pageContent.lastChild);
+        }
+        console.log(this.name);
+        Website.changeTitle(this.name);
+    }
+}
+
+
+

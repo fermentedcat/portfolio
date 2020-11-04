@@ -1,69 +1,102 @@
 body {
     background-color: rgb(255, 255, 255);
-    padding: 2rem;
-    header {
-        height: 25vh;
-        background-color: rgb(243, 236, 227);
-        h1 {
-            text-transform: uppercase;
-            font-size: 5em;
-            position: fixed;
-            top: 0.6em;
-            left: 0.8em;
-        }
-    }
-    nav {
-        button {
-            position: fixed;
-            left: 0.5em;
-            top: 45%;
-            text-decoration: none;
-            color: black;
-            font-size: 1.5em;
-            font-weight: 900;
-            background-color: transparent;
-            border: none;
-            z-index: 1;
-        }
-        button:hover {
-            color: gold;
-        }
-        button:focus {
-            outline: none;
-            border: none;
-        }
-        div.menu {
-            width: 60vw;
-            left: 0vw;
-            position: fixed;
-            height: 100vh;
-            background-color: rgb(255, 255, 255);
-            display: grid;
-            grid-template-columns: 16vw 1fr 2em;
-            grid-template-rows: 30vh 1fr 10vh;
-            ul {
-                grid-column: 2;
-                grid-row: 2;
-                list-style-type: none;
-                a {
-                    text-decoration: none;
-                    color: black;
-                    font-size: 1.5em;
+    padding: 1.5rem;
+    padding-top: 6.5vw;
+    padding-bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    div.backgroundImage {
+        background-image: url("../resources/images/self-portrait.jpg");
+        background-position-y: center;
+        background-size: cover;
+        background-repeat: repeat-y;
+        height: 100%;
+        width: 100%;
+        padding: 1em 1em 0 1em;
+        nav {
+            button {
+                position: fixed;
+                left: 0.5em;
+                top: 45%;
+                text-decoration: none;
+                color: black;
+                font-size: 1.5em;
+                font-weight: 900;
+                background-color: transparent;
+                border: none;
+                z-index: 1;
+            }
+            button:hover {
+                color: gold;
+            }
+            button:focus {
+                outline: none;
+                border: none;
+            }
+            div.menu {
+                width: 60vw;
+                left: 0vw;
+                position: fixed;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 10vw 1fr 2em;
+                grid-template-rows: 20vh 1fr 10vh;
+                ul {
+                    grid-column: 2;
+                    grid-row: 2;
+                    list-style-type: none;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-size: 2.5em;
+                    }
+                    a:hover {
+                        color: gold;
+                    }
                 }
-                a:hover {
-                    color: gold;
+                transition: all 1s ease-in-out;
+            }
+            div.closed {
+                left: -60vw;
+            }
+        }
+        .backgroundWrapper {
+            box-sizing: content-box;
+            background-color: white;
+            width: 100%;
+            min-height: 100%;
+            transition: all 1s ease-in-out;
+            float: right;
+            p {
+                float: right;
+            }
+            header {                
+                h1 { //* för tillgänglighet?
+                    text-transform: uppercase;
+                    font-size: 5em;
+                    position: fixed;
+                    top: 0.6em;
+                    left: 0.8em;
+                }
+                img {
+                    width: 28%;
+                    margin: 0 auto;
+                    position: fixed;
+                    top: 3vw;
+                    left: 1.5rem;
                 }
             }
-            transition: all 1s ease-in-out;
+            
+            /* main {
+                // display: grid;
+                // grid-template-rows: 3fr 8fr;
+                // overflow: scroll;
+                // height: 100vh;
+                // width: 100vw;
+                
+            } */
         }
-        div.closed {
-            left: -60vw;
-        }
+        
     }
-    main {
-        background-color: rgb(231, 231, 231);
-        // display: grid;
-        // grid-template-rows: 3fr 8fr;
-        // overflow: scroll;
-    }
+    
 }
