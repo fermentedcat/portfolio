@@ -4,15 +4,16 @@ body {
   padding-top: 6.5vw;
   padding-bottom: 0;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  z-index: 2; }
   body div.backgroundImage {
-    background-image: url("../resources/images/self-portrait.jpg");
-    background-position-y: center;
+    background-image: url("../resources/images/grass-8.jpeg");
+    background-position-y: bottom;
     background-size: cover;
     background-repeat: repeat-y;
-    height: 100%;
+    height: 2000px;
     width: 100%;
-    padding: 1em 1em 0 1em; }
+    padding: 1em 0 0 0; }
     body div.backgroundImage nav button {
       position: fixed;
       left: 0.5em;
@@ -23,39 +24,53 @@ body {
       font-weight: 900;
       background-color: transparent;
       border: none;
-      z-index: 1; }
+      z-index: 2; }
     body div.backgroundImage nav button:hover {
-      color: gold; }
+      color: tomato; }
     body div.backgroundImage nav button:focus {
       outline: none;
       border: none; }
     body div.backgroundImage nav div.menu {
-      width: 60vw;
-      left: 0vw;
       position: fixed;
+      left: 0;
+      width: calc(100vw - 1.5rem);
       height: 100%;
+      background-color: white;
+      border-right: 6vw solid gold;
       display: grid;
-      grid-template-columns: 10vw 1fr 2em;
+      grid-template-columns: 1fr 12vw 1fr;
       grid-template-rows: 20vh 1fr 10vh;
-      transition: all 1s ease-in-out; }
+      transition: all 0.5s ease-in; }
       body div.backgroundImage nav div.menu ul {
         grid-column: 2;
         grid-row: 2;
-        list-style-type: none; }
+        list-style-type: none;
+        padding: 0; }
         body div.backgroundImage nav div.menu ul a {
           text-decoration: none;
-          color: white;
-          font-size: 2.5em; }
+          color: black;
+          font-size: 3vw; }
         body div.backgroundImage nav div.menu ul a:hover {
           color: gold; }
+        body div.backgroundImage nav div.menu ul a.clicked,
+        body div.backgroundImage nav div.menu ul a:focus,
+        body div.backgroundImage nav div.menu ul a:active {
+          color: tomato; }
     body div.backgroundImage nav div.closed {
-      left: -60vw; }
+      left: -100vw; }
+    body div.backgroundImage nav .navBorder {
+      z-index: 1;
+      height: 100%;
+      width: 1.5rem;
+      position: fixed;
+      background-color: white;
+      left: 0; }
     body div.backgroundImage .backgroundWrapper {
-      box-sizing: content-box;
+      border-left: 2rem solid gold;
+      box-sizing: border-box;
       background-color: white;
       width: 100%;
       min-height: 100%;
-      transition: all 1s ease-in-out;
       float: right;
       /* main {
                 // display: grid;
@@ -79,3 +94,17 @@ body {
         position: fixed;
         top: 3vw;
         left: 1.5rem; }
+      body div.backgroundImage .backgroundWrapper .pageContent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) 63vw;
+        grid-template-rows: auto;
+        gap: 1em; }
+        body div.backgroundImage .backgroundWrapper .pageContent img {
+          grid-column: 1 / 2;
+          width: 100%;
+          border-top-left-radius: 30px; }
+        body div.backgroundImage .backgroundWrapper .pageContent p {
+          grid-column: 1 / 2;
+          grid-row: 2 / 3; }
+        body div.backgroundImage .backgroundWrapper .pageContent h3 {
+          width: 100%; }
