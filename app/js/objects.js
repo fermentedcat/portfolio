@@ -69,7 +69,7 @@ let pageMenu = [
             ],
             images: [
                 {
-                    src: "../resources/images/self-portrait.jpg",
+                    src: "resources/images/self-portrait.jpg",
                     alt: "Colorful self-portrait",
                     text: "This is a photo-realistic drawing of me thinking about pizza."
                 }
