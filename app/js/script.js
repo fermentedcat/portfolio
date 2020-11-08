@@ -12,15 +12,61 @@ class Page {
     constructor(page) {
         this.name = page.name;
         this.intro = page.content.intro;
-        this.pageContent = page.pageContent;
+        this.info = page.content.info;
+        this.images = page.content.images;
+        this.wrapper = document.querySelector(".pageContent");
+        this.class = page.class;
     }
     loadPage() {
-        while (pageContent.firstChild) {
-            pageContent.removeChild(pageContent.lastChild);
+        while (this.wrapper.firstChild) {
+            this.wrapper.removeChild(this.wrapper.lastChild);
         }
-        console.log(this.name);
         Website.changeTitle(this.name);
-        console.log(this.intro);
+        this.wrapper.classList.add(this.class);
+        let header = document.createElement("h2");
+        let imgWrapper = document.createElement("div");
+        imgWrapper.className = "headerImg";
+        this.wrapper.appendChild(imgWrapper);
+        let img = document.createElement("img");
+        img.src = this.images[0].src;
+        img.alt = this.images[0].alt;
+        let imgText = document.createElement("p");
+        imgText.innerHTML = this.images[0].text;
+        imgText.className = "imgText";
+        imgWrapper.appendChild(img);
+        imgWrapper.appendChild(imgText);
+
+        let introWrapper = document.createElement("div");
+        introWrapper.classList.add("introWrapper");
+        introWrapper.classList.add(this.class + "Intro");
+        this.wrapper.appendChild(introWrapper);
+        header.innerHTML = this.name;
+        introWrapper.appendChild(header);
+        // add intro text
+        for (let text of this.intro) {
+            let intro = document.createElement("p");
+            intro.innerHTML = text;
+            intro.className = "intro";
+            introWrapper.appendChild(intro);
+        }
+
+        
+        // add additional info text
+        for (let i = 0; i < this.info.length; i++) {
+            let sectionWrapper = document.createElement("div");
+            sectionWrapper.classList.add("section" + (i + 1));
+            sectionWrapper.classList.add("section");
+            this.wrapper.appendChild(sectionWrapper);
+            let title = document.createElement("h3");
+            title.innerHTML = this.info[0].title;
+            sectionWrapper.appendChild(title);
+            for (let part of this.info[i].text) {
+                let info = document.createElement("p");
+                info.innerHTML = part;
+                sectionWrapper.appendChild(info);
+            }
+
+        }
     }
 
 }
@@ -37,6 +83,21 @@ class Website {
         this.menu = document.querySelector(".menu");
         this.ul = document.querySelector(".menu_list");
     
+        
+        this.menu_button.onmouseover = () => {
+            if (this.menu.classList.contains("closed")) {
+                this.menu.classList.add("hover");
+                this.menu_button.classList.add("reveal");
+                this.menu_button.innerHTML = "= menu";
+            }
+        }
+        this.menu_button.onmouseout = () => {
+            this.menu.classList.remove("hover");
+            if (this.menu.classList.contains("closed")) {
+                this.menu_button.innerHTML = "|||";
+            }
+            this.menu_button.classList.remove("reveal");
+        }
         this.menu_button.addEventListener("click", e => {
             this.toggleMenu();
         })
@@ -44,10 +105,12 @@ class Website {
     toggleMenu() {
         if (this.menu.classList.contains("closed")) {
             this.menu_button.innerHTML = "X";
+            this.menu.classList.remove("hover");
             this.loadMenuItems();
 
         } else {
             this.menu_button.innerHTML = "|||";
+            this.menu.classList.add("hover");
             setTimeout(() => {
                 while (this.ul.firstChild) {
                     this.ul.removeChild(this.ul.lastChild);
@@ -72,7 +135,7 @@ class Website {
                 page.loadPage();
                 this.toggleMenu();
                 a.classList.add("clicked");
-                
+                this.menu.classList.remove("hover");
             });
             this.ul.appendChild(li);
             li.appendChild(a);

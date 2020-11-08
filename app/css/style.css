@@ -1,110 +1,138 @@
 body {
   background-color: white;
-  padding: 1.5rem;
-  padding-top: 6.5vw;
-  padding-bottom: 0;
+  padding: 0 1.5rem 0 1.5rem;
   height: 100vh;
-  width: 100vw;
-  z-index: 2; }
+  width: 100vw; }
   body div.backgroundImage {
     background-image: url("../resources/images/grass-8.jpeg");
-    background-position-y: bottom;
+    background-position-y: top;
     background-size: cover;
-    background-repeat: repeat-y;
-    height: 2000px;
     width: 100%;
-    padding: 1em 0 0 0; }
-    body div.backgroundImage nav button {
+    position: sticky;
+    border-top: 6.5vw solid white;
+    box-sizing: content-box;
+    top: 0px;
+    height: 1.2em; }
+  body nav button {
+    position: fixed;
+    left: 1em;
+    top: 45%;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    font-weight: 900;
+    background-color: transparent;
+    border: none;
+    z-index: 2;
+    transition: all 0.5s ease-in-out; }
+  body nav button:hover {
+    color: tomato; }
+  body nav button:focus {
+    outline: none;
+    border: none; }
+  body nav button.reveal {
+    left: 0.8em; }
+  body nav div.menu {
+    position: fixed;
+    left: 0;
+    width: calc(100vw - 1.5rem);
+    height: 100%;
+    background-color: white;
+    border-right: 6vw solid gold;
+    display: grid;
+    grid-template-columns: 1fr 12vw 1fr;
+    grid-template-rows: 20vh 1fr 10vh;
+    transition: all 0.5s ease-in; }
+    body nav div.menu ul {
+      grid-column: 2;
+      grid-row: 2;
+      list-style-type: none;
+      padding: 0; }
+      body nav div.menu ul a {
+        text-decoration: none;
+        color: black;
+        font-size: 3vw; }
+      body nav div.menu ul a:hover {
+        color: gold; }
+      body nav div.menu ul a.clicked,
+      body nav div.menu ul a:focus,
+      body nav div.menu ul a:active {
+        color: tomato; }
+  body nav div.closed {
+    left: calc((-100vw - 1.5rem) + 6.5rem); }
+  body nav div.hover {
+    left: calc((-100vw - 1.5rem) + 8rem); }
+  body nav .navBorder {
+    z-index: 1;
+    height: 100%;
+    width: 1.5rem;
+    position: fixed;
+    background-color: white;
+    left: 0; }
+  body .backgroundWrapper {
+    border-left: 2rem solid gold;
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    min-height: 100%;
+    float: right;
+    /* main {
+            // display: grid;
+            // grid-template-rows: 3fr 8fr;
+            // overflow: scroll;
+            // height: 100vh;
+            // width: 100vw;
+            
+        } */ }
+    body .backgroundWrapper p {
+      float: right; }
+    body .backgroundWrapper header h1 {
+      text-transform: uppercase;
+      font-size: 5em;
       position: fixed;
-      left: 0.5em;
-      top: 45%;
-      text-decoration: none;
-      color: black;
-      font-size: 1.5em;
-      font-weight: 900;
-      background-color: transparent;
-      border: none;
-      z-index: 2; }
-    body div.backgroundImage nav button:hover {
-      color: tomato; }
-    body div.backgroundImage nav button:focus {
-      outline: none;
-      border: none; }
-    body div.backgroundImage nav div.menu {
+      top: 0.6em;
+      left: 0.8em; }
+    body .backgroundWrapper header img {
+      width: 28%;
+      margin: 0 auto;
       position: fixed;
-      left: 0;
-      width: calc(100vw - 1.5rem);
-      height: 100%;
-      background-color: white;
-      border-right: 6vw solid gold;
+      top: 3vw;
+      left: 1.5rem; }
+    body .backgroundWrapper .pageContent {
+      margin: 3.5vw;
       display: grid;
-      grid-template-columns: 1fr 12vw 1fr;
-      grid-template-rows: 20vh 1fr 10vh;
-      transition: all 0.5s ease-in; }
-      body div.backgroundImage nav div.menu ul {
-        grid-column: 2;
-        grid-row: 2;
-        list-style-type: none;
-        padding: 0; }
-        body div.backgroundImage nav div.menu ul a {
-          text-decoration: none;
-          color: black;
-          font-size: 3vw; }
-        body div.backgroundImage nav div.menu ul a:hover {
-          color: gold; }
-        body div.backgroundImage nav div.menu ul a.clicked,
-        body div.backgroundImage nav div.menu ul a:focus,
-        body div.backgroundImage nav div.menu ul a:active {
-          color: tomato; }
-    body div.backgroundImage nav div.closed {
-      left: -100vw; }
-    body div.backgroundImage nav .navBorder {
-      z-index: 1;
-      height: 100%;
-      width: 1.5rem;
-      position: fixed;
-      background-color: white;
-      left: 0; }
-    body div.backgroundImage .backgroundWrapper {
-      border-left: 2rem solid gold;
-      box-sizing: border-box;
-      background-color: white;
-      width: 100%;
-      min-height: 100%;
-      float: right;
-      /* main {
-                // display: grid;
-                // grid-template-rows: 3fr 8fr;
-                // overflow: scroll;
-                // height: 100vh;
-                // width: 100vw;
+      grid-template-columns: 8vw 1fr 1.3fr 8vw;
+      grid-template-rows: 3rem auto 50vh repeat(10, 40vw);
+      grid-column-gap: 1.8em;
+      /* h2 {
                 
+            }
+            p {
+                grid-column: 3 / span 1;
+                grid-row: auto;
+            } */
+      /* p.intro {
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
             } */ }
-      body div.backgroundImage .backgroundWrapper p {
-        float: right; }
-      body div.backgroundImage .backgroundWrapper header h1 {
-        text-transform: uppercase;
-        font-size: 5em;
-        position: fixed;
-        top: 0.6em;
-        left: 0.8em; }
-      body div.backgroundImage .backgroundWrapper header img {
-        width: 28%;
-        margin: 0 auto;
-        position: fixed;
-        top: 3vw;
-        left: 1.5rem; }
-      body div.backgroundImage .backgroundWrapper .pageContent {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr) 63vw;
-        grid-template-rows: auto;
-        gap: 1em; }
-        body div.backgroundImage .backgroundWrapper .pageContent img {
-          grid-column: 1 / 2;
-          width: 100%;
-          border-top-left-radius: 30px; }
-        body div.backgroundImage .backgroundWrapper .pageContent p {
-          grid-column: 1 / 2;
-          grid-row: 2 / 3; }
-        body div.backgroundImage .backgroundWrapper .pageContent h3 {
+      body .backgroundWrapper .pageContent .headerImg {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+        body .backgroundWrapper .pageContent .headerImg img {
           width: 100%; }
+      body .backgroundWrapper .pageContent .imgText {
+        grid-column: 3 / span 1;
+        grid-row: 3 / span 1;
+        font-size: 0.8em;
+        font-weight: 600; }
+      body .backgroundWrapper .pageContent .introWrapper {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 3; }
+      body .backgroundWrapper .pageContent .section {
+        margin-top: 10rem; }
+      body .backgroundWrapper .pageContent .section1 {
+        grid-column: 2 / span 2;
+        grid-row: 4 / span 3; }

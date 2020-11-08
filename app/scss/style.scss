@@ -1,139 +1,177 @@
 body {
     background-color: rgb(255, 255, 255);
-    padding: 1.5rem;
-    padding-top: 6.5vw;
-    padding-bottom: 0;
+    padding: 0 1.5rem 0 1.5rem;
     height: 100vh;
     width: 100vw;
-    z-index: 2;
     div.backgroundImage {
         background-image: url("../resources/images/grass-8.jpeg");
-        background-position-y: bottom;
+        background-position-y: top;
         background-size: cover;
-        background-repeat: repeat-y;
-        height: 2000px;
         width: 100%;
-        padding: 1em 0 0 0;
-        nav {
-            button {
-                position: fixed;
-                left: 0.5em;
-                top: 45%;
-                text-decoration: none;
-                color: black;
-                font-size: 1.5em;
-                font-weight: 900;
-                background-color: transparent;
-                border: none;
-                z-index: 2;
-            }
-            button:hover {
-                color: tomato;
-            }
-            button:focus {
-                outline: none;
-                border: none;
-            }
-            div.menu {
-                position: fixed;
-                left: 0;
-                width: calc(100vw - 1.5rem);
-                height: 100%;
+        position: sticky;
+        border-top: 6.5vw solid white;
+        box-sizing: content-box;
+        top: 0px;
+        height: 1.2em;
+        
+    }
+    nav {
+        button {
+            position: fixed;
+            left: 1em;
+            top: 45%;
+            text-decoration: none;
+            color: black;
+            font-size: 1.5em;
+            font-weight: 900;
+            background-color: transparent;
+            border: none;
+            z-index: 2;
+            transition: all 0.5s ease-in-out;
+        }
+        button:hover {
+            color: tomato;
+        }
+        button:focus {
+            outline: none;
+            border: none;
+        }
+        button.reveal {
+            left: 0.8em;
+        }
+        div.menu {
+            position: fixed;
+            left: 0;
+            width: calc(100vw - 1.5rem);
+            height: 100%;
 
-                background-color: white;
-                border-right: 6vw solid gold;
-                
-                display: grid;
-                grid-template-columns: 1fr 12vw 1fr;
-                grid-template-rows: 20vh 1fr 10vh;
-                transition: all 0.5s ease-in;
-                ul {
-                    grid-column: 2;
-                    grid-row: 2;
-                    list-style-type: none;
-                    padding: 0;
-                    a {
-                        text-decoration: none;
-                        color: black;
-                        font-size: 3vw;
-                    }
-                    a:hover {
-                        color: gold;
-                    }
-                    a.clicked,
-                    a:focus,
-                    a:active {
-                        color: tomato;
-                    }
+            background-color: white;
+            border-right: 6vw solid gold;
+            
+            display: grid;
+            grid-template-columns: 1fr 12vw 1fr;
+            grid-template-rows: 20vh 1fr 10vh;
+            transition: all 0.5s ease-in;
+            ul {
+                grid-column: 2;
+                grid-row: 2;
+                list-style-type: none;
+                padding: 0;
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 3vw;
                 }
-            }
-            div.closed {
-                left: -100vw;
-            }
-            .navBorder {
-                z-index: 1;
-                height: 100%;
-                width: 1.5rem;
-                position: fixed;
-                background-color: white;
-                left: 0;
+                a:hover {
+                    color: gold;
+                }
+                a.clicked,
+                a:focus,
+                a:active {
+                    color: tomato;
+                }
             }
         }
-        .backgroundWrapper {
-            border-left: 2rem solid gold;
-            box-sizing: border-box;
+        div.closed {
+            left: calc((-100vw - 1.5rem) + 6.5rem);
+        }
+        div.hover {
+            left: calc((-100vw - 1.5rem) + 8rem);
+        }
+        .navBorder {
+            z-index: 1;
+            height: 100%;
+            width: 1.5rem;
+            position: fixed;
             background-color: white;
-            width: 100%;
-            min-height: 100%;
+            left: 0;
+        }
+    }
+    .backgroundWrapper {
+        border-left: 2rem solid gold; //? täcks av nav
+        box-sizing: border-box;
+        background-color: white;
+        width: 100%;
+        min-height: 100%;
+        float: right;
+        p {
             float: right;
-            p {
-                float: right;
+        }
+        header {   
+            //// lägg till knappar uppe till höger  
+            //// language / accessibility           
+            h1 { //* för tillgänglighet?
+                text-transform: uppercase;
+                font-size: 5em;
+                position: fixed;
+                top: 0.6em;
+                left: 0.8em;
             }
-            header {                
-                h1 { //* för tillgänglighet?
-                    text-transform: uppercase;
-                    font-size: 5em;
-                    position: fixed;
-                    top: 0.6em;
-                    left: 0.8em;
-                }
+            img {
+                width: 28%;
+                margin: 0 auto;
+                position: fixed;
+                top: 3vw;
+                left: 1.5rem;
+            }
+        }
+        .pageContent {
+            margin: 3.5vw;
+            display: grid;
+            grid-template-columns: 8vw 1fr 1.3fr 8vw;
+            //// todo fixa mellanrum mellan
+            grid-template-rows: 3rem auto 50vh repeat(10, 40vw);
+            grid-column-gap: 1.8em;
+            .headerImg {
+                grid-column: 3 / span 1;
+                grid-row: 2 / span 1;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
                 img {
-                    width: 28%;
-                    margin: 0 auto;
-                    position: fixed;
-                    top: 3vw;
-                    left: 1.5rem;
-                }
-            }
-            .pageContent {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr) 63vw;
-                grid-template-rows: auto;
-                gap: 1em;
-                img {
-                    grid-column: 1 / 2;
-                    width: 100%;
-                    border-top-left-radius: 30px;
-                }
-                p {
-                    grid-column: 1 / 2;
-                    grid-row: 2 / 3;
-                }
-                h3 {
                     width: 100%;
                 }
+
             }
-            
-            /* main {
-                // display: grid;
-                // grid-template-rows: 3fr 8fr;
-                // overflow: scroll;
-                // height: 100vh;
-                // width: 100vw;
+            .imgText {
+                grid-column: 3 / span 1;
+                grid-row: 3 / span 1;
+                font-size: 0.8em;
+                font-weight: 600;
+            }
+            /* h2 {
                 
+            }
+            p {
+                grid-column: 3 / span 1;
+                grid-row: auto;
             } */
+            /* p.intro {
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
+            } */
+            .introWrapper {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 3;
+            }
+            .section {
+                margin-top: 10rem;
+            }
+            .section1 {
+                grid-column: 2 / span 2;
+                grid-row: 4 / span 3;
+            
+            }
         }
         
+        /* main {
+            // display: grid;
+            // grid-template-rows: 3fr 8fr;
+            // overflow: scroll;
+            // height: 100vh;
+            // width: 100vw;
+            
+        } */
     }
     
 }
