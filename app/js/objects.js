@@ -23,7 +23,29 @@ let pageMenu = [
         name: "Portfolio",
         class: "portfolio",
         content: {
-            intro: "",
+            intro: ["Here are some early works"],
+            info: [
+                {
+                    title: "Quiz",
+                    text: ["My debut solo project.", 
+                    "The main aim for this project was to use an API and to build an app to check for correct answers.", 
+                    "I loved doing this, this is where I first kind of understood OOP.", 
+                    "", 
+                    ""],
+                    link: "https://github.com/fermentedcat/quiz",
+                    images: ""
+                },
+                {
+                    title: "Yatzy",
+                    text: ["As my first group project I did at Nackademin we were tasked to make a Yahtzee game.", 
+                    "As we were only a few weeks in, I learned a LOT during this project.", 
+                    "I also enjoyed being totally lost in code and fearlessly just running with any idea for problem solving", 
+                    "Having to re-write code as time went on and we learnt more at school was a good exercise too.", 
+                    "If set to do this over I would probably (hopefully) have a totally different idea of how to implement it."],
+                    link: "https://github.com/fermentedcat/YatzyGruppen_2",
+                    images: ""
+                }
+            ],
             images: ""
         }
     },

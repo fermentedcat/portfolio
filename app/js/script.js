@@ -106,6 +106,8 @@ class Page {
 
             let submitButton = document.createElement("button");
             submitButton.type = "submit";
+            submitButton.innerHTML = "Send";
+            submitButton.className = "btn btn-primary";
 
             form.appendChild(title);
             
@@ -121,7 +123,9 @@ class Page {
             form.appendChild(messageLabel);
             form.appendChild(message);
 
-            form.onsubmit()
+            form.appendChild(submitButton);
+
+            // form.onsubmit() ////TODO: fixa gmail API redirect uri...
 
 
             
