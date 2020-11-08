@@ -24,48 +24,139 @@ class Page {
         Website.changeTitle(this.name);
         this.wrapper.classList.add(this.class);
         let header = document.createElement("h2");
-        let imgWrapper = document.createElement("div");
-        imgWrapper.className = "headerImg";
-        this.wrapper.appendChild(imgWrapper);
-        let img = document.createElement("img");
-        img.src = this.images[0].src;
-        img.alt = this.images[0].alt;
-        let imgText = document.createElement("p");
-        imgText.innerHTML = this.images[0].text;
-        imgText.className = "imgText";
-        imgWrapper.appendChild(img);
-        imgWrapper.appendChild(imgText);
-
         let introWrapper = document.createElement("div");
         introWrapper.classList.add("introWrapper");
         introWrapper.classList.add(this.class + "Intro");
         this.wrapper.appendChild(introWrapper);
         header.innerHTML = this.name;
         introWrapper.appendChild(header);
-        // add intro text
-        for (let text of this.intro) {
-            let intro = document.createElement("p");
-            intro.innerHTML = text;
-            intro.className = "intro";
-            introWrapper.appendChild(intro);
+
+        if (!this.intro[0].title) {
+            // add intro text
+            for (let text of this.intro) {
+                let intro = document.createElement("p");
+                intro.innerHTML = text;
+                intro.className = "intro";
+                introWrapper.appendChild(intro);
+            }
+        } else {
+            let contactWrapper = document.createElement("div");
+            introWrapper.appendChild(contactWrapper);
+            for (let part of this.intro) {
+                let title = document.createElement("p");
+                title.innerHTML = part.title;
+                title.className = "contactInfoTitle";
+                let text = document.createElement("p");
+                text.innerHTML = part.text;
+                contactWrapper.appendChild(title);
+                contactWrapper.appendChild(text);
+            }
         }
 
-        
-        // add additional info text
-        for (let i = 0; i < this.info.length; i++) {
-            let sectionWrapper = document.createElement("div");
-            sectionWrapper.classList.add("section" + (i + 1));
-            sectionWrapper.classList.add("section");
-            this.wrapper.appendChild(sectionWrapper);
-            let title = document.createElement("h3");
-            title.innerHTML = this.info[0].title;
-            sectionWrapper.appendChild(title);
-            for (let part of this.info[i].text) {
-                let info = document.createElement("p");
-                info.innerHTML = part;
-                sectionWrapper.appendChild(info);
-            }
+        if (this.class == "contact") {
+            let form = document.createElement("form");
+            this.wrapper.appendChild(form);
 
+            let title = document.createElement("h4");
+            title.innerHTML = "Please send me an email and I'll get back to you soon. I'd be happy to hear from you.";
+            
+            let name = document.createElement("input");
+            let email = document.createElement("input");
+            let phone = document.createElement("input");
+            let message = document.createElement("textarea");
+
+            name.type = "text";
+            email.type = "email";
+            phone.type = "text";
+
+            name.className = "form-control";
+            email.className = "form-control";
+            phone.className = "form-control";
+            message.className = "form-control";
+
+            name.placeholder = "Your Name";
+            email.placeholder = "your@email.com";
+            phone.placeholder = "070-1234567";
+            message.placeholder = "Your message...";
+
+            name.id = "inputName";
+            email.id = "inputEmail";
+            phone.id = "inputPhone";
+            message.id = "inputMessage";
+
+            name.name = "Name";
+            email.name = "Email";
+            phone.name = "Phone";
+            message.name = "Message";
+
+            let nameLabel = document.createElement("label");
+            let emailLabel = document.createElement("label");
+            let phoneLabel = document.createElement("label");
+            let messageLabel = document.createElement("label");
+
+            nameLabel.htmlFor = "inputName";
+            emailLabel.htmlFor = "inputEmail";
+            phoneLabel.htmlFor = "inputPhone";
+            messageLabel.htmlFor = "inputMessage";
+
+            nameLabel.innerHTML = "Name:";
+            emailLabel.innerHTML = "Email:";
+            phoneLabel.innerHTML = "Phone:";
+            messageLabel.innerHTML = "Message:";
+
+            let submitButton = document.createElement("button");
+            submitButton.type = "submit";
+
+            form.appendChild(title);
+            
+            form.appendChild(nameLabel);
+            form.appendChild(name);
+            
+            form.appendChild(emailLabel);
+            form.appendChild(email);
+
+            form.appendChild(phoneLabel);
+            form.appendChild(phone);
+            
+            form.appendChild(messageLabel);
+            form.appendChild(message);
+
+            form.onsubmit()
+
+
+            
+        } else {
+
+            let imgWrapper = document.createElement("div");
+            imgWrapper.className = "headerImg";
+            this.wrapper.appendChild(imgWrapper);
+            let img = document.createElement("img");
+            img.src = this.images[0].src;
+            img.alt = this.images[0].alt;
+            let imgText = document.createElement("p");
+            imgText.innerHTML = this.images[0].text;
+            imgText.className = "imgText";
+            imgWrapper.appendChild(img);
+            imgWrapper.appendChild(imgText);
+    
+            
+    
+            // add additional info text
+            for (let i = 0; i < this.info.length; i++) {
+                let sectionWrapper = document.createElement("div");
+                sectionWrapper.classList.add("section" + (i + 1));
+                sectionWrapper.classList.add("section");
+                this.wrapper.appendChild(sectionWrapper);
+                let title = document.createElement("h3");
+                title.innerHTML = this.info[0].title;
+                sectionWrapper.appendChild(title);
+                for (let part of this.info[i].text) {
+                    let info = document.createElement("p");
+                    info.innerHTML = part;
+                    sectionWrapper.appendChild(info);
+                }
+    
+            }
         }
     }
 

@@ -58,7 +58,17 @@ let pageMenu = [
         name: "Contact",
         class: "contact",
         content: {
-            intro: "",
+            intro: [
+                {
+                    title: "email:",
+                    text: "majaneko@gmail.com"
+                },
+                {
+                    title: "phone:",
+                    text: "072-3058222"
+                }
+            ],
+            info: "",
             images: ""
         }
     }];
