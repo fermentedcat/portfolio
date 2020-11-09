@@ -166,7 +166,7 @@ body {
         body .backgroundWrapper .pageContent form input {
           margin-bottom: 1.5em; }
     body .backgroundWrapper .pageContent.portfolio {
-      grid-template-columns: 0.5vw 1fr 0.5vw;
+      grid-template-columns: 1vw 1fr 1vw;
       grid-template-rows: auto; }
       body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro {
         grid-column: 2 / span 1;
@@ -175,11 +175,13 @@ body {
         grid-column: 2 / span 1;
         margin-top: 20vw;
         display: grid;
-        gap: 2em;
-        grid-template-columns: 3fr 1fr; }
+        grid-column-gap: 2em;
+        grid-template-columns: 4fr 1.5fr; }
         body .backgroundWrapper .pageContent.portfolio .section .carousel {
           grid-column: 1 / span 1;
           grid-row: 1 / span 1; }
+          body .backgroundWrapper .pageContent.portfolio .section .carousel img {
+            width: 100%; }
           body .backgroundWrapper .pageContent.portfolio .section .carousel .carousel-indicators li {
             background-color: lightgray;
             opacity: 0.5; }
@@ -194,6 +196,16 @@ body {
         grid-row: 3 / span 3; }
       body .backgroundWrapper .pageContent.portfolio .section2 {
         grid-row: 6 / span 3; }
+      @media screen and (max-width: 1120px) {
+        body .backgroundWrapper .pageContent.portfolio .section {
+          display: flex;
+          flex-direction: column-reverse; }
+          body .backgroundWrapper .pageContent.portfolio .section p {
+            font-size: 1em;
+            margin-bottom: 1em; } }
+      @media screen and (max-width: 800px) {
+        body .backgroundWrapper .pageContent.portfolio .section p {
+          font-size: 0.8em; } }
   body .sr-only {
     position: absolute;
     width: 1px;
@@ -211,3 +223,7 @@ body {
     margin: 0;
     overflow: visible;
     clip: auto; }
+
+@media screen and (max-width: 1300px) {
+  p {
+    font-size: 0.8em; } }

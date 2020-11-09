@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(e) {
 
-    let website = new Website();
+    new Website();
 
     
 });
@@ -192,7 +192,9 @@ class Page {
                         carouselInner.appendChild(carItem);
                         let img = document.createElement("img");
                         img.src = this.info[i].images[j].src;
-                        img.className = "d-block w-100";
+                        img.setAttribute("srcset", `${this.info[i].images[j].srcset}`)
+                        img.sizes = this.info[i].sizes;
+                        img.className = "d-block";
                         img.alt = this.info[i].images[j].alt;
                         carItem.appendChild(img);
                     }

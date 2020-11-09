@@ -32,27 +32,25 @@ let pageMenu = [
                     link: "https://github.com/fermentedcat/quiz",
                     images: [
                         {
-                            srcset: "resources/images/quiz-1-low.jpg 480w, resources/images/quiz-1.jpg 800w",
-                            sizes: "(max-width: 600px) 480px, 800px",
+                            srcset: "resources/images/quiz-1-400.jpg 400w, resources/images/quiz-1-900.jpg 900w, resources/images/quiz-1-1200.jpg 1200w, resources/images/quiz-1-1500.jpg 1500w",
                             src: "resources/images/quiz-1.jpg",
                             alt: "Start quiz screenshot",
                             text: ""
                         },
                         {
-                            srcset: "resources/images/quiz-2-low.jpg 480w, resources/images/quiz-2.jpg 800w",
-                            sizes: "(max-width: 600px) 480px, 800px",
+                            srcset: "resources/images/quiz-2-400.jpg 400w, resources/images/quiz-2-900.jpg 900w, resources/images/quiz-2-1200.jpg 1200w, resources/images/quiz-2-1500.jpg 1500w",
                             src: "resources/images/quiz-2.jpg",
                             alt: "Select quiz answer screenshot",
                             text: ""
                         },
                         {
-                            srcset: "resources/images/quiz-3-low.jpg 480w, resources/images/quiz-3.jpg 800w",
-                            sizes: "(max-width: 600px) 480px, 800px",
+                            srcset: "resources/images/quiz-3-400.jpg 400w, resources/images/quiz-3-900.jpg 900w, resources/images/quiz-3-1200.jpg 1200w, resources/images/quiz-3-1500.jpg 1500w",
                             src: "resources/images/quiz-3.jpg",
                             alt: "Quiz result, view correct answers, screenshot",
                             text: ""
                         },
-                    ]
+                    ],
+                    sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -9vw ) * 0.7273)",
                 },
                 {
                     title: "Yatzy",
@@ -60,34 +58,32 @@ let pageMenu = [
                     link: "https://github.com/fermentedcat/YatzyGruppen_2",
                     images: [
                         {
-                            srcset: "resources/images/yatzy-1-low.jpg 480w, resources/images/yatzy-1.jpg 800w",
-                            sizes: "(max-width: 600px) 480px, 800px",
-                            src: "resources/images/yatzy-1.jpg",
+                            srcset: "resources/images/yatzy-1-400.jpg 400w, resources/images/yatzy-1-900.jpg 900w, resources/images/yatzy-1-1200.jpg 1200w, resources/images/yatzy-1-1500.jpg 1500w",
+                            src: "resources/images/yatzy-1-900.jpg",
                             alt: "Start yatzy game screenshot",
                             text: ""
                         },
                         {
-                            srcset: "resources/images/yatzy-2-low.jpg 480w, resources/images/yatzy-2.jpg 800w",
-                            sizes: "(max-width: 600px) 480px, 800px",
-                            src: "resources/images/yatzy-2.jpg",
+                            srcset: "resources/images/yatzy-2-400.jpg 400w, resources/images/yatzy-2-900.jpg 900w, resources/images/yatzy-2-1200.jpg 1200w, resources/images/yatzy-2-1500.jpg 1500w",
+                            src: "resources/images/yatzy-2-900.jpg",
                             alt: "Start yatzy game, enter name, screenshot",
                             text: ""
                         },
                         {
-                            srcset: "resources/images/yatzy-3-low.jpg 480w, resources/images/yatzy-3.jpg 800w",
-                            sizes: "(max-width: 600px) 480px, 800px",
-                            src: "resources/images/yatzy-3.jpg",
+                            srcset: "resources/images/yatzy-3-400.jpg 400w, resources/images/yatzy-3-900.jpg 900w, resources/images/yatzy-3-1200.jpg 1200w, resources/images/yatzy-3-1500.jpg 1500w",
+                            src: "resources/images/yatzy-3-900.jpg",
                             alt: "Yatzy game, throw dice, screenshot",
                             text: ""
                         },
                         {
-                            srcset: "resources/images/yatzy-4-low.jpg 480w, resources/images/yatzy-4.jpg 800w",
-                            sizes: "(max-width: 600px) 480px, 800px",
-                            src: "resources/images/yatzy-4.jpg",
+                            srcset: "resources/images/yatzy-4-400.jpg 400w, resources/images/yatzy-4-900.jpg 900w, resources/images/yatzy-4-1200.jpg 1200w, resources/images/yatzy-4-1500.jpg 1500w",
+                            src: "resources/images/yatzy-4-900.jpg",
                             alt: "Yatzy game, throw dice, screenshot",
                             text: ""
                         }
-                    ]
+                    ],
+                    //TODO: ÄNDRA efter ändringar
+                    sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -9vw ) * 0.7273)",
                 }
             ],
             images: ""
@@ -113,13 +109,14 @@ let pageMenu = [
             ],
             images: [
                 {
-                    srcset: "resources/images/self-portrait-s.jpg 480w, resources/images/self-portrait-m.jpg 800w",
-                    sizes: "(max-width: 600px) 480px, 800px",
-                    src: "resources/images/self-portrait-m.jpg",
+                    srcset: "resources/images/self-portrait-300.jpg 300w, resources/images/self-portrait-600.jpg 600w, resources/images/self-portrait-900.jpg 900w, resources/images/self-portrait-1200.jpg 1200w",
+                    src: "resources/images/self-portrait-900.jpg",
                     alt: "Colorful self-portrait",
-                    text: "This is a photo-realistic drawing of me thinking about pizza."
-                }
-            ]
+                    text: "This is a photo-realistic drawing of me thinking about pizza.",
+                    sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -7vw ) * 0.57)",
+                } //TODO: ÄNDRA efter ändringar
+            ],
+            
         }
     },
     {
