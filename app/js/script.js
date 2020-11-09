@@ -21,8 +21,9 @@ class Page {
         while (this.wrapper.firstChild) {
             this.wrapper.removeChild(this.wrapper.lastChild);
         }
+        window.scrollTo(0, 0);
         Website.changeTitle(this.name);
-        this.wrapper.classList.add(this.class);
+        this.wrapper.className = `pageContent ${this.class}`;
         let header = document.createElement("h2");
         let introWrapper = document.createElement("div");
         introWrapper.classList.add("introWrapper");
@@ -129,19 +130,22 @@ class Page {
 
 
             
-        } else {
+        
 
-            let imgWrapper = document.createElement("div");
-            imgWrapper.className = "headerImg";
-            this.wrapper.appendChild(imgWrapper);
-            let img = document.createElement("img");
-            img.src = this.images[0].src;
-            img.alt = this.images[0].alt;
-            let imgText = document.createElement("p");
-            imgText.innerHTML = this.images[0].text;
-            imgText.className = "imgText";
-            imgWrapper.appendChild(img);
-            imgWrapper.appendChild(imgText);
+        } else {
+            if (this.images.length > 0) {
+                let imgWrapper = document.createElement("div");
+                imgWrapper.className = "headerImg";
+                this.wrapper.appendChild(imgWrapper);
+                let img = document.createElement("img");
+                img.src = this.images[0].src;
+                img.alt = this.images[0].alt;
+                let imgText = document.createElement("p");
+                imgText.innerHTML = this.images[0].text;
+                imgText.className = "imgText";
+                imgWrapper.appendChild(img);
+                imgWrapper.appendChild(imgText);
+            }
     
             
     
@@ -151,14 +155,99 @@ class Page {
                 sectionWrapper.classList.add("section" + (i + 1));
                 sectionWrapper.classList.add("section");
                 this.wrapper.appendChild(sectionWrapper);
+                
+                //// add carousels for portfolio
+                if (this.info[i].images) {
+                    let carousel = document.createElement("div");
+                    carousel.id = `indicators${i}`;
+                    carousel.className = "carousel slide";
+                    carousel.setAttribute("data-ride", "carousel");
+                    sectionWrapper.appendChild(carousel);
+
+                    let ol = document.createElement("ol");
+                    ol.className = "carousel-indicators";
+                    carousel.appendChild(ol);
+
+                    for (let j = 0; j < this.info[i].images.length; j++) {
+                        let li = document.createElement("li");
+                        li.setAttribute("data-target", `#indicators${i}`);
+                        li.setAttribute("data-slide-to", '"' + j + '"');
+                        li.setAttribute("data-slide-to", `${j}`);
+
+                        if (j == 0) {
+                            li.className = "active";
+                        }
+                        ol.appendChild(li);
+                    }
+                    let carouselInner = document.createElement("div");
+                    carouselInner.className = "carousel-inner";
+                    carousel.appendChild(carouselInner);
+                    for (let j = 0; j < this.info[i].images.length; j++) {
+                        let carItem = document.createElement("div");
+                        if (j == 0) {
+                            carItem.className = "carousel-item active";
+                        } else {
+                            carItem.className = "carousel-item";
+                        }
+                        carouselInner.appendChild(carItem);
+                        let img = document.createElement("img");
+                        img.src = this.info[i].images[j].src;
+                        img.className = "d-block w-100";
+                        img.alt = this.info[i].images[j].alt;
+                        carItem.appendChild(img);
+                    }
+                    let controlPrev = document.createElement("a");
+                    controlPrev.className = "carousel-control-prev";
+                    controlPrev.setAttribute("href", `#indicators${i}`)
+                    controlPrev.setAttribute("role", "button");
+                    controlPrev.setAttribute("data-slide", "prev");
+                    carousel.appendChild(controlPrev);
+
+                    let controlNext = document.createElement("a");
+                    controlNext.className = "carousel-control-next";
+                    controlNext.setAttribute("href", `#indicators${i}`)
+                    controlNext.setAttribute("role", "button");
+                    controlNext.setAttribute("data-slide", "next");
+                    carousel.appendChild(controlNext);
+
+                    let spanPrev = document.createElement("span");
+                    spanPrev.className = "carousel-control-prev-icon";
+                    spanPrev.setAttribute("aria-hidden", "true");
+                    
+                    let spanPrevSR = document.createElement("span");
+                    spanPrevSR.className = "sr-only";
+                    spanPrevSR.innerHTML = "Previous";
+                    
+                    controlPrev.appendChild(spanPrev);
+                    controlPrev.appendChild(spanPrevSR);
+                    
+                    let spanNext = document.createElement("span");
+                    spanNext.className = "carousel-control-next-icon";
+                    spanNext.setAttribute("aria-hidden", "true");
+
+                    let spanNextSR = document.createElement("span");
+                    spanNextSR.className = "sr-only";
+                    spanNextSR.innerHTML = "Next";
+
+                    controlNext.appendChild(spanNext);
+                    controlNext.appendChild(spanNextSR);
+                    
+                }
+
+                let textWrapper = document.createElement("div");
+                textWrapper.className = "infoTextWrapper"
+                sectionWrapper.appendChild(textWrapper);
+                
                 let title = document.createElement("h3");
-                title.innerHTML = this.info[0].title;
-                sectionWrapper.appendChild(title);
+                title.innerHTML = this.info[i].title;
+                textWrapper.appendChild(title);
+                
                 for (let part of this.info[i].text) {
                     let info = document.createElement("p");
                     info.innerHTML = part;
-                    sectionWrapper.appendChild(info);
+                    textWrapper.appendChild(info);
                 }
+
     
             }
         }

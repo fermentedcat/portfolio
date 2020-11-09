@@ -7,8 +7,9 @@ body {
     background-image: url("../resources/images/grass-8.jpeg");
     background-position-y: top;
     background-size: cover;
-    width: 100%;
-    position: sticky;
+    width: calc(100% - 3rem);
+    position: fixed;
+    z-index: 4;
     border-top: 6.5vw solid white;
     box-sizing: content-box;
     top: 0px;
@@ -23,7 +24,7 @@ body {
     font-weight: 900;
     background-color: transparent;
     border: none;
-    z-index: 2;
+    z-index: 5;
     transition: all 0.5s ease-in-out; }
   body nav button:hover {
     color: tomato; }
@@ -37,6 +38,7 @@ body {
     left: 0;
     width: calc(100vw - 1.5rem);
     height: 100%;
+    z-index: 3;
     background-color: white;
     border-right: 6vw solid gold;
     display: grid;
@@ -63,19 +65,23 @@ body {
   body nav div.hover {
     left: calc((-100vw - 1.5rem) + 8rem); }
   body nav .navBorder {
-    z-index: 1;
+    z-index: 5;
     height: 100%;
     width: 1.5rem;
     position: fixed;
     background-color: white;
     left: 0; }
   body .backgroundWrapper {
+    margin-top: calc(6.5vw + 1.2em);
     border-left: 2rem solid gold;
     box-sizing: border-box;
-    background-color: white;
+    background-color: #f8f8f8;
     width: 100%;
     min-height: 100%;
     float: right;
+    /* p {
+            float: right;
+        } */
     /* main {
             // display: grid;
             // grid-template-rows: 3fr 8fr;
@@ -84,8 +90,6 @@ body {
             // width: 100vw;
             
         } */ }
-    body .backgroundWrapper p {
-      float: right; }
     body .backgroundWrapper header h1 {
       text-transform: uppercase;
       font-size: 5em;
@@ -97,7 +101,8 @@ body {
       margin: 0 auto;
       position: fixed;
       top: 3vw;
-      left: 1.5rem; }
+      left: 1.5rem;
+      z-index: 4; }
     body .backgroundWrapper .pageContent {
       margin: 3.5vw;
       display: grid;
@@ -160,3 +165,49 @@ body {
         body .backgroundWrapper .pageContent form textarea,
         body .backgroundWrapper .pageContent form input {
           margin-bottom: 1.5em; }
+    body .backgroundWrapper .pageContent.portfolio {
+      grid-template-columns: 0.5vw 1fr 0.5vw;
+      grid-template-rows: auto; }
+      body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1; }
+      body .backgroundWrapper .pageContent.portfolio .section {
+        grid-column: 2 / span 1;
+        margin-top: 20vw;
+        display: grid;
+        gap: 2em;
+        grid-template-columns: 3fr 1fr; }
+        body .backgroundWrapper .pageContent.portfolio .section .carousel {
+          grid-column: 1 / span 1;
+          grid-row: 1 / span 1; }
+          body .backgroundWrapper .pageContent.portfolio .section .carousel .carousel-indicators li {
+            background-color: lightgray;
+            opacity: 0.5; }
+          body .backgroundWrapper .pageContent.portfolio .section .carousel .carousel-indicators li.active {
+            background-color: gold;
+            opacity: 0.5; }
+          body .backgroundWrapper .pageContent.portfolio .section .carousel .carousel-indicators li:hover {
+            opacity: 1; }
+        body .backgroundWrapper .pageContent.portfolio .section .infoTextWrapper {
+          grid-column: 2 / span 1; }
+      body .backgroundWrapper .pageContent.portfolio .section1 {
+        grid-row: 3 / span 3; }
+      body .backgroundWrapper .pageContent.portfolio .section2 {
+        grid-row: 6 / span 3; }
+  body .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0; }
+  body .sr-only-focusable:active,
+  body .sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto; }
