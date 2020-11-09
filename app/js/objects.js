@@ -23,7 +23,7 @@ let pageMenu = [
         name: "Portfolio",
         class: "portfolio",
         content: {
-            intro: ["Here are some early works"],
+            intro: ["Here are my early works. Scroll down or click here:"],
             info: [
                 {
                     title: "Quiz",

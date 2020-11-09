@@ -8,12 +8,12 @@ body {
     background-position-y: top;
     background-size: cover;
     width: calc(100% - 3rem);
+    height: 1.2em;
     position: fixed;
-    z-index: 4;
-    border-top: 6.5vw solid white;
-    box-sizing: content-box;
     top: 0px;
-    height: 1.2em; }
+    border-top: 6.5vw solid white;
+    z-index: 4;
+    box-sizing: content-box; }
   body nav button {
     position: fixed;
     left: 1em;
@@ -53,13 +53,39 @@ body {
       body nav div.menu ul a {
         text-decoration: none;
         color: black;
-        font-size: 3vw; }
-      body nav div.menu ul a:hover {
-        color: gold; }
-      body nav div.menu ul a.clicked,
-      body nav div.menu ul a:focus,
-      body nav div.menu ul a:active {
-        color: tomato; }
+        font-size: 3vw;
+        font-weight: 600; }
+      body nav div.menu ul a {
+        text-decoration: none;
+        position: relative;
+        z-index: 1; }
+      body nav div.menu ul a:after {
+        position: absolute;
+        content: '';
+        height: 0px;
+        bottom: 0.7vw;
+        z-index: -1;
+        margin: 0 auto;
+        left: -1vw;
+        right: 0;
+        width: 0%;
+        transition: all .2s ease-in-out; }
+      body nav div.menu ul a:hover:after,
+      body nav div.menu ul a:active:after {
+        width: calc(100% + 2.5vw);
+        height: 1.6vw; }
+      body nav div.menu ul a.nav-home:hover:after,
+      body nav div.menu ul a.nav-home:active:after {
+        background-color: #f58457; }
+      body nav div.menu ul a.nav-portfolio:hover:after,
+      body nav div.menu ul a.nav-portfolio:active:after {
+        background-color: #bdbddd; }
+      body nav div.menu ul a.nav-about:hover:after,
+      body nav div.menu ul a.nav-about:active:after {
+        background-color: #cfcfcf; }
+      body nav div.menu ul a.nav-contact:hover:after,
+      body nav div.menu ul a.nav-contact:hover:after {
+        background-color: #ffe551; }
   body nav div.closed {
     left: calc((-100vw - 1.5rem) + 6.5rem); }
   body nav div.hover {
@@ -81,14 +107,6 @@ body {
     float: right;
     /* p {
             float: right;
-        } */
-    /* main {
-            // display: grid;
-            // grid-template-rows: 3fr 8fr;
-            // overflow: scroll;
-            // height: 100vh;
-            // width: 100vw;
-            
         } */ }
     body .backgroundWrapper header h1 {
       text-transform: uppercase;
@@ -104,108 +122,95 @@ body {
       left: 1.5rem;
       z-index: 4; }
     body .backgroundWrapper .pageContent {
-      margin: 3.5vw;
-      display: grid;
-      grid-template-columns: 8vw 1fr 1.3fr 8vw;
-      grid-template-rows: 3rem auto 50vh repeat(10, 40vw);
-      grid-column-gap: 1.8em;
-      /* h2 {
-                
-            }
-            p {
-                grid-column: 3 / span 1;
-                grid-row: auto;
-            } */
-      /* p.intro {
-                grid-column: 1 / span 1;
-                grid-row: 1 / span 1;
-            } */ }
-      body .backgroundWrapper .pageContent .headerImg {
-        grid-column: 3 / span 1;
-        grid-row: 2 / span 1;
-        display: flex;
-        flex-direction: column;
-        width: 100%; }
-        body .backgroundWrapper .pageContent .headerImg img {
-          width: 100%; }
-      body .backgroundWrapper .pageContent .imgText {
-        grid-column: 3 / span 1;
-        grid-row: 3 / span 1;
-        font-size: 0.8em;
-        font-weight: 600; }
+      display: flex;
+      flex-direction: column;
+      margin: 3.5rem; }
       body .backgroundWrapper .pageContent .introWrapper {
-        grid-column: 2 / span 1;
-        grid-row: 1 / span 3; }
-      body .backgroundWrapper .pageContent .contactIntro {
-        grid-row: 2 / span 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; }
-        body .backgroundWrapper .pageContent .contactIntro div {
+        display: grid;
+        grid-template-columns: 8vw 1fr 1fr 8vw;
+        grid-template-rows: 5rem 100vh auto;
+        grid-column-gap: 1.8em; }
+        body .backgroundWrapper .pageContent .introWrapper h2 {
+          grid-column: 2 / span 1;
+          grid-row: 1 / span 1; }
+        body .backgroundWrapper .pageContent .introWrapper .introText {
+          grid-column: 2 / span 1; }
+        body .backgroundWrapper .pageContent .introWrapper .introImg {
+          grid-column: 3 / span 1;
           display: flex;
-          flex-direction: column; }
-          body .backgroundWrapper .pageContent .contactIntro div h2 + p {
-            margin-top: 3em; }
-          body .backgroundWrapper .pageContent .contactIntro div p {
-            margin-top: 0.5em;
-            margin-bottom: 0; }
-          body .backgroundWrapper .pageContent .contactIntro div .contactInfoTitle {
-            font-weight: 600;
-            margin-top: 1.5em; }
+          flex-direction: column;
+          width: 100%; }
+          body .backgroundWrapper .pageContent .introWrapper .introImg img {
+            width: 100%; }
+          body .backgroundWrapper .pageContent .introWrapper .introImg .imgText {
+            font-size: 0.8em;
+            font-weight: 600; }
+        body .backgroundWrapper .pageContent .introWrapper .contactIntro {
+          grid-row: 2 / span 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between; }
+          body .backgroundWrapper .pageContent .introWrapper .contactIntro div {
+            display: flex;
+            flex-direction: column; }
+            body .backgroundWrapper .pageContent .introWrapper .contactIntro div h2 + p {
+              margin-top: 3em; }
+            body .backgroundWrapper .pageContent .introWrapper .contactIntro div p {
+              margin-top: 0.5em;
+              margin-bottom: 0; }
+            body .backgroundWrapper .pageContent .introWrapper .contactIntro div .contactInfoTitle {
+              font-weight: 600;
+              margin-top: 1.5em; }
+            body .backgroundWrapper .pageContent .introWrapper .contactIntro div form {
+              grid-column: 3 / span 1;
+              grid-row: 2 / span 1; }
+              body .backgroundWrapper .pageContent .introWrapper .contactIntro div form h4 {
+                margin-bottom: 1.5em; }
+              body .backgroundWrapper .pageContent .introWrapper .contactIntro div form textarea,
+              body .backgroundWrapper .pageContent .introWrapper .contactIntro div form input {
+                margin-bottom: 1.5em; }
       body .backgroundWrapper .pageContent .section {
-        margin-top: 10rem; }
-      body .backgroundWrapper .pageContent .section1 {
-        grid-column: 2 / span 2;
-        grid-row: 4 / span 3; }
-      body .backgroundWrapper .pageContent form {
-        grid-column: 3 / span 1;
-        grid-row: 2 / span 1; }
-        body .backgroundWrapper .pageContent form h4 {
-          margin-bottom: 1.5em; }
-        body .backgroundWrapper .pageContent form textarea,
-        body .backgroundWrapper .pageContent form input {
-          margin-bottom: 1.5em; }
-    body .backgroundWrapper .pageContent.portfolio {
-      grid-template-columns: 1vw 1fr 1vw;
-      grid-template-rows: auto; }
-      body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro {
         grid-column: 2 / span 1;
-        grid-row: 1 / span 1; }
-      body .backgroundWrapper .pageContent.portfolio .section {
-        grid-column: 2 / span 1;
-        margin-top: 20vw;
+        margin-bottom: 20vw;
         display: grid;
         grid-column-gap: 2em;
         grid-template-columns: 4fr 1.5fr; }
-        body .backgroundWrapper .pageContent.portfolio .section .carousel {
+        body .backgroundWrapper .pageContent .section .carousel {
           grid-column: 1 / span 1;
           grid-row: 1 / span 1; }
-          body .backgroundWrapper .pageContent.portfolio .section .carousel img {
+          body .backgroundWrapper .pageContent .section .carousel img {
             width: 100%; }
-          body .backgroundWrapper .pageContent.portfolio .section .carousel .carousel-indicators li {
+          body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li {
             background-color: lightgray;
             opacity: 0.5; }
-          body .backgroundWrapper .pageContent.portfolio .section .carousel .carousel-indicators li.active {
+          body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
             background-color: gold;
             opacity: 0.5; }
-          body .backgroundWrapper .pageContent.portfolio .section .carousel .carousel-indicators li:hover {
+          body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li:hover {
             opacity: 1; }
-        body .backgroundWrapper .pageContent.portfolio .section .infoTextWrapper {
+        body .backgroundWrapper .pageContent .section .infoTextWrapper {
           grid-column: 2 / span 1; }
-      body .backgroundWrapper .pageContent.portfolio .section1 {
+      body .backgroundWrapper .pageContent .section1 {
         grid-row: 3 / span 3; }
-      body .backgroundWrapper .pageContent.portfolio .section2 {
+      body .backgroundWrapper .pageContent .section2 {
         grid-row: 6 / span 3; }
+      @media screen and (max-width: 1300px) {
+        body .backgroundWrapper .pageContent .section p {
+          font-size: 0.8em; } }
       @media screen and (max-width: 1120px) {
-        body .backgroundWrapper .pageContent.portfolio .section {
+        body .backgroundWrapper .pageContent .section {
           display: flex;
           flex-direction: column-reverse; }
-          body .backgroundWrapper .pageContent.portfolio .section p {
+          body .backgroundWrapper .pageContent .section p {
             font-size: 1em;
             margin-bottom: 1em; } }
       @media screen and (max-width: 800px) {
-        body .backgroundWrapper .pageContent.portfolio .section p {
+        body .backgroundWrapper .pageContent .section p {
           font-size: 0.8em; } }
+      body .backgroundWrapper .pageContent footer {
+        display: flex;
+        justify-content: center;
+        margin: 1.5em; }
   body .sr-only {
     position: absolute;
     width: 1px;
@@ -223,7 +228,3 @@ body {
     margin: 0;
     overflow: visible;
     clip: auto; }
-
-@media screen and (max-width: 1300px) {
-  p {
-    font-size: 0.8em; } }

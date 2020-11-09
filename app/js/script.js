@@ -21,28 +21,34 @@ class Page {
         while (this.wrapper.firstChild) {
             this.wrapper.removeChild(this.wrapper.lastChild);
         }
+        //// intro text
         window.scrollTo(0, 0);
         Website.changeTitle(this.name);
         this.wrapper.className = `pageContent ${this.class}`;
-        let header = document.createElement("h2");
         let introWrapper = document.createElement("div");
         introWrapper.classList.add("introWrapper");
         introWrapper.classList.add(this.class + "Intro");
-        this.wrapper.appendChild(introWrapper);
+        let introText = document.createElement("div");
+        introText.className = "introText";
+        let header = document.createElement("h2");
         header.innerHTML = this.name;
+
+        this.wrapper.appendChild(introWrapper);
+        introWrapper.appendChild(introText);
         introWrapper.appendChild(header);
 
+        //// intro text from object
         if (!this.intro[0].title) {
-            // add intro text
             for (let text of this.intro) {
                 let intro = document.createElement("p");
                 intro.innerHTML = text;
                 intro.className = "intro";
-                introWrapper.appendChild(intro);
+                introText.appendChild(intro);
             }
-        } else {
+        } else {///TODO: NÅT E FEL
+            ////contact info from object
             let contactWrapper = document.createElement("div");
-            introWrapper.appendChild(contactWrapper);
+            introText.appendChild(contactWrapper);
             for (let part of this.intro) {
                 let title = document.createElement("p");
                 title.innerHTML = part.title;
@@ -135,8 +141,8 @@ class Page {
         } else {
             if (this.images.length > 0) {
                 let imgWrapper = document.createElement("div");
-                imgWrapper.className = "headerImg";
-                this.wrapper.appendChild(imgWrapper);
+                imgWrapper.className = "introImg";
+                introWrapper.appendChild(imgWrapper);
                 let img = document.createElement("img");
                 img.src = this.images[0].src;
                 img.alt = this.images[0].alt;
@@ -149,10 +155,10 @@ class Page {
     
             
     
-            // add additional info text
+            //// section info text
             for (let i = 0; i < this.info.length; i++) {
                 let sectionWrapper = document.createElement("div");
-                sectionWrapper.classList.add("section" + (i + 1));
+                sectionWrapper.id = `section${i + 1}`;
                 sectionWrapper.classList.add("section");
                 this.wrapper.appendChild(sectionWrapper);
                 
@@ -167,7 +173,7 @@ class Page {
                     let ol = document.createElement("ol");
                     ol.className = "carousel-indicators";
                     carousel.appendChild(ol);
-
+                    //// carousel page indicators
                     for (let j = 0; j < this.info[i].images.length; j++) {
                         let li = document.createElement("li");
                         li.setAttribute("data-target", `#indicators${i}`);
@@ -179,6 +185,7 @@ class Page {
                         }
                         ol.appendChild(li);
                     }
+                    //// carousel images
                     let carouselInner = document.createElement("div");
                     carouselInner.className = "carousel-inner";
                     carousel.appendChild(carouselInner);
@@ -193,11 +200,13 @@ class Page {
                         let img = document.createElement("img");
                         img.src = this.info[i].images[j].src;
                         img.setAttribute("srcset", `${this.info[i].images[j].srcset}`)
-                        img.sizes = this.info[i].sizes;
+                        img.setAttribute("sizes", `${this.info[i].sizes}`);
                         img.className = "d-block";
                         img.alt = this.info[i].images[j].alt;
                         carItem.appendChild(img);
                     }
+
+                    //// carousel controls
                     let controlPrev = document.createElement("a");
                     controlPrev.className = "carousel-control-prev";
                     controlPrev.setAttribute("href", `#indicators${i}`)
@@ -212,25 +221,25 @@ class Page {
                     controlNext.setAttribute("data-slide", "next");
                     carousel.appendChild(controlNext);
 
+                    //// control icons
                     let spanPrev = document.createElement("span");
                     spanPrev.className = "carousel-control-prev-icon";
                     spanPrev.setAttribute("aria-hidden", "true");
-                    
-                    let spanPrevSR = document.createElement("span");
-                    spanPrevSR.className = "sr-only";
-                    spanPrevSR.innerHTML = "Previous";
-                    
-                    controlPrev.appendChild(spanPrev);
-                    controlPrev.appendChild(spanPrevSR);
-                    
                     let spanNext = document.createElement("span");
                     spanNext.className = "carousel-control-next-icon";
                     spanNext.setAttribute("aria-hidden", "true");
+                    
 
+                    ////screen reader control spans
+                    let spanPrevSR = document.createElement("span");
+                    spanPrevSR.className = "sr-only";
+                    spanPrevSR.innerHTML = "Previous";
                     let spanNextSR = document.createElement("span");
                     spanNextSR.className = "sr-only";
                     spanNextSR.innerHTML = "Next";
-
+                    
+                    controlPrev.appendChild(spanPrev);
+                    controlPrev.appendChild(spanPrevSR);
                     controlNext.appendChild(spanNext);
                     controlNext.appendChild(spanNextSR);
                     
@@ -253,6 +262,16 @@ class Page {
     
             }
         }
+        let footer = document.createElement("footer");
+        this.wrapper.appendChild(footer);
+        let upButton = document.createElement("button");
+        upButton.type = "button";
+        upButton.className = "btn btn-primary";
+        upButton.innerHTML = "Top";
+        footer.appendChild(upButton);
+        upButton.addEventListener("click", e => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
     }
 
 }
@@ -313,9 +332,9 @@ class Website {
     loadMenuItems() {
         for (let page of this.pages) {
             let li = document.createElement("li");
-            li.className = "nav-item"
             let a = document.createElement("a");
-            a.className = "nav-link";
+            // a.className = "nav-link";
+            a.className = `nav-${page.class}`;
             a.innerHTML = page.name;
             a.addEventListener("click", e => {
                 page.loadPage();
