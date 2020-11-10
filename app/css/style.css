@@ -1,237 +1,308 @@
-body {
-  background-color: white;
-  padding: 0 1.5rem 0 1.5rem;
-  height: 100vh;
-  width: 100vw; }
-  body div.backgroundImage {
-    background-image: url("../resources/images/grass-8.jpeg");
-    background-position-y: top;
-    background-size: cover;
-    width: calc(100% - 3rem);
-    height: 1.2em;
-    position: fixed;
-    top: 0px;
-    border-top: 6.5vw solid white;
-    z-index: 4;
-    box-sizing: content-box; }
-  body nav button {
-    position: fixed;
-    left: 1em;
-    top: 45%;
-    text-decoration: none;
-    color: black;
-    font-size: 1.5em;
-    font-weight: 900;
-    background-color: transparent;
-    border: none;
-    z-index: 5;
-    transition: all 0.5s ease-in-out; }
-  body nav button:hover {
-    color: tomato; }
-  body nav button:focus {
-    outline: none;
-    border: none; }
-  body nav button.reveal {
-    left: 0.8em; }
-  body nav div.menu {
-    position: fixed;
-    left: 0;
-    width: calc(100vw - 1.5rem);
-    height: 100%;
-    z-index: 3;
+html {
+  scroll-behavior: smooth; }
+  html body {
     background-color: white;
-    border-right: 6vw solid gold;
-    display: grid;
-    grid-template-columns: 1fr 12vw 1fr;
-    grid-template-rows: 20vh 1fr 10vh;
-    transition: all 0.5s ease-in; }
-    body nav div.menu ul {
-      grid-column: 2;
-      grid-row: 2;
-      list-style-type: none;
-      padding: 0; }
-      body nav div.menu ul a {
-        text-decoration: none;
-        color: black;
-        font-size: 3vw;
-        font-weight: 600; }
-      body nav div.menu ul a {
-        text-decoration: none;
-        position: relative;
-        z-index: 1;
-        outline: none;
-        border: none; }
-      body nav div.menu ul a:after {
-        position: absolute;
-        content: '';
-        height: 0px;
-        bottom: 0.7vw;
-        z-index: -1;
+    padding: 0 1.5rem 0 1.5rem;
+    height: 100vh;
+    width: 100vw; }
+    html body div.backgroundImage {
+      background-image: url("../resources/images/grass-slim2.jpeg");
+      background-position-y: center;
+      background-size: cover;
+      width: calc(100% - 3rem);
+      height: 1.2em;
+      position: fixed;
+      top: 0px;
+      border-top: 6.5vw solid white;
+      z-index: 4;
+      box-sizing: content-box; }
+    html body nav button {
+      position: fixed;
+      left: 1.36em;
+      top: 45%;
+      text-decoration: none;
+      color: #282c3b;
+      font-size: 1.5em;
+      font-weight: 900;
+      background-color: transparent;
+      border: none;
+      z-index: 6;
+      transition: all 0.5s ease-in-out; }
+    html body nav button:hover {
+      color: #f7672e; }
+    html body nav button:focus {
+      outline: none;
+      border: none; }
+    html body nav button.reveal {
+      left: 1.1rem; }
+    html body nav div.menu {
+      position: fixed;
+      left: 0;
+      width: calc(100vw - 1.5rem);
+      height: 100%;
+      z-index: 3;
+      background-color: white;
+      border-right: 8rem solid rgba(255, 187, 0, 0.904);
+      display: grid;
+      grid-template-columns: 1fr 12vw 1fr;
+      grid-template-rows: 20vh 1fr 10vh;
+      transition: all 0.5s ease-in; }
+      html body nav div.menu ul {
+        grid-column: 2;
+        grid-row: 2;
+        list-style-type: none;
+        padding: 0; }
+        html body nav div.menu ul a {
+          text-decoration: none;
+          color: #282c3b;
+          font-size: 3vw;
+          font-weight: 600;
+          position: relative;
+          z-index: 1;
+          outline: none;
+          border: none; }
+        html body nav div.menu ul a:after {
+          position: absolute;
+          content: '';
+          height: 0px;
+          bottom: 0.7vw;
+          z-index: -1;
+          margin: 0 auto;
+          left: -0.3em;
+          right: 0;
+          width: 0%;
+          transition: all .2s ease-in-out; }
+        html body nav div.menu ul a.nav-home:hover:after,
+        html body nav div.menu ul a.nav-home:focus:after,
+        html body nav div.menu ul a.nav-home:active:after {
+          width: calc(100% + 0.8em);
+          height: 0.5em;
+          background-color: #f8936b;
+          opacity: 1; }
+        html body nav div.menu ul a.nav-portfolio:hover:after,
+        html body nav div.menu ul a.nav-portfolio:focus:after,
+        html body nav div.menu ul a.nav-portfolio:active:after {
+          width: calc(100% + 0.8em);
+          height: 0.5em;
+          background-color: #bdbddd;
+          opacity: 1; }
+        html body nav div.menu ul a.nav-about:hover:after,
+        html body nav div.menu ul a.nav-about:focus:after,
+        html body nav div.menu ul a.nav-about:active:after {
+          width: calc(100% + 0.8em);
+          height: 0.5em;
+          background-color: #cfcfcf;
+          opacity: 1; }
+        html body nav div.menu ul a.nav-contact:hover:after,
+        html body nav div.menu ul a.nav-contact:focus:after,
+        html body nav div.menu ul a.nav-contact:hover:after {
+          width: calc(100% + 0.8em);
+          height: 0.5em;
+          background-color: rgba(255, 217, 0, 0.733);
+          opacity: 1; }
+    html body nav div.closed {
+      left: calc((-100vw - 1.5rem) + 6.5rem); }
+    html body nav div.hover {
+      left: calc((-100vw - 1.5rem) + 8rem); }
+    html body nav .navBorder {
+      z-index: 5;
+      height: 100%;
+      width: 1.5rem;
+      position: fixed;
+      background-color: white;
+      left: 0; }
+    html body .backgroundWrapper {
+      margin-top: calc(6.5vw + 1.2em);
+      border-left: 2rem solid gold;
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+      width: 100%;
+      min-height: 100%;
+      float: right;
+      /* p {
+                float: right;
+            } */ }
+      html body .backgroundWrapper header h1 {
+        text-transform: uppercase;
+        font-size: 5em;
+        position: fixed;
+        top: 0.6em;
+        left: 0.8em; }
+      html body .backgroundWrapper header img {
+        width: 28%;
         margin: 0 auto;
-        left: -1vw;
-        right: 0;
-        width: 0%;
-        transition: all .2s ease-in-out; }
-      body nav div.menu ul a:hover:after,
-      body nav div.menu ul a:focus:after,
-      body nav div.menu ul a:active:after {
-        width: calc(100% + 2.5vw);
-        height: 1.6vw; }
-      body nav div.menu ul a.nav-home:hover:after,
-      body nav div.menu ul a.nav-home:focus:after,
-      body nav div.menu ul a.nav-home:active:after {
-        background-color: #f58457; }
-      body nav div.menu ul a.nav-portfolio:hover:after,
-      body nav div.menu ul a.nav-portfolio:focus:after,
-      body nav div.menu ul a.nav-portfolio:active:after {
-        background-color: #bdbddd; }
-      body nav div.menu ul a.nav-about:hover:after,
-      body nav div.menu ul a.nav-about:focus:after,
-      body nav div.menu ul a.nav-about:active:after {
-        background-color: #cfcfcf; }
-      body nav div.menu ul a.nav-contact:hover:after,
-      body nav div.menu ul a.nav-contact:focus:after,
-      body nav div.menu ul a.nav-contact:hover:after {
-        background-color: #ffe551; }
-  body nav div.closed {
-    left: calc((-100vw - 1.5rem) + 6.5rem); }
-  body nav div.hover {
-    left: calc((-100vw - 1.5rem) + 8rem); }
-  body nav .navBorder {
-    z-index: 5;
-    height: 100%;
-    width: 1.5rem;
-    position: fixed;
-    background-color: white;
-    left: 0; }
-  body .backgroundWrapper {
-    margin-top: calc(6.5vw + 1.2em);
-    border-left: 2rem solid gold;
-    box-sizing: border-box;
-    background-color: #f8f8f8;
-    width: 100%;
-    min-height: 100%;
-    float: right;
-    /* p {
-            float: right;
-        } */ }
-    body .backgroundWrapper header h1 {
-      text-transform: uppercase;
-      font-size: 5em;
-      position: fixed;
-      top: 0.6em;
-      left: 0.8em; }
-    body .backgroundWrapper header img {
-      width: 28%;
-      margin: 0 auto;
-      position: fixed;
-      top: 3vw;
-      left: 1.5rem;
-      z-index: 4; }
-    body .backgroundWrapper .pageContent {
-      display: flex;
-      flex-direction: column;
-      margin: 3.5rem; }
-      body .backgroundWrapper .pageContent .introWrapper {
-        display: grid;
-        grid-template-columns: 8vw 1fr 1fr 8vw;
-        grid-template-rows: 5rem 100vh auto;
-        grid-column-gap: 1.8em; }
-        body .backgroundWrapper .pageContent .introWrapper h2 {
-          grid-column: 2 / span 1;
-          grid-row: 1 / span 1; }
-        body .backgroundWrapper .pageContent .introWrapper .introText {
-          grid-column: 2 / span 1; }
-        body .backgroundWrapper .pageContent .introWrapper .introImg {
-          grid-column: 3 / span 1;
-          display: flex;
-          flex-direction: column;
-          width: 100%; }
-          body .backgroundWrapper .pageContent .introWrapper .introImg img {
-            width: 100%; }
-          body .backgroundWrapper .pageContent .introWrapper .introImg .imgText {
-            font-size: 0.8em;
-            font-weight: 600; }
-        body .backgroundWrapper .pageContent .introWrapper .contactIntro {
-          grid-row: 2 / span 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between; }
-          body .backgroundWrapper .pageContent .introWrapper .contactIntro div {
-            display: flex;
-            flex-direction: column; }
-            body .backgroundWrapper .pageContent .introWrapper .contactIntro div h2 + p {
-              margin-top: 3em; }
-            body .backgroundWrapper .pageContent .introWrapper .contactIntro div p {
-              margin-top: 0.5em;
-              margin-bottom: 0; }
-            body .backgroundWrapper .pageContent .introWrapper .contactIntro div .contactInfoTitle {
-              font-weight: 600;
-              margin-top: 1.5em; }
-            body .backgroundWrapper .pageContent .introWrapper .contactIntro div form {
-              grid-column: 3 / span 1;
-              grid-row: 2 / span 1; }
-              body .backgroundWrapper .pageContent .introWrapper .contactIntro div form h4 {
-                margin-bottom: 1.5em; }
-              body .backgroundWrapper .pageContent .introWrapper .contactIntro div form textarea,
-              body .backgroundWrapper .pageContent .introWrapper .contactIntro div form input {
-                margin-bottom: 1.5em; }
-      body .backgroundWrapper .pageContent .section {
-        grid-column: 2 / span 1;
-        margin-bottom: 20vw;
-        display: grid;
-        grid-column-gap: 2em;
-        grid-template-columns: 4fr 1.5fr; }
-        body .backgroundWrapper .pageContent .section .carousel {
-          grid-column: 1 / span 1;
-          grid-row: 1 / span 1; }
-          body .backgroundWrapper .pageContent .section .carousel img {
-            width: 100%; }
-          body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li {
-            background-color: lightgray;
-            opacity: 0.5; }
-          body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
-            background-color: gold;
-            opacity: 0.5; }
-          body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li:hover {
-            opacity: 1; }
-        body .backgroundWrapper .pageContent .section .infoTextWrapper {
-          grid-column: 2 / span 1; }
-      body .backgroundWrapper .pageContent .section1 {
-        grid-row: 3 / span 3; }
-      body .backgroundWrapper .pageContent .section2 {
-        grid-row: 6 / span 3; }
-      @media screen and (max-width: 1300px) {
-        body .backgroundWrapper .pageContent .section p {
-          font-size: 0.8em; } }
-      @media screen and (max-width: 1120px) {
-        body .backgroundWrapper .pageContent .section {
-          display: flex;
-          flex-direction: column-reverse; }
-          body .backgroundWrapper .pageContent .section p {
-            font-size: 1em;
-            margin-bottom: 1em; } }
-      @media screen and (max-width: 800px) {
-        body .backgroundWrapper .pageContent .section p {
-          font-size: 0.8em; } }
-      body .backgroundWrapper .pageContent footer {
+        position: fixed;
+        top: 3vw;
+        left: 1.5rem;
+        z-index: 4; }
+      html body .backgroundWrapper .pageContent {
         display: flex;
-        justify-content: center;
-        margin: 1.5em; }
-  body .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0; }
-  body .sr-only-focusable:active,
-  body .sr-only-focusable:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto; }
+        flex-direction: column;
+        margin: 3.5rem; }
+        html body .backgroundWrapper .pageContent .introWrapper {
+          display: grid;
+          grid-template-columns: 8vw 1fr 1fr 8vw;
+          grid-template-rows: 5rem 100vh auto;
+          grid-column-gap: 1.8em; }
+          html body .backgroundWrapper .pageContent .introWrapper h2 {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1; }
+          html body .backgroundWrapper .pageContent .introWrapper .introText {
+            grid-column: 2 / span 1; }
+            html body .backgroundWrapper .pageContent .introWrapper .introText a {
+              color: #282c3b;
+              text-decoration: none;
+              color: #282c3b;
+              font-weight: 600;
+              position: relative;
+              z-index: 1;
+              outline: none;
+              border: none; }
+            html body .backgroundWrapper .pageContent .introWrapper .introText a:after {
+              position: absolute;
+              content: '';
+              height: 0px;
+              bottom: 0.4vw;
+              z-index: -1;
+              margin: 0 auto;
+              left: -0.3em;
+              right: 0;
+              width: 0%;
+              transition: all .2s ease-in-out; }
+            html body .backgroundWrapper .pageContent .introWrapper .introText a:hover:after,
+            html body .backgroundWrapper .pageContent .introWrapper .introText a:focus:after,
+            html body .backgroundWrapper .pageContent .introWrapper .introText a:active:after {
+              width: calc(100% + 0.8em);
+              height: 0.5em;
+              background-color: gold;
+              opacity: 0.5; }
+          html body .backgroundWrapper .pageContent .introWrapper .introImg {
+            grid-column: 3 / span 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%; }
+            html body .backgroundWrapper .pageContent .introWrapper .introImg img {
+              width: 100%; }
+            html body .backgroundWrapper .pageContent .introWrapper .introImg .imgText {
+              font-size: 0.8em;
+              font-weight: 600; }
+          html body .backgroundWrapper .pageContent .introWrapper .contactIntro {
+            grid-row: 2 / span 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; }
+            html body .backgroundWrapper .pageContent .introWrapper .contactIntro div {
+              display: flex;
+              flex-direction: column; }
+              html body .backgroundWrapper .pageContent .introWrapper .contactIntro div h2 + p {
+                margin-top: 3em; }
+              html body .backgroundWrapper .pageContent .introWrapper .contactIntro div p {
+                margin-top: 0.5em;
+                margin-bottom: 0; }
+              html body .backgroundWrapper .pageContent .introWrapper .contactIntro div .contactInfoTitle {
+                font-weight: 600;
+                margin-top: 1.5em; }
+              html body .backgroundWrapper .pageContent .introWrapper .contactIntro div form {
+                grid-column: 3 / span 1;
+                grid-row: 2 / span 1; }
+                html body .backgroundWrapper .pageContent .introWrapper .contactIntro div form h4 {
+                  margin-bottom: 1.5em; }
+                html body .backgroundWrapper .pageContent .introWrapper .contactIntro div form textarea,
+                html body .backgroundWrapper .pageContent .introWrapper .contactIntro div form input {
+                  margin-bottom: 1.5em; }
+        html body .backgroundWrapper .pageContent .section {
+          grid-column: 2 / span 1;
+          padding-top: 25vh;
+          display: grid;
+          grid-column-gap: 2em;
+          grid-template-columns: 4fr 1.5fr; }
+          html body .backgroundWrapper .pageContent .section .carousel {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1; }
+            html body .backgroundWrapper .pageContent .section .carousel img {
+              width: 100%; }
+            html body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li {
+              background-color: lightgray;
+              opacity: 0.5; }
+            html body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
+              background-color: gold;
+              opacity: 0.5; }
+            html body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li:hover {
+              opacity: 1; }
+          html body .backgroundWrapper .pageContent .section .infoTextWrapper {
+            grid-column: 2 / span 1; }
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper a {
+              color: #282c3b;
+              text-decoration: none;
+              color: #282c3b;
+              font-weight: 600;
+              position: relative;
+              z-index: 1;
+              outline: none;
+              border: none; }
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper a:after {
+              position: absolute;
+              content: '';
+              height: 0px;
+              bottom: 0.4vw;
+              z-index: -1;
+              margin: 0 auto;
+              left: -0.3em;
+              right: 0;
+              width: 0%;
+              transition: all .2s ease-in-out; }
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper a:hover:after,
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper a:focus:after,
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper a:active:after {
+              width: calc(100% + 0.8em);
+              height: 0.5em;
+              background-color: gold;
+              opacity: 0.5; }
+        @media screen and (max-width: 1300px) {
+          html body .backgroundWrapper .pageContent .section p {
+            font-size: 0.8em; } }
+        @media screen and (max-width: 1120px) {
+          html body .backgroundWrapper .pageContent .section {
+            display: flex;
+            flex-direction: column-reverse; }
+            html body .backgroundWrapper .pageContent .section p {
+              font-size: 1em;
+              margin-bottom: 1em; } }
+        @media screen and (max-width: 800px) {
+          html body .backgroundWrapper .pageContent .section p {
+            font-size: 0.8em; } }
+        html body .backgroundWrapper .pageContent footer {
+          display: flex;
+          justify-content: center;
+          margin: 15em 0 1.5em 0; }
+          html body .backgroundWrapper .pageContent footer i {
+            color: gold;
+            transition: all 0.2s ease-in-out;
+            border: none;
+            outline: none; }
+          html body .backgroundWrapper .pageContent footer i:hover,
+          html body .backgroundWrapper .pageContent footer i:focus,
+          html body .backgroundWrapper .pageContent footer i:active {
+            color: #f7672e;
+            cursor: pointer; }
+      html body .backgroundWrapper .pageContent.about .section {
+        margin-left: 15vw;
+        margin-right: 15vw;
+        display: flex; }
+    html body .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0; }
+    html body .sr-only-focusable:active,
+    html body .sr-only-focusable:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto; }

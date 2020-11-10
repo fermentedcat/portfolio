@@ -1,7 +1,46 @@
 $primary: gold;
-$carousel-control-color: rgb(230, 230, 230);
-$mainBackground: rgb(248, 248, 248);
-$link-home: rgb(245, 132, 87);
-$link-portfolio: rgb(189, 189, 221);
-$link-about: rgb(207, 207, 207);
-$link-contact: rgb(255, 229, 81);
+
+$yellow: gold;
+$lightYellow: rgba(255, 217, 0, 0.733);
+$red: rgb(247, 103, 46);
+$lightRed: rgb(245, 132, 87);
+$lighterRed: rgb(248, 147, 107);
+
+$gray: rgb(207, 207, 207);
+$blueGray: rgb(189, 189, 221);
+$blue: rgb(40, 44, 59);
+
+$lightGray: rgb(230, 230, 230);
+$almostWhite: rgb(248, 248, 248);
+
+$carousel-control-color: $lightGray;
+$mainBackground: $almostWhite;
+
+$link-home: $lighterRed;
+$link-portfolio: $blueGray;
+$link-about: $gray;
+$link-contact: $lightYellow;
+
+$link-color: $blue;
+$hover-color: $red;
+
+@mixin lineBehindAfter ($bottom: 0.7vw){
+    position: absolute;
+    content: '';
+    height: 0px;
+    bottom: $bottom; 
+    z-index: -1;
+    
+    margin: 0 auto;
+    left: -0.3em;
+    right: 0;
+    width: 0%;
+    transition: all .2s ease-in-out;
+}
+
+@mixin lineBehindHover($color, $opacity: 1) {
+    width: calc(100% + 0.8em);
+    height: 0.5em;
+    background-color: $color;
+    opacity: $opacity;
+}

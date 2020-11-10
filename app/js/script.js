@@ -258,19 +258,29 @@ class Page {
                     info.innerHTML = part;
                     textWrapper.appendChild(info);
                 }
+                let link = document.createElement("a");
+                link.href = this.info[i].link;
+                link.innerHTML = "Visit page";
+                textWrapper.appendChild(link);
 
     
             }
         }
         let footer = document.createElement("footer");
         this.wrapper.appendChild(footer);
-        let upButton = document.createElement("button");
+        let upButton = document.createElement("i");
         upButton.type = "button";
-        upButton.className = "btn btn-primary";
-        upButton.innerHTML = "Top";
+        upButton.setAttribute("tabindex", "0");
+        upButton.className = "fas fa-angle-double-up fa-4x";
         footer.appendChild(upButton);
         upButton.addEventListener("click", e => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+        upButton.addEventListener("keyup", e => {
+            e.preventDefault();
+            if (e.code == "Enter") {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         })
     }
 
