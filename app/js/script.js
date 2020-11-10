@@ -285,9 +285,16 @@ class Website {
         }
 
         this.menu_button = document.querySelector(".menu_button");
+        this.menu_button.setAttribute("tabindex", "0");
         this.menu = document.querySelector(".menu");
         this.ul = document.querySelector(".menu_list");
-    
+        
+        this.menu_button.addEventListener("keyup", e => {
+            e.preventDefault();
+            if (e.keyCode == 9) {
+                this.toggleMenu();
+            }
+        })
         
         this.menu_button.onmouseover = () => {
             if (this.menu.classList.contains("closed")) {
@@ -333,9 +340,20 @@ class Website {
         for (let page of this.pages) {
             let li = document.createElement("li");
             let a = document.createElement("a");
+            a.setAttribute("tabindex", "0");
+
             // a.className = "nav-link";
             a.className = `nav-${page.class}`;
             a.innerHTML = page.name;
+            a.addEventListener("keyup", e => {
+                e.preventDefault();
+                if (e.code == "Enter") {
+                    page.loadPage();
+                    this.toggleMenu();
+                    a.classList.add("clicked");
+                    this.menu.classList.remove("hover");
+                }
+            })
             a.addEventListener("click", e => {
                 page.loadPage();
                 this.toggleMenu();

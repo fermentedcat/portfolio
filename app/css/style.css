@@ -58,7 +58,9 @@ body {
       body nav div.menu ul a {
         text-decoration: none;
         position: relative;
-        z-index: 1; }
+        z-index: 1;
+        outline: none;
+        border: none; }
       body nav div.menu ul a:after {
         position: absolute;
         content: '';
@@ -71,19 +73,24 @@ body {
         width: 0%;
         transition: all .2s ease-in-out; }
       body nav div.menu ul a:hover:after,
+      body nav div.menu ul a:focus:after,
       body nav div.menu ul a:active:after {
         width: calc(100% + 2.5vw);
         height: 1.6vw; }
       body nav div.menu ul a.nav-home:hover:after,
+      body nav div.menu ul a.nav-home:focus:after,
       body nav div.menu ul a.nav-home:active:after {
         background-color: #f58457; }
       body nav div.menu ul a.nav-portfolio:hover:after,
+      body nav div.menu ul a.nav-portfolio:focus:after,
       body nav div.menu ul a.nav-portfolio:active:after {
         background-color: #bdbddd; }
       body nav div.menu ul a.nav-about:hover:after,
+      body nav div.menu ul a.nav-about:focus:after,
       body nav div.menu ul a.nav-about:active:after {
         background-color: #cfcfcf; }
       body nav div.menu ul a.nav-contact:hover:after,
+      body nav div.menu ul a.nav-contact:focus:after,
       body nav div.menu ul a.nav-contact:hover:after {
         background-color: #ffe551; }
   body nav div.closed {

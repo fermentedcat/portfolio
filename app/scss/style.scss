@@ -72,6 +72,8 @@ body {
                     text-decoration: none; 
                     position: relative; 
                     z-index: 1;
+                    outline: none;
+            border: none;
                 }   
                 
                 
@@ -90,23 +92,28 @@ body {
                     transition: all .2s ease-in-out;
                 }
                 a:hover:after,
+                a:focus:after,
                 a:active:after {
                     width: calc(100% + 2.5vw);
                     height: 1.6vw;
                 }
                 a.nav-home:hover:after,
+                a.nav-home:focus:after,
                  a.nav-home:active:after {
                     background-color: $link-home;
                 }
                 a.nav-portfolio:hover:after,
+                a.nav-portfolio:focus:after,
                 a.nav-portfolio:active:after {
                     background-color: $link-portfolio;
                 }
                 a.nav-about:hover:after,
+                a.nav-about:focus:after,
                 a.nav-about:active:after {
                     background-color: $link-about;
                 }
                 a.nav-contact:hover:after,
+                a.nav-contact:focus:after,
                 a.nav-contact:hover:after {
                     background-color: $link-contact;
                 }
