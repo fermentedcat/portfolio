@@ -5,7 +5,7 @@ html {
     padding: 0 1.5rem 0 1.5rem;
     height: 100vh;
     width: 100vw; }
-    html body div.backgroundImage {
+    html body .backgroundImage {
       background-image: url("../resources/images/grass-slim2.jpeg");
       background-position-y: center;
       background-size: cover;
@@ -16,6 +16,22 @@ html {
       border-top: 6.5vw solid white;
       z-index: 4;
       box-sizing: content-box; }
+    html body .backgroundImage.firstDisplay {
+      position: absolute;
+      top: 41.7%;
+      z-index: 8;
+      width: 70vw;
+      left: 15vw;
+      height: 6vw;
+      border: none;
+      background-color: #bdbddd;
+      background-image: unset; }
+    html body .backgroundImage.firstDisplay:hover,
+    html body .backgroundImage.firstDisplay:focus,
+    html body .backgroundImage.firstDisplay:active {
+      background-image: url("../resources/images/grass-slim2.jpeg");
+      background-position-y: center;
+      background-size: cover; }
     html body nav button {
       position: fixed;
       left: 1.36em;
@@ -35,7 +51,9 @@ html {
       border: none; }
     html body nav button.reveal {
       left: 1.1rem; }
-    html body nav div.menu {
+    html body nav button.noDisplay {
+      display: none; }
+    html body nav .menu {
       position: fixed;
       left: 0;
       width: calc(100vw - 1.5rem);
@@ -47,12 +65,12 @@ html {
       grid-template-columns: 1fr 12vw 1fr;
       grid-template-rows: 20vh 1fr 10vh;
       transition: all 0.5s ease-in; }
-      html body nav div.menu ul {
+      html body nav .menu ul {
         grid-column: 2;
         grid-row: 2;
         list-style-type: none;
         padding: 0; }
-        html body nav div.menu ul a {
+        html body nav .menu ul a {
           text-decoration: none;
           color: #282c3b;
           font-size: 3vw;
@@ -61,7 +79,7 @@ html {
           z-index: 1;
           outline: none;
           border: none; }
-        html body nav div.menu ul a:after {
+        html body nav .menu ul a:after {
           position: absolute;
           content: '';
           height: 0px;
@@ -72,38 +90,41 @@ html {
           right: 0;
           width: 0%;
           transition: all .2s ease-in-out; }
-        html body nav div.menu ul a.nav-home:hover:after,
-        html body nav div.menu ul a.nav-home:focus:after,
-        html body nav div.menu ul a.nav-home:active:after {
+        html body nav .menu ul a.nav-home:hover:after,
+        html body nav .menu ul a.nav-home:focus:after,
+        html body nav .menu ul a.nav-home:active:after {
           width: calc(100% + 0.8em);
           height: 0.5em;
           background-color: #f8936b;
           opacity: 1; }
-        html body nav div.menu ul a.nav-portfolio:hover:after,
-        html body nav div.menu ul a.nav-portfolio:focus:after,
-        html body nav div.menu ul a.nav-portfolio:active:after {
+        html body nav .menu ul a.nav-portfolio:hover:after,
+        html body nav .menu ul a.nav-portfolio:focus:after,
+        html body nav .menu ul a.nav-portfolio:active:after {
           width: calc(100% + 0.8em);
           height: 0.5em;
           background-color: #bdbddd;
           opacity: 1; }
-        html body nav div.menu ul a.nav-about:hover:after,
-        html body nav div.menu ul a.nav-about:focus:after,
-        html body nav div.menu ul a.nav-about:active:after {
+        html body nav .menu ul a.nav-about:hover:after,
+        html body nav .menu ul a.nav-about:focus:after,
+        html body nav .menu ul a.nav-about:active:after {
           width: calc(100% + 0.8em);
           height: 0.5em;
           background-color: #cfcfcf;
           opacity: 1; }
-        html body nav div.menu ul a.nav-contact:hover:after,
-        html body nav div.menu ul a.nav-contact:focus:after,
-        html body nav div.menu ul a.nav-contact:hover:after {
+        html body nav .menu ul a.nav-contact:hover:after,
+        html body nav .menu ul a.nav-contact:focus:after,
+        html body nav .menu ul a.nav-contact:hover:after {
           width: calc(100% + 0.8em);
           height: 0.5em;
           background-color: rgba(255, 217, 0, 0.733);
           opacity: 1; }
-    html body nav div.closed {
+    html body nav .closed {
       left: calc((-100vw - 1.5rem) + 6.5rem); }
-    html body nav div.hover {
+    html body nav .hover {
       left: calc((-100vw - 1.5rem) + 8rem); }
+    html body nav .menu.noDisplay {
+      border: 0px;
+      left: -100vw; }
     html body nav .navBorder {
       z-index: 5;
       height: 100%;
@@ -111,9 +132,10 @@ html {
       position: fixed;
       background-color: white;
       left: 0; }
+    html body nav .navBorder.firstDisplay {
+      width: 0px; }
     html body .backgroundWrapper {
       margin-top: calc(6.5vw + 1.2em);
-      border-left: 2rem solid gold;
       box-sizing: border-box;
       background-color: #f8f8f8;
       width: 100%;
@@ -134,7 +156,16 @@ html {
         position: fixed;
         top: 3vw;
         left: 1.5rem;
-        z-index: 4; }
+        z-index: 4;
+        transition: all 0.3s ease-in-out; }
+      html body .backgroundWrapper header img.firstDisplay {
+        position: absolute;
+        top: 38%;
+        z-index: 8;
+        width: 60vw;
+        left: 20vw;
+        border: none;
+        pointer-events: none; }
       html body .backgroundWrapper .pageContent {
         display: flex;
         flex-direction: column;
@@ -146,7 +177,26 @@ html {
           grid-column-gap: 1.8em; }
           html body .backgroundWrapper .pageContent .introWrapper h2 {
             grid-column: 2 / span 1;
-            grid-row: 1 / span 1; }
+            grid-row: 1 / span 1;
+            width: max-content;
+            position: relative;
+            z-index: 1; }
+          html body .backgroundWrapper .pageContent .introWrapper h2:after {
+            position: absolute;
+            content: '';
+            height: 0px;
+            bottom: 1.4em;
+            z-index: -1;
+            margin: 0 auto;
+            left: -0.3em;
+            right: 0;
+            width: 0%;
+            transition: all .2s ease-in-out;
+            width: calc(100% + 0.8em);
+            height: 0.5em;
+            background-color: #bdbddd;
+            opacity: 1;
+            z-index: -1; }
           html body .backgroundWrapper .pageContent .introWrapper .introText {
             grid-column: 2 / span 1; }
             html body .backgroundWrapper .pageContent .introWrapper .introText a {
@@ -194,6 +244,26 @@ html {
             html body .backgroundWrapper .pageContent .introWrapper .contactIntro div {
               display: flex;
               flex-direction: column; }
+              html body .backgroundWrapper .pageContent .introWrapper .contactIntro div h2 {
+                width: max-content;
+                position: relative;
+                z-index: 1; }
+              html body .backgroundWrapper .pageContent .introWrapper .contactIntro div h2:after {
+                position: absolute;
+                content: '';
+                height: 0px;
+                bottom: 1.4em;
+                z-index: -1;
+                margin: 0 auto;
+                left: -0.3em;
+                right: 0;
+                width: 0%;
+                transition: all .2s ease-in-out;
+                width: calc(100% + 0.8em);
+                height: 0.5em;
+                background-color: rgba(255, 217, 0, 0.733);
+                opacity: 1;
+                z-index: -1; }
               html body .backgroundWrapper .pageContent .introWrapper .contactIntro div h2 + p {
                 margin-top: 3em; }
               html body .backgroundWrapper .pageContent .introWrapper .contactIntro div p {
@@ -231,6 +301,26 @@ html {
               opacity: 1; }
           html body .backgroundWrapper .pageContent .section .infoTextWrapper {
             grid-column: 2 / span 1; }
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper h3 {
+              width: max-content;
+              position: relative;
+              z-index: 1; }
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper h3:after {
+              position: absolute;
+              content: '';
+              height: 0px;
+              bottom: 0.18em;
+              z-index: -1;
+              margin: 0 auto;
+              left: -0.3em;
+              right: 0;
+              width: 0%;
+              transition: all .2s ease-in-out;
+              width: calc(100% + 0.8em);
+              height: 0.5em;
+              background-color: rgba(255, 217, 0, 0.733);
+              opacity: 1;
+              z-index: -1; }
             html body .backgroundWrapper .pageContent .section .infoTextWrapper a {
               color: #282c3b;
               text-decoration: none;
@@ -289,6 +379,8 @@ html {
         margin-left: 15vw;
         margin-right: 15vw;
         display: flex; }
+    html body .backgroundWrapper.firstDisplay {
+      margin: 0; }
     html body .sr-only {
       position: absolute;
       width: 1px;
@@ -306,3 +398,5 @@ html {
       margin: 0;
       overflow: visible;
       clip: auto; }
+  html body.firstDisplay {
+    padding: 0; }

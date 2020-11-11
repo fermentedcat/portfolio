@@ -7,7 +7,7 @@ html {
         height: 100vh;
         width: 100vw;
         //// vit bakbrund (border) under headern, målad kant
-        div.backgroundImage {
+        .backgroundImage {
             background-image: url("../resources/images/grass-slim2.jpeg");
             background-position-y: center;
             background-size: cover;
@@ -18,7 +18,29 @@ html {
             border-top: 6.5vw solid white;
             z-index: 4;
             box-sizing: content-box;
+            // transition: all 0.5s ease-in-out;
+
         }
+        .backgroundImage.firstDisplay {
+            position: absolute;
+            top: 41.7%;
+            z-index: 8;
+            width: 70vw;
+            left: 15vw;
+            height: 6vw;
+            border: none;
+            background-color: $link-portfolio;
+            background-image: unset;
+            //tabba
+        }
+        .backgroundImage.firstDisplay:hover,
+        .backgroundImage.firstDisplay:focus,
+        .backgroundImage.firstDisplay:active {
+            background-image: url("../resources/images/grass-slim2.jpeg");
+            background-position-y: center;
+            background-size: cover;
+        }
+
         //// navigeringsmeny
         nav {
             button {
@@ -44,9 +66,12 @@ html {
             button.reveal {
                 left: 1.1rem;
             }
+            button.noDisplay {
+                display: none;
+            }
     
     
-            div.menu {
+            .menu {
                 position: fixed;
                 left: 0;
                 width: calc(100vw - 1.5rem);
@@ -104,12 +129,19 @@ html {
                 }
             }
             //// closed menu 
-            div.closed {
+            .closed {
                 left: calc((-100vw - 1.5rem) + 6.5rem);
             }
-            div.hover {
+            .hover {
                 left: calc((-100vw - 1.5rem) + 8rem);
             }
+
+            .menu.noDisplay {
+                border: 0px;
+                left: -100vw;
+                // transition: all 0.2s ease-in;
+            }
+
             .navBorder {
                 z-index: 5;
                 height: 100%;
@@ -118,10 +150,14 @@ html {
                 background-color: white;
                 left: 0;
             }
+            .navBorder.firstDisplay {
+                width: 0px;
+            }
+            
+            
         }
         .backgroundWrapper {
             margin-top: calc(6.5vw + 1.2em);
-            border-left: 2rem solid gold; //? täcks av nav
             box-sizing: border-box;
             background-color: $mainBackground;
             width: 100%;
@@ -147,6 +183,17 @@ html {
                     top: 3vw;
                     left: 1.5rem;
                     z-index: 4;
+                    transition: all 0.3s ease-in-out;
+                    
+                }
+                img.firstDisplay {
+                    position: absolute;
+                    top: 38%;
+                    z-index: 8;
+                    width: 60vw;
+                    left: 20vw;
+                    border: none;
+                    pointer-events: none;
                 }
             }
     
@@ -164,7 +211,16 @@ html {
                     h2 {
                         grid-column: 2 / span 1;
                         grid-row: 1 / span 1;
+                        width: max-content;
+                        position: relative;
+                        z-index: 1;
                     }
+                    h2:after {
+                        @include lineBehindAfter(1.4em);
+                        @include lineBehindHover($link-portfolio);
+                        z-index: -1;
+                    }
+                    
                     .introText {
                         grid-column: 2 / span 1;
                         a {
@@ -208,6 +264,16 @@ html {
                         div {
                             display: flex;
                             flex-direction: column;
+                            h2 {
+                                width: max-content;
+                                position: relative;
+                                z-index: 1;
+                            }
+                            h2:after {
+                                @include lineBehindAfter(1.4em);
+                                @include lineBehindHover($link-contact);
+                                z-index: -1;
+                            }
                             h2 + p {
                                 margin-top: 3em;
                             }
@@ -263,6 +329,16 @@ html {
                     }
                     .infoTextWrapper {
                         grid-column: 2 / span 1;
+                        h3 {
+                            width: max-content;
+                            position: relative;
+                            z-index: 1;
+                        }
+                        h3:after {
+                            @include lineBehindAfter(0.18em);
+                            @include lineBehindHover($lightYellow);
+                            z-index: -1;
+                        }
                         a {
                             
                             color: $link-color;
@@ -345,6 +421,9 @@ html {
                 }
             }
         }
+        .backgroundWrapper.firstDisplay {
+            margin: 0;
+        }
     
         
         //// screen reader only
@@ -368,6 +447,9 @@ html {
             overflow: visible;
             clip: auto;
         }
+    }
+    body.firstDisplay {
+        padding: 0;
     }
     
 

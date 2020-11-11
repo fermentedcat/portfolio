@@ -12,11 +12,34 @@ var aboutMe = {
 
 let pageMenu = [
     {
-        name: "Home",
-        class: "home",
+        name: "About",
+        class: "about",
         content: {
-            intro: "",
-            images: ""
+            intro: ['Hi! I\'m a curious and creative aspiring Fullstack developer based in Stockholm.<br>Currently I\'m in my first year of <a href="#section1">Nackademin</a>\'s 2-year higher vocational education program.', "With a background in art and music, I've recently turned around and started on a new path. <br> My eye for detail and mind for languages and problem-solving made it be love at first console.log.", 
+            "The structures behind a language and the puzzles of it has always been interesting to me. I also find that although I like to work on my own, with a well-functioning team you can do so much more.",
+            "I'm drawn towards backend, frontend and everything in between. Basically I want to understand everything.",
+            ],
+            info: [
+                {
+                    title: "About Nackademin",
+                    text: [
+                        "Web Developer Full Stack Open Source is a 2-year program at Nackademin which provides a broad competence in programming, both backend and frontend. As a student, you learn to develop interactive web applications in, among others, NodeJS, PHP and JavaScript for complex environments with regard to performance and large amounts of data. You also learn to develop modern applications using HTML, CSS and various JavaScript libraries. The education provides knowledge of the specific development environments, programming languages and guidelines that the web requires today.",
+                        "In addition to this, you also learn to collaborate in agile projects, from coding to implementation. You become used to working in a solution-oriented way, both independently and in development teams.",
+                        "Studying at Nackademin means learning a profession and not a subject. From the student, this requires discipline, great drive and personal responsibility for their studies. While Nackademin provides the conditions to succeed, the student is responsible for their learning. The education is conducted full time but some days are set for self-study."
+                    ],
+                    link: "https://nackademin.se/utbildningar/webbutvecklare-fullstack-open-source/"
+                }
+            ],
+            images: [
+                {
+                    srcset: "resources/images/self-portrait-300.jpg 300w, resources/images/self-portrait-600.jpg 600w, resources/images/self-portrait-900.jpg 900w, resources/images/self-portrait-1200.jpg 1200w",
+                    src: "resources/images/self-portrait-900.jpg",
+                    alt: "Colorful self-portrait",
+                    text: "This is a photo-realistic drawing of me thinking about pizza.",
+                    sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -7vw ) * 0.57)",
+                } //TODO: ÄNDRA efter ändringar
+            ],
+            
         }
     },
     {
@@ -89,37 +112,16 @@ let pageMenu = [
             images: ""
         }
     },
-    {
-        name: "About",
-        class: "about",
+
+    /* {
+        name: "Home",
+        class: "home",
         content: {
-            intro: ['Hi! I\'m a curious and creative aspiring Fullstack developer based in Stockholm.<br>Currently I\'m in my first year of <a href="#section1">Nackademin</a>\'s 2-year higher vocational education program.', "With a background in art and music, I've recently turned around and started on a new path. <br> My eye for detail and mind for languages and problem-solving made it be love at first console.log.", 
-            "The structures behind a language and the puzzles of it has always been interesting to me. I also find that although I like to work on my own, with a well-functioning team you can do so much more.",
-            "I'm drawn towards backend, frontend and everything in between. Basically I want to understand everything.",
-            ],
-            info: [
-                {
-                    title: "About Nackademin",
-                    text: [
-                        "Web Developer Full Stack Open Source is a 2-year program at Nackademin which provides a broad competence in programming, both backend and frontend. As a student, you learn to develop interactive web applications in, among others, NodeJS, PHP and JavaScript for complex environments with regard to performance and large amounts of data. You also learn to develop modern applications using HTML, CSS and various JavaScript libraries. The education provides knowledge of the specific development environments, programming languages and guidelines that the web requires today.",
-                        "In addition to this, you also learn to collaborate in agile projects, from coding to implementation. You become used to working in a solution-oriented way, both independently and in development teams.",
-                        "Studying at Nackademin means learning a profession and not a subject. From the student, this requires discipline, great drive and personal responsibility for their studies. While Nackademin provides the conditions to succeed, the student is responsible for their learning. The education is conducted full time but some days are set for self-study."
-                    ],
-                    link: "https://nackademin.se/utbildningar/webbutvecklare-fullstack-open-source/"
-                }
-            ],
-            images: [
-                {
-                    srcset: "resources/images/self-portrait-300.jpg 300w, resources/images/self-portrait-600.jpg 600w, resources/images/self-portrait-900.jpg 900w, resources/images/self-portrait-1200.jpg 1200w",
-                    src: "resources/images/self-portrait-900.jpg",
-                    alt: "Colorful self-portrait",
-                    text: "This is a photo-realistic drawing of me thinking about pizza.",
-                    sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -7vw ) * 0.57)",
-                } //TODO: ÄNDRA efter ändringar
-            ],
-            
+            intro: "",
+            images: ""
         }
-    },
+    }, */
+    
     {
         name: "Contact",
         class: "contact",
