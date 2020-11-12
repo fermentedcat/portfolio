@@ -61,6 +61,33 @@ class Page {
                 imgWrapper.appendChild(img);
                 imgWrapper.appendChild(imgText);
 
+            //// section info text
+            for (let i = 0; i < this.info.length; i++) {
+                let sectionWrapper = document.createElement("section");
+                sectionWrapper.id = `section${i + 1}`;
+                sectionWrapper.classList.add("section");
+                this.wrapper.appendChild(sectionWrapper);
+                let textWrapper = document.createElement("div");
+                textWrapper.className = "infoTextWrapper"
+                sectionWrapper.appendChild(textWrapper);
+                
+                let title = document.createElement("h3");
+                title.innerHTML = this.info[i].title;
+                textWrapper.appendChild(title);
+                
+                for (let part of this.info[i].text) {
+                    let info = document.createElement("p");
+                    info.innerHTML = part;
+                    textWrapper.appendChild(info);
+                }
+                let link = document.createElement("a");
+                link.href = this.info[i].link;
+                link.innerHTML = "Visit page";
+                textWrapper.appendChild(link); 
+            }
+
+                
+
         ////contact info from object
         } else if (this.class == "contact"){
             let contactWrapper = document.createElement("div");
@@ -78,15 +105,85 @@ class Page {
         }
         
         if (subCat) {
-            //// sections for content
-            for (let i = 0; i < subCat.info.length; i++) {
+            for (let text of subCat.intro) {
+                let intro = document.createElement("p");
+                intro.innerHTML = text;
+                intro.className = "intro";
+                introText.appendChild(intro);
+            }
+            if (subCat.name == "Art") {
                 let sectionWrapper = document.createElement("section");
-                sectionWrapper.id = `section${i + 1}`;
-                sectionWrapper.classList.add("section");
+                sectionWrapper.className = "section art";
                 this.wrapper.appendChild(sectionWrapper);
-                
-                //// Code portfolio carousels
-                if (subCat.name == "Code") {     
+                for (let obj of subCat.info) {
+                    let imgWrapper = document.createElement("div");
+                    sectionWrapper.appendChild(imgWrapper);
+                    if (obj.image) {
+                        let img = document.createElement("img");
+                        if (obj.image.srcset) {
+                            img.srcset = obj.image.srcset;
+                            img.sizes = obj.image.sizes;
+                        }
+                        img.src = obj.image.src;
+                        img.alt = obj.image.alt;
+                        imgWrapper.appendChild(img);
+                    } else if (obj.video) {
+                        let video = document.createElement("video");
+                        let source = document.createElement("source");
+                        source.src = obj.video.src;
+                        source.alt = obj.video.alt;
+                        source.type = "video/mp4";
+                        video.innerHTML = "Your browser does not support this type of video."
+                        video.controls = true;
+                        video.autoplay = true;
+                        video.loop = true;
+                        video.appendChild(source);
+                        imgWrapper.appendChild(video);
+                    }
+                }
+            } else if (subCat.name == "Music") {
+                let sectionWrapper = document.createElement("section");
+                sectionWrapper.className = "section music";
+                this.wrapper.appendChild(sectionWrapper);
+                for (let obj of subCat.info) {
+                    let imgWrapper = document.createElement("div");
+                    sectionWrapper.appendChild(imgWrapper);
+                    //// links to facebook etc
+                    if (obj.links) {
+                        let linkWrapper = document.createElement("div");
+                        introWrapper.appendChild(linkWrapper);
+                        let h4 = document.createElement("h4");
+                        h4.innerHTML = obj.text;
+                        let ul = document.createElement("ul");
+                        linkWrapper.appendChild(h4);
+                        linkWrapper.appendChild(ul);
+                        for (let link of obj.links) {
+                            let li = document.createElement("li");
+                            let i = document.createElement("i");
+                            let a = document.createElement("a");
+                            a.innerHTML = link.title;
+                            a.href = link.href;
+                            a.target = "blank";
+                            i.className = link.icon;
+                            li.appendChild(i);
+                            li.appendChild(a);
+                            ul.appendChild(li);
+                        }
+                    //// video and player embeds
+                    } else if (obj.embed) {
+                        let span = document.createElement("span");
+                        span.innerHTML = obj.embed;
+                        imgWrapper.appendChild(span);
+                    }
+                }
+            } else if (subCat.name == "Code") {
+                for (let i = 0; i < subCat.info.length; i++) {
+                    let sectionWrapper = document.createElement("section");
+                    sectionWrapper.id = `section${i + 1}`;
+                    sectionWrapper.classList.add("section");
+                    this.wrapper.appendChild(sectionWrapper);
+    
+                    //// Code portfolio carousels                        
                     let carousel = document.createElement("div");
                     carousel.id = `indicators${i}`;
                     carousel.className = "carousel slide";
@@ -128,7 +225,6 @@ class Page {
                         img.alt = subCat.info[i].images[j].alt;
                         carItem.appendChild(img);
                     }
-
                     //// carousel controls
                     let controlPrev = document.createElement("a");
                     controlPrev.className = "carousel-control-prev";
@@ -164,28 +260,35 @@ class Page {
                     controlPrev.appendChild(spanPrev);
                     controlPrev.appendChild(spanPrevSR);
                     controlNext.appendChild(spanNext);
-                    controlNext.appendChild(spanNextSR);
-                }
-
-                //// section info text
-                let textWrapper = document.createElement("div");
-                textWrapper.className = "infoTextWrapper"
-                sectionWrapper.appendChild(textWrapper);
-                
-                let title = document.createElement("h3");
-                title.innerHTML = subCat.info[i].title;
-                textWrapper.appendChild(title);
-                
-                for (let part of subCat.info[i].text) {
-                    let info = document.createElement("p");
-                    info.innerHTML = part;
-                    textWrapper.appendChild(info);
-                }
-                let link = document.createElement("a");
-                link.href = subCat.info[i].link;
-                link.innerHTML = "Visit page";
-                textWrapper.appendChild(link);
+                    controlNext.appendChild(spanNextSR); 
+                    
+                    
+                    //// section info text
+                    let textWrapper = document.createElement("div");
+                    textWrapper.className = "infoTextWrapper"
+                    sectionWrapper.appendChild(textWrapper);
+                    
+                    let title = document.createElement("h3");
+                    title.innerHTML = subCat.info[i].title;
+                    textWrapper.appendChild(title);
+                    
+                    for (let part of subCat.info[i].text) {
+                        let info = document.createElement("p");
+                        info.innerHTML = part;
+                        textWrapper.appendChild(info);
+                    }
+                    let link = document.createElement("a");
+                    link.href = subCat.info[i].link;
+                    link.innerHTML = "Visit page";
+                    textWrapper.appendChild(link);          
+                }        
             }
+
+            //// sections for content
+            
+
+                
+            
         }
 
 
@@ -265,17 +368,9 @@ class Page {
 
             // form.onsubmit() ////TODO: fixa gmail API redirect uri...
 
-
-            
-        
-
-        } else {
-            
-    
-            
-    
-            
         }
+
+        //// footer on every page
         let footer = document.createElement("footer");
         this.wrapper.appendChild(footer);
         let upButton = document.createElement("i");

@@ -205,7 +205,8 @@ html {
       html body .backgroundWrapper .pageContent {
         display: flex;
         flex-direction: column;
-        margin: 3.5rem; }
+        margin: 3.5rem;
+        margin-left: 5.5rem; }
         html body .backgroundWrapper .pageContent .introWrapper {
           display: grid;
           grid-template-columns: 8vw 1fr 1fr 8vw;
@@ -384,6 +385,14 @@ html {
               height: 0.5em;
               background-color: gold;
               opacity: 0.5; }
+        html body .backgroundWrapper .pageContent .section.art {
+          display: flex;
+          flex-direction: column; }
+          html body .backgroundWrapper .pageContent .section.art div {
+            width: 100%; }
+            html body .backgroundWrapper .pageContent .section.art div img,
+            html body .backgroundWrapper .pageContent .section.art div video {
+              width: 100%; }
         @media screen and (max-width: 1300px) {
           html body .backgroundWrapper .pageContent .section p {
             font-size: 0.8em; } }
