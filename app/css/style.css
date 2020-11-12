@@ -5,7 +5,7 @@ html {
     padding: 0 1.5rem 0 1.5rem;
     height: 100vh;
     width: 100vw; }
-    html body .backgroundImage {
+    html body .borderImage {
       background-image: url("../resources/images/grass-slim2.jpeg");
       background-position-y: center;
       background-size: cover;
@@ -15,8 +15,9 @@ html {
       top: 0px;
       border-top: 6.5vw solid white;
       z-index: 4;
-      box-sizing: content-box; }
-    html body .backgroundImage.firstDisplay {
+      box-sizing: content-box;
+      outline: none; }
+    html body .borderImage.firstDisplay {
       position: absolute;
       top: 41.7%;
       z-index: 8;
@@ -26,9 +27,9 @@ html {
       border: none;
       background-color: #bdbddd;
       background-image: unset; }
-    html body .backgroundImage.firstDisplay:hover,
-    html body .backgroundImage.firstDisplay:focus,
-    html body .backgroundImage.firstDisplay:active {
+    html body .borderImage.firstDisplay:hover,
+    html body .borderImage.firstDisplay:focus,
+    html body .borderImage.firstDisplay:active {
       background-image: url("../resources/images/grass-slim2.jpeg");
       background-position-y: center;
       background-size: cover; }
@@ -78,7 +79,8 @@ html {
           position: relative;
           z-index: 1;
           outline: none;
-          border: none; }
+          border: none;
+          cursor: pointer; }
         html body nav .menu ul a:after {
           position: absolute;
           content: '';
@@ -109,7 +111,7 @@ html {
         html body nav .menu ul a.nav-about:active:after {
           width: calc(100% + 0.8em);
           height: 0.5em;
-          background-color: #cfcfcf;
+          background-color: #f8936b;
           opacity: 1; }
         html body nav .menu ul a.nav-contact:hover:after,
         html body nav .menu ul a.nav-contact:focus:after,
@@ -118,6 +120,40 @@ html {
           height: 0.5em;
           background-color: rgba(255, 217, 0, 0.733);
           opacity: 1; }
+        html body nav .menu ul ul.subMenu li {
+          display: grid;
+          grid-template-columns: 3vw 4vw;
+          align-items: center;
+          position: relative;
+          z-index: 1;
+          width: max-content;
+          cursor: pointer;
+          outline: none;
+          border: none; }
+          html body nav .menu ul ul.subMenu li i {
+            justify-self: center;
+            grid-column: 1 / 2; }
+          html body nav .menu ul ul.subMenu li a {
+            grid-column: 2 / 3;
+            font-size: 1.5vw; }
+        html body nav .menu ul ul.subMenu li:after {
+          position: absolute;
+          content: '';
+          height: 0px;
+          bottom: 0.6vw;
+          z-index: -1;
+          margin: 0 auto;
+          left: 0em;
+          right: 0;
+          width: 0%;
+          transition: all .2s ease-in-out; }
+        html body nav .menu ul ul.subMenu li:hover:after,
+        html body nav .menu ul ul.subMenu li:focus:after,
+        html body nav .menu ul ul.subMenu li:active:after {
+          width: calc(100% + 0.8em);
+          height: 0.9vw;
+          background-color: #bdbddd;
+          opacity: 0.5; }
     html body nav .closed {
       left: calc((-100vw - 1.5rem) + 6.5rem); }
     html body nav .hover {

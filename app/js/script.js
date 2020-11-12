@@ -44,12 +44,23 @@ class Website {
         })
 
         //// click on landing page title to open menu
-        document.querySelector(".backgroundImage").addEventListener("click", e => {
+
+        document.querySelector(".borderImage").addEventListener("click", e => {
             let firstClass = document.querySelectorAll(".firstDisplay");
             for (let elem of firstClass) {
                 elem.classList.remove("firstDisplay");
             }
             this.toggleMenu();
+        })
+        document.querySelector(".borderImage").addEventListener("keyup", e => {
+            e.preventDefault();
+            if (e.code == "Enter") {
+                let firstClass = document.querySelectorAll(".firstDisplay");
+                for (let elem of firstClass) {
+                    elem.classList.remove("firstDisplay");
+                }
+                this.toggleMenu();
+            }
         })
     }
 
@@ -91,22 +102,51 @@ class Website {
             a.addEventListener("keyup", e => {
                 e.preventDefault();
                 if (e.code == "Enter") {
-                    page.loadPage();
-                    this.toggleMenu();
-                    a.classList.add("clicked");
-                    this.menu.classList.remove("hover");
-                    this.menu_button.classList.remove("noDisplay");
+                    loadMenu(this);
                 }
             })
             a.addEventListener("click", e => {
-                page.loadPage();
-                this.toggleMenu();
-                a.classList.add("clicked");
-                this.menu.classList.remove("hover");
-                this.menu_button.classList.remove("noDisplay");
+                loadMenu(this);
             });
             this.ul.appendChild(li);
             li.appendChild(a);
+
+            // function //TODO funktion för val ovan
+
+            function loadMenu(website) {
+                if (page.name == "Portfolio" && !a.classList.contains("clicked")) {
+                    loadSubMenu(page.content, website);
+                } else {
+                    page.loadPage();
+                    website.toggleMenu();
+                    website.menu.classList.remove("hover");
+                    website.menu_button.classList.remove("noDisplay");
+                }
+                a.classList.add("clicked");
+            }
+
+            function loadSubMenu(content, website) {
+                let subUl = document.createElement("ul");
+                subUl.className = "subMenu";
+                for (let subCat of content) {
+                    let subLi = document.createElement("li");
+                    let a = document.createElement("a");
+                    a.innerHTML = subCat.name;
+                    let i = document.createElement("i");
+                    i.className = subCat.icon;
+                    subLi.setAttribute("tabindex", "0");
+                    subLi.appendChild(i);
+                    subLi.appendChild(a);
+                    subUl.appendChild(subLi);
+                    subLi.addEventListener("click", e => {
+                        page.loadPage(subCat);
+                        website.toggleMenu();
+                        website.menu.classList.remove("hover");
+                        website.menu_button.classList.remove("noDisplay");
+                    })
+                }
+                li.parentNode.insertBefore(subUl, li.nextSibling);
+            }
         }
     }
 }

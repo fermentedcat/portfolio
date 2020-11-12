@@ -7,7 +7,7 @@ html {
         height: 100vh;
         width: 100vw;
         //// vit bakbrund (border) under headern, målad kant
-        .backgroundImage {
+        .borderImage {
             background-image: url("../resources/images/grass-slim2.jpeg");
             background-position-y: center;
             background-size: cover;
@@ -18,10 +18,11 @@ html {
             border-top: 6.5vw solid white;
             z-index: 4;
             box-sizing: content-box;
+            outline: none;
             // transition: all 0.5s ease-in-out;
 
         }
-        .backgroundImage.firstDisplay {
+        .borderImage.firstDisplay {
             position: absolute;
             top: 41.7%;
             z-index: 8;
@@ -33,9 +34,9 @@ html {
             background-image: unset;
             //tabba
         }
-        .backgroundImage.firstDisplay:hover,
-        .backgroundImage.firstDisplay:focus,
-        .backgroundImage.firstDisplay:active {
+        .borderImage.firstDisplay:hover,
+        .borderImage.firstDisplay:focus,
+        .borderImage.firstDisplay:active {
             background-image: url("../resources/images/grass-slim2.jpeg");
             background-position-y: center;
             background-size: cover;
@@ -99,6 +100,7 @@ html {
                         z-index: 1;
                         outline: none;
                         border: none;
+                        cursor: pointer;
                     }
                     
                     
@@ -108,7 +110,7 @@ html {
                     }
                     a.nav-home:hover:after,
                     a.nav-home:focus:after,
-                     a.nav-home:active:after {
+                    a.nav-home:active:after {
                         @include lineBehindHover($link-home);
                     }
                     a.nav-portfolio:hover:after,
@@ -125,6 +127,37 @@ html {
                     a.nav-contact:focus:after,
                     a.nav-contact:hover:after {
                         @include lineBehindHover($link-contact);
+                    }
+                    //// sub menu for portfolio
+                    ul.subMenu {
+                        li {
+                            display: grid;
+                            grid-template-columns: 3vw 4vw;
+                            align-items: center;
+                            position: relative; 
+                            z-index: 1;
+                            width: max-content;
+                            cursor: pointer;
+
+                            outline: none;
+                            border: none;
+                            i {
+                                justify-self: center;
+                                grid-column: 1 / 2;
+                            }
+                            a {
+                                grid-column: 2 / 3;
+                                font-size: 1.5vw;
+                            }
+                        }
+                        li:after {
+                            @include lineBehindAfter(0.6vw, 0em);
+                        }
+                        li:hover:after,
+                        li:focus:after,
+                        li:active:after {
+                            @include lineBehindHover($link-portfolio, 0.5, 0.9vw);
+                        }
                     }
                 }
             }

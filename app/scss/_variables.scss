@@ -18,13 +18,13 @@ $mainBackground: $almostWhite;
 
 $link-home: $lighterRed;
 $link-portfolio: $blueGray;
-$link-about: $gray;
+$link-about: $lighterRed;
 $link-contact: $lightYellow;
 
 $link-color: $blue;
 $hover-color: $red;
 
-@mixin lineBehindAfter ($bottom: 0.7vw){
+@mixin lineBehindAfter ($bottom: 0.7vw, $left: -0.3em){
     position: absolute;
     content: '';
     height: 0px;
@@ -32,15 +32,15 @@ $hover-color: $red;
     z-index: -1;
     
     margin: 0 auto;
-    left: -0.3em;
+    left: $left;
     right: 0;
     width: 0%;
     transition: all .2s ease-in-out;
 }
 
-@mixin lineBehindHover($color, $opacity: 1) {
+@mixin lineBehindHover($color, $opacity: 1, $height: 0.5em) {
     width: calc(100% + 0.8em);
-    height: 0.5em;
+    height: $height;
     background-color: $color;
     opacity: $opacity;
 }
