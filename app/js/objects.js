@@ -122,6 +122,17 @@ let pageMenu = [
                         sizes: ""
                     },
                     {
+                        title: "Boy",
+                        text: [""],
+                        link: "",
+                        image: {
+                            srcset: "",
+                            src: "resources/images/adi.jpg",
+                            alt: "Colorful drawing of a boy looking tired.",
+                            text: ""
+                        },
+                    },
+                    {
                         title: "Sticks and Stones",
                         text: [""],
                         link: "",
@@ -134,16 +145,15 @@ let pageMenu = [
                         }
                     },
                     {
-                        title: "Poster Heaven up Here",
+                        title: "Flower field",
                         text: [""],
                         link: "",
                         image: {
-                            srcset: "resources/images/huh1feb14-600.jpg 600w, resources/images/huh1feb14-1200.jpg 1200w",
-                            src: "resources/images/huh1feb14-600.jpg",
-                            alt: "Colorful painted poster with text coming out of eyes",
-                            text: "Poster for Heaven up Here"
+                            srcset: "",
+                            src: "resources/images/field.jpg",
+                            alt: "Drawing of a field of flowers.",
+                            text: ""
                         },
-                        sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -9vw ) * 0.7273)",
                     },
                     {
                         title: "Flip-book",
@@ -155,18 +165,19 @@ let pageMenu = [
                             alt: "Flip-book with animated plate of pasta",
                             text: "Flip-book"
                         },
-                    }/* ,
+                    },
                     {
-                        title: "Flip-book",
+                        title: "Poster Heaven up Here",
                         text: [""],
                         link: "",
-                        video: {
-                            srcset: "",
-                            src: "resources/images/Pasta.mp4",
-                            alt: "Flip-book with animated plate of pasta",
-                            text: "Flip-book"
+                        image: {
+                            srcset: "resources/images/huh1feb14-600.jpg 600w, resources/images/huh1feb14-1200.jpg 1200w",
+                            src: "resources/images/huh1feb14-600.jpg",
+                            alt: "Colorful painted poster with text coming out of eyes",
+                            text: "Poster for Heaven up Here"
                         },
-                    } */
+                        sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -9vw ) * 0.7273)",
+                    }
                 ]
             },
             {   //// SUB: MUSIC ////
