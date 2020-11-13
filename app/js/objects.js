@@ -244,7 +244,7 @@ let pageMenu = [
                 }
             ],
             info: {   //// LINKS ////
-                text: "Find me on social media:",
+                text: "Find me on the web:",
                 links: [
                     {
                         title: "LinkedIn",

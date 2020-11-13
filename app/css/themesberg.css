@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --bs-blue: #282c3b;
+  --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
@@ -162,10 +162,10 @@ sup {
   top: -.5em; }
 
 a {
-  color: #282c3b;
+  color: #38384d;
   text-decoration: underline; }
   a:hover {
-    color: #090a0d; }
+    color: #181821; }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
@@ -2506,10 +2506,10 @@ progress {
 
 .btn-link {
   font-weight: 400;
-  color: #282c3b;
+  color: #38384d;
   text-decoration: underline; }
   .btn-link:hover {
-    color: #090a0d; }
+    color: #181821; }
   .btn-link:disabled, .btn-link.disabled {
     color: #6c757d; }
 
@@ -3326,7 +3326,7 @@ progress {
 .page-link {
   position: relative;
   display: block;
-  color: #282c3b;
+  color: #38384d;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #dee2e6;
@@ -3336,12 +3336,12 @@ progress {
       transition: none; } }
   .page-link:hover {
     z-index: 2;
-    color: #090a0d;
+    color: #181821;
     background-color: #e9ecef;
     border-color: #dee2e6; }
   .page-link:focus {
     z-index: 3;
-    color: #090a0d;
+    color: #181821;
     background-color: #e9ecef;
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25); }

@@ -104,6 +104,7 @@ class Page {
                 contactWrapper.appendChild(text);
             }
             let linkWrapper = document.createElement("div");
+            linkWrapper.className = "linkWrapper";
             introWrapper.appendChild(linkWrapper);
             let h4 = document.createElement("h4");
             h4.innerHTML = this.info.text;
@@ -132,17 +133,20 @@ class Page {
                 intro.className = "intro";
                 introText.appendChild(intro);
             }
+            
             //// scroll down button
             let downButton = document.createElement("a");
-            let icon = document.createElement("i");
-            downButton.appendChild(icon);
-            downButton.className = "downButton";
-            downButton.type = "button";
-            downButton.setAttribute("tabindex", "0");
-            icon.className = "fas fa-angle-down fa-4x";
-
-            downButton.href = "#section1";
-            introWrapper.appendChild(downButton);
+            if (subCat.name != "Code") {
+                let icon = document.createElement("i");
+                downButton.appendChild(icon);
+                downButton.className = "downButton";
+                downButton.type = "button";
+                downButton.setAttribute("tabindex", "0");
+                icon.className = "fas fa-angle-down fa-4x";
+    
+                downButton.href = "#section1";
+                introWrapper.appendChild(downButton);
+            }
 
             //* PORTFOLIO SUB: ART*//
             if (subCat.name == "Art") {

@@ -5,7 +5,7 @@ html {
 
     
     body {
-        background-color: rgb(255, 255, 255);
+        background-color: $background-color;
         padding: 0 1.5rem 0 1.5rem;
         height: 100vh;
         width: 100vw;
@@ -18,7 +18,7 @@ html {
             height: $borderHeight;
             position: fixed;
             top: 0px;
-            border-top: $topHeight solid white;
+            border-top: $topHeight solid $background-color;
             z-index: 4;
             box-sizing: content-box;
             outline: none;
@@ -84,8 +84,8 @@ html {
                 width: calc(100vw - 1.5rem);
                 height: 100%;
                 z-index: 3;
-                background-color: white;
-                border-right: 8rem solid rgba(255, 187, 0, 0.904);
+                background-color: $background-color;
+                border-right: 8rem solid $menu-color;
                 
                 display: grid;
                 grid-template-columns: 1fr 12vw 1fr;
@@ -187,7 +187,7 @@ html {
                 height: 100%;
                 width: 1.5rem;
                 position: fixed;
-                background-color: white;
+                background-color: $background-color;
                 left: 0;
             }
             // on page load
@@ -239,7 +239,7 @@ html {
                 flex-direction: column;
                 margin: 3.5rem;
                 margin-left: 5.5rem;
-    
+                
                 //// PAGE INTRO ////
                 .introWrapper {
                     height: calc(100vh - 20vw);
@@ -283,6 +283,7 @@ html {
                             @include lineBehindHover($yellow, 0.5);
                         }
                     }
+                    
 
                     //// INTRO IMAGE (about) ////
                     .introImg {
@@ -298,35 +299,24 @@ html {
                             font-weight: 600;
                         }
                     }
+                    //// social media links
                     .linkWrapper {
                         grid-column: 3 / 4;
                         grid-row: 2 / 3;
                         justify-self: end;
                         h4 {
-                            font-size: 1.1em;
+                            font-size: $linkwr-h4-size;
                         }
                         ul {
                             padding: 0;
                             li {
-                                list-style: none;
-                                display: grid;
-                                grid-template-columns: 3vw 4vw;
-                                align-items: center;
-                                position: relative; 
-                                z-index: 1;
-                                width: max-content;
-                                cursor: pointer;
-    
-                                @include noOutline;
+                                @include list-li;
     
                                 i {
-                                    justify-self: center;
-                                    grid-column: 1 / 2;
+                                    @include list-li-i;
                                 }
                                 a {
-                                    text-decoration: none;
-                                    grid-column: 2 / 3;
-                                    font-size: 1.5vw;
+                                    @include list-li-a;
                                 }
                             }
                             li:after {
@@ -337,39 +327,10 @@ html {
                             li:active:after {
                                 @include lineBehindHover($link-portfolio, 0.5, 0.9vw);
                             }
-                        }
-                        
+                        }                        
                     }
                     
-
-                    //// CONTACT INTRO ////
-                    .contactIntro {
-                        grid-row: 2 / span 1;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        div {
-                            display: flex;
-                            flex-direction: column;
-                            h2 {
-                                width: max-content;
-                                position: relative;
-                                z-index: 1;
-                            }
-                            h2:after {
-                                @include lineBehindAfter(1.4em);
-                                @include lineBehindHover($link-contact);
-                                z-index: -1;
-                            }
-                            h2 + p {
-                                margin-top: 3em;
-                            }
-                            p {
-                                margin-top: 0.5em;
-                                margin-bottom: 0;
-                            }
-                        }
-                    }
+                    //// scroll down button
                     .downButton {
                         color: $button-color;
                         width: max-content;
@@ -384,7 +345,51 @@ html {
                         color: $hover-color;
                     }
                 }
-                //// SECTIONS ////
+                //// CONTACT INTRO ////
+                .introWrapper.contactIntro {
+                    h2 {
+                        width: max-content;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    h2:after {
+                        @include lineBehindHover($link-contact, 1, 0.5);
+                        z-index: -1;
+                    }
+                    .introText {
+                        div {
+                            p {
+                                margin: 0;
+                            }
+                            .contactInfoTitle {
+                                font-weight: 600;
+                            }
+                            p + .contactInfoTitle {
+                                margin-top: 2vh;
+                            }
+                        }
+                    }
+                    .linkWrapper {
+                        ul {
+                            li:after {
+                                background-color: $link-contact;
+                            }
+                        }
+                    }
+                }
+                //// CONTACT INTRO ////
+                .introWrapper.aboutIntro {
+                    h2 {
+                        width: max-content;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    h2:after {
+                        @include lineBehindHover($link-about, 1, 0.5);
+                        z-index: -1;
+                    }
+                }
+                ////* SECTIONS *////
                 .section {
                     grid-column: 2 / span 1;
                     padding-top: 25vh;
@@ -445,7 +450,7 @@ html {
                         }
                     }
                 }
-
+                    
                 ////  SUB-CATEGORY:  ART // MUSIC  ////
                 #section1.art {
                     display: unset;
@@ -453,7 +458,7 @@ html {
                     column-gap: 1vw; 
                     break-inside: avoid-column;
                     div {
-                        padding-bottom: 1vw;
+                        margin-bottom: 1vw;
                         
                         img,
                         video,
@@ -485,7 +490,7 @@ html {
                         //title
                         h4:after {
                             @include lineBehindAfter(0.18em);
-                            @include lineBehindHover($link-portfolio, 0.5);
+                            @include lineBehindHover($lightYellow, 0.5);
                             z-index: -1;
                         }
                     }
@@ -601,7 +606,7 @@ html {
             .borderImage {
                 width: 100%;
                 height: 10vw;
-                border-top: 12vw solid white;
+                border-top: 12vw solid $background-color;
             }
             nav {
                 button.menu_button {
@@ -667,14 +672,20 @@ html {
                         top: 6vw;
                         left: 25vw;
                     }
+                    img.firstDisplay {
+                        top: 40.4%;
+                    }
                 }
                 .pageContent {
-                    margin: 5vw;
+                    margin: 8vw;
                     margin-top: 30vw;
                     .introWrapper {
                         display: flex;
                         flex-direction: column;
                         height: auto;
+                        h2:after {
+                            bottom: 0.7vw;
+                        }
                         .linkWrapper {
                             margin-top: 10%;
                             align-self: center;
@@ -702,7 +713,42 @@ html {
                         .downButton {
                             margin-top: 10%;
                             align-self: center;
+                            @include noOutline;
                         }
+                    }
+                    #section1.art {
+                        columns: 1;
+                        div {
+                            margin-bottom: 4vw;
+                        }
+                    }
+                    #section1.music {
+                        div {
+                            margin-top: 4vw;
+                            span {
+                                
+                                iframe {
+                                    width: 90vw;
+                                    height: calc(90vw * 0.5625);
+                                    max-width: 100%;
+                                    min-width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .portfolio {
+                    .section {
+                        padding-top: 15vh;
+                        .infoTextWrapper {
+                            margin-bottom: 4vw;
+                            a {
+                                font-size: 1em;
+                            }
+                        }
+                    }
+                    footer {
+                        margin-top: 10vh;
                     }
                 }
             }
