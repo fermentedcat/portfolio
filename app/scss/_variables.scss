@@ -22,7 +22,21 @@ $link-about: $lighterRed;
 $link-contact: $lightYellow;
 
 $link-color: $blue;
-$hover-color: $red;
+$hover-color: $lightRed;
+$menuBtn-hover-color: $red;
+$button-color: $yellow;
+
+$topHeight: 6.5vw;
+$borderHeight: 1.2em;
+
+@mixin transition($time: 0.5s) {
+    transition: all $time ease-in-out;
+}
+
+@mixin noOutline {
+    outline: none;
+    border: none;
+}
 
 @mixin lineBehindAfter ($bottom: 0.7vw, $left: -0.3em){
     position: absolute;

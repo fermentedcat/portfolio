@@ -38,17 +38,19 @@ class Page {
         }
 
         this.wrapper.appendChild(introWrapper);
-        introWrapper.appendChild(introText);
         introWrapper.appendChild(header);
+        introWrapper.appendChild(introText);
 
-        //// intro text from object - about
+        //// ABOUT PAGE ////
         if (this.class == "about") {
             for (let text of this.intro) {
+                //// intro text 
                 let intro = document.createElement("p");
                 intro.innerHTML = text;
                 intro.className = "intro";
                 introText.appendChild(intro);
             }
+            //// IMAGE 
             let imgWrapper = document.createElement("div");
                 imgWrapper.className = "introImg";
                 introWrapper.appendChild(imgWrapper);
@@ -61,11 +63,11 @@ class Page {
                 imgWrapper.appendChild(img);
                 imgWrapper.appendChild(imgText);
 
-            //// section info text
+            //// INFO SECTION (NACKADEMIN)
             for (let i = 0; i < this.info.length; i++) {
                 let sectionWrapper = document.createElement("section");
                 sectionWrapper.id = `section${i + 1}`;
-                sectionWrapper.classList.add("section");
+                sectionWrapper.className ="section about";
                 this.wrapper.appendChild(sectionWrapper);
                 let textWrapper = document.createElement("div");
                 textWrapper.className = "infoTextWrapper"
@@ -88,7 +90,7 @@ class Page {
 
                 
 
-        ////contact info from object
+        //// CONTACT PAGE ////
         } else if (this.class == "contact"){
             let contactWrapper = document.createElement("div");
             introText.appendChild(contactWrapper);
@@ -101,9 +103,28 @@ class Page {
                 contactWrapper.appendChild(title);
                 contactWrapper.appendChild(text);
             }
+            let linkWrapper = document.createElement("div");
+            introWrapper.appendChild(linkWrapper);
+            let h4 = document.createElement("h4");
+            h4.innerHTML = this.info.text;
+            let ul = document.createElement("ul");
+            linkWrapper.appendChild(h4);
+            linkWrapper.appendChild(ul);
+            for (let link of this.info.links) {
+                let li = document.createElement("li");
+                let i = document.createElement("i");
+                let a = document.createElement("a");
+                a.innerHTML = link.title;
+                a.href = link.href;
+                a.target = "blank";
+                i.className = link.icon;
+                li.appendChild(i);
+                li.appendChild(a);
+                ul.appendChild(li);
+            }
         
         }
-        
+        //// PORTFOLIO ////
         if (subCat) {
             for (let text of subCat.intro) {
                 let intro = document.createElement("p");
@@ -111,8 +132,22 @@ class Page {
                 intro.className = "intro";
                 introText.appendChild(intro);
             }
+            //// scroll down button
+            let downButton = document.createElement("a");
+            let icon = document.createElement("i");
+            downButton.appendChild(icon);
+            downButton.className = "downButton";
+            downButton.type = "button";
+            downButton.setAttribute("tabindex", "0");
+            icon.className = "fas fa-angle-down fa-4x";
+
+            downButton.href = "#section1";
+            introWrapper.appendChild(downButton);
+
+            //* PORTFOLIO SUB: ART*//
             if (subCat.name == "Art") {
                 let sectionWrapper = document.createElement("section");
+                sectionWrapper.id = "section1";
                 sectionWrapper.className = "section art";
                 this.wrapper.appendChild(sectionWrapper);
                 for (let obj of subCat.info) {
@@ -124,6 +159,7 @@ class Page {
                             img.srcset = obj.image.srcset;
                             img.sizes = obj.image.sizes;
                         }
+                        img.setAttribute("tabindex", "0");
                         img.src = obj.image.src;
                         img.alt = obj.image.alt;
                         imgWrapper.appendChild(img);
@@ -134,6 +170,7 @@ class Page {
                         source.alt = obj.video.alt;
                         source.type = "video/mp4";
                         video.innerHTML = "Your browser does not support this type of video."
+                        video.setAttribute("tabindex", "0");
                         video.controls = true;
                         video.autoplay = true;
                         video.loop = true;
@@ -141,17 +178,19 @@ class Page {
                         imgWrapper.appendChild(video);
                     }
                 }
+            //* PORTFOLIO SUB: MUSIC*//
             } else if (subCat.name == "Music") {
                 let sectionWrapper = document.createElement("section");
+                sectionWrapper.id = "section1";
                 sectionWrapper.className = "section music";
                 this.wrapper.appendChild(sectionWrapper);
                 for (let obj of subCat.info) {
-                    let imgWrapper = document.createElement("div");
-                    sectionWrapper.appendChild(imgWrapper);
+                    
                     //// links to facebook etc
                     if (obj.links) {
                         let linkWrapper = document.createElement("div");
-                        introWrapper.appendChild(linkWrapper);
+                        introWrapper.insertBefore(linkWrapper, downButton);
+                        linkWrapper.className = "linkWrapper";
                         let h4 = document.createElement("h4");
                         h4.innerHTML = obj.text;
                         let ul = document.createElement("ul");
@@ -171,11 +210,23 @@ class Page {
                         }
                     //// video and player embeds
                     } else if (obj.embed) {
+                        let imgWrapper = document.createElement("div");
+                        sectionWrapper.appendChild(imgWrapper);
+                        
+                        // description
+                        let h4 = document.createElement("h4");
+                        let p = document.createElement("p");
+                        h4.innerHTML = obj.title;
+                        p.innerHTML = obj.text;
+                        imgWrapper.appendChild(h4);
+                        imgWrapper.appendChild(p);
+                        
                         let span = document.createElement("span");
                         span.innerHTML = obj.embed;
                         imgWrapper.appendChild(span);
                     }
                 }
+            //* PORTFOLIO SUB: CODE*//
             } else if (subCat.name == "Code") {
                 for (let i = 0; i < subCat.info.length; i++) {
                     let sectionWrapper = document.createElement("section");
@@ -280,97 +331,13 @@ class Page {
                     let link = document.createElement("a");
                     link.href = subCat.info[i].link;
                     link.innerHTML = "Visit page";
+                    link.target = "blank";
                     textWrapper.appendChild(link);          
                 }        
             }
-
-            //// sections for content
-            
-
-                
-            
         }
 
-
-
-
-        if (this.class == "contact") {
-            let form = document.createElement("form");
-            this.wrapper.appendChild(form);
-
-            let title = document.createElement("h4");
-            title.innerHTML = "Please send me an email and I'll get back to you soon. I'd be happy to hear from you.";
-            
-            let name = document.createElement("input");
-            let email = document.createElement("input");
-            let phone = document.createElement("input");
-            let message = document.createElement("textarea");
-
-            name.type = "text";
-            email.type = "email";
-            phone.type = "text";
-
-            name.className = "form-control";
-            email.className = "form-control";
-            phone.className = "form-control";
-            message.className = "form-control";
-
-            name.placeholder = "Your Name";
-            email.placeholder = "your@email.com";
-            phone.placeholder = "070-1234567";
-            message.placeholder = "Your message...";
-
-            name.id = "inputName";
-            email.id = "inputEmail";
-            phone.id = "inputPhone";
-            message.id = "inputMessage";
-
-            name.name = "Name";
-            email.name = "Email";
-            phone.name = "Phone";
-            message.name = "Message";
-
-            let nameLabel = document.createElement("label");
-            let emailLabel = document.createElement("label");
-            let phoneLabel = document.createElement("label");
-            let messageLabel = document.createElement("label");
-
-            nameLabel.htmlFor = "inputName";
-            emailLabel.htmlFor = "inputEmail";
-            phoneLabel.htmlFor = "inputPhone";
-            messageLabel.htmlFor = "inputMessage";
-
-            nameLabel.innerHTML = "Name:";
-            emailLabel.innerHTML = "Email:";
-            phoneLabel.innerHTML = "Phone:";
-            messageLabel.innerHTML = "Message:";
-
-            let submitButton = document.createElement("button");
-            submitButton.type = "submit";
-            submitButton.innerHTML = "Send";
-            submitButton.className = "btn btn-primary";
-
-            form.appendChild(title);
-            
-            form.appendChild(nameLabel);
-            form.appendChild(name);
-            
-            form.appendChild(emailLabel);
-            form.appendChild(email);
-
-            form.appendChild(phoneLabel);
-            form.appendChild(phone);
-            
-            form.appendChild(messageLabel);
-            form.appendChild(message);
-
-            form.appendChild(submitButton);
-
-            // form.onsubmit() ////TODO: fixa gmail API redirect uri...
-
-        }
-
-        //// footer on every page
+        //// Footer on every page ////
         let footer = document.createElement("footer");
         this.wrapper.appendChild(footer);
         let upButton = document.createElement("i");

@@ -1,27 +1,31 @@
 @import 'variables';
 html {
     scroll-behavior: smooth;
+    //// BODY ////
+
+    
     body {
         background-color: rgb(255, 255, 255);
         padding: 0 1.5rem 0 1.5rem;
         height: 100vh;
         width: 100vw;
-        //// vit bakbrund (border) under headern, målad kant
+        ////* BORDER *////
         .borderImage {
             background-image: url("../resources/images/grass-slim2.jpeg");
             background-position-y: center;
             background-size: cover;
             width: calc(100% - 3rem);
-            height: 1.2em;
+            height: $borderHeight;
             position: fixed;
             top: 0px;
-            border-top: 6.5vw solid white;
+            border-top: $topHeight solid white;
             z-index: 4;
             box-sizing: content-box;
             outline: none;
-            // transition: all 0.5s ease-in-out;
 
         }
+        
+        //// border: entering page ////
         .borderImage.firstDisplay {
             position: absolute;
             top: 41.7%;
@@ -34,6 +38,7 @@ html {
             background-image: unset;
             //tabba
         }
+        //// border: entering page ////
         .borderImage.firstDisplay:hover,
         .borderImage.firstDisplay:focus,
         .borderImage.firstDisplay:active {
@@ -42,7 +47,7 @@ html {
             background-size: cover;
         }
 
-        //// navigeringsmeny
+        ////* NAV MENU *////
         nav {
             button {
                 position: fixed;
@@ -53,25 +58,26 @@ html {
                 font-size: 1.5em;
                 font-weight: 900;
                 background-color: transparent;
-                border: none;
                 z-index: 6;
-                transition: all 0.5s ease-in-out;
+                @include transition(0.5s);
+                @include noOutline;
             }
             button:hover {
-                color: $hover-color;
+                color: $menuBtn-hover-color;
             }
             button:focus {
-                outline: none;
-                border: none;
+                @include noOutline;
             }
+            // (hover)
             button.reveal {
                 left: 1.1rem;
             }
+            // on page load
             button.noDisplay {
                 display: none;
             }
     
-    
+            //// MENU DIV ////
             .menu {
                 position: fixed;
                 left: 0;
@@ -84,8 +90,9 @@ html {
                 display: grid;
                 grid-template-columns: 1fr 12vw 1fr;
                 grid-template-rows: 20vh 1fr 10vh;
-                transition: all 0.5s ease-in;
-    
+                @include transition;
+                
+                //// MENU ITEMS ////
                 ul {
                     grid-column: 2;
                     grid-row: 2;
@@ -98,8 +105,8 @@ html {
                         font-weight: 600;
                         position: relative; 
                         z-index: 1;
-                        outline: none;
-                        border: none;
+                        @include noOutline;
+
                         cursor: pointer;
                     }
                     
@@ -128,7 +135,7 @@ html {
                     a.nav-contact:hover:after {
                         @include lineBehindHover($link-contact);
                     }
-                    //// sub menu for portfolio
+                    //// sub menu for portfolio ///
                     ul.subMenu {
                         li {
                             display: grid;
@@ -139,8 +146,8 @@ html {
                             width: max-content;
                             cursor: pointer;
 
-                            outline: none;
-                            border: none;
+                            @include noOutline;
+
                             i {
                                 justify-self: center;
                                 grid-column: 1 / 2;
@@ -161,20 +168,20 @@ html {
                     }
                 }
             }
-            //// closed menu 
+            // closed menu 
             .closed {
                 left: calc((-100vw - 1.5rem) + 6.5rem);
             }
+            // on button hover
             .hover {
                 left: calc((-100vw - 1.5rem) + 8rem);
             }
-
+            // on page load
             .menu.noDisplay {
                 border: 0px;
                 left: -100vw;
-                // transition: all 0.2s ease-in;
             }
-
+            //// left white border to cover nav
             .navBorder {
                 z-index: 5;
                 height: 100%;
@@ -183,12 +190,14 @@ html {
                 background-color: white;
                 left: 0;
             }
+            // on page load
             .navBorder.firstDisplay {
                 width: 0px;
             }
             
             
         }
+        //// OUTER WRAPPER ////
         .backgroundWrapper {
             margin-top: calc(6.5vw + 1.2em);
             box-sizing: border-box;
@@ -196,19 +205,12 @@ html {
             width: 100%;
             min-height: 100%;
             float: right;
-            /* p {
-                float: right;
-            } */
-            header {   
+
+            //// HEADER ////
+            header {  
                 //// lägg till knappar uppe till höger  
                 //// language / accessibility           
-                h1 { //* för tillgänglighet?
-                    text-transform: uppercase;
-                    font-size: 5em;
-                    position: fixed;
-                    top: 0.6em;
-                    left: 0.8em;
-                }
+                
                 img {
                     width: 28%;
                     margin: 0 auto;
@@ -216,9 +218,10 @@ html {
                     top: 3vw;
                     left: 1.5rem;
                     z-index: 4;
-                    transition: all 0.3s ease-in-out;
+                    @include transition(0.3s);
                     
                 }
+                // on page load
                 img.firstDisplay {
                     position: absolute;
                     top: 38%;
@@ -229,19 +232,22 @@ html {
                     pointer-events: none;
                 }
             }
-    
+
+            ////*     MAIN PAGE CONTENT    *////
             .pageContent {
                 display: flex;
                 flex-direction: column;
                 margin: 3.5rem;
                 margin-left: 5.5rem;
     
-                    
+                //// PAGE INTRO ////
                 .introWrapper {
+                    height: calc(100vh - 20vw);
                     display: grid;
                     grid-template-columns: 8vw 1fr 1fr 8vw;
-                    grid-template-rows: 5rem 100vh auto;
+                    grid-template-rows: 5rem auto;
                     grid-column-gap: 1.8em;
+                    //// TITLE ////
                     h2 {
                         grid-column: 2 / span 1;
                         grid-row: 1 / span 1;
@@ -249,12 +255,14 @@ html {
                         position: relative;
                         z-index: 1;
                     }
+                    // header shadow
                     h2:after {
                         @include lineBehindAfter(1.4em);
                         @include lineBehindHover($link-portfolio);
                         z-index: -1;
                     }
-                    
+
+                    //// INTRO (general)////
                     .introText {
                         grid-column: 2 / span 1;
                         a {
@@ -264,8 +272,7 @@ html {
                             font-weight: 600;
                             position: relative; 
                             z-index: 1;
-                            outline: none;
-                            border: none;    
+                            @include noOutline;   
                         }
                         a:after {
                             @include lineBehindAfter(0.4vw);
@@ -275,8 +282,9 @@ html {
                         a:active:after {
                             @include lineBehindHover($yellow, 0.5);
                         }
-    
                     }
+
+                    //// INTRO IMAGE (about) ////
                     .introImg {
                         grid-column: 3 / span 1;
                         display: flex;
@@ -290,6 +298,51 @@ html {
                             font-weight: 600;
                         }
                     }
+                    .linkWrapper {
+                        grid-column: 3 / 4;
+                        grid-row: 2 / 3;
+                        justify-self: end;
+                        h4 {
+                            font-size: 1.1em;
+                        }
+                        ul {
+                            padding: 0;
+                            li {
+                                list-style: none;
+                                display: grid;
+                                grid-template-columns: 3vw 4vw;
+                                align-items: center;
+                                position: relative; 
+                                z-index: 1;
+                                width: max-content;
+                                cursor: pointer;
+    
+                                @include noOutline;
+    
+                                i {
+                                    justify-self: center;
+                                    grid-column: 1 / 2;
+                                }
+                                a {
+                                    text-decoration: none;
+                                    grid-column: 2 / 3;
+                                    font-size: 1.5vw;
+                                }
+                            }
+                            li:after {
+                                @include lineBehindAfter(0.6vw, 1em);
+                            }
+                            li:hover:after,
+                            li:focus:after,
+                            li:active:after {
+                                @include lineBehindHover($link-portfolio, 0.5, 0.9vw);
+                            }
+                        }
+                        
+                    }
+                    
+
+                    //// CONTACT INTRO ////
                     .contactIntro {
                         grid-row: 2 / span 1;
                         display: flex;
@@ -315,24 +368,23 @@ html {
                                 margin-top: 0.5em;
                                 margin-bottom: 0;
                             }
-                            .contactInfoTitle {
-                                font-weight: 600;
-                                margin-top: 1.5em;
-                            }
-                            form {
-                                grid-column: 3 / span 1;
-                                grid-row: 2 / span 1;
-                                h4 {
-                                    margin-bottom: 1.5em;
-                                }
-                                textarea,
-                                input {
-                                    margin-bottom: 1.5em;
-                                }
-                            }
                         }
                     }
+                    .downButton {
+                        color: $button-color;
+                        width: max-content;
+                        height: max-content;
+                        @include transition(0.2s);
+                        @include noOutline;
+                        align-self: end;
+                        justify-self: center;
+                        grid-column: 2 / 4;
+                    }
+                    .downButton:hover {
+                        color: $hover-color;
+                    }
                 }
+                //// SECTIONS ////
                 .section {
                     grid-column: 2 / span 1;
                     padding-top: 25vh;
@@ -340,13 +392,13 @@ html {
                     grid-column-gap: 2em;
                     grid-template-columns: 4fr 1.5fr;
                     
+                    //// IMAGES ////
                     .carousel {
                         grid-column: 1 / span 1;
                         grid-row: 1 / span 1;
                         img {
                             width: 100%;
                         }
-    
                         .carousel-indicators {
                             li {
                                 background-color: rgb(211, 211, 211);
@@ -361,6 +413,7 @@ html {
                             }
                         }
                     }
+                    //// SECTION TEXT ////
                     .infoTextWrapper {
                         grid-column: 2 / span 1;
                         h3 {
@@ -374,15 +427,13 @@ html {
                             z-index: -1;
                         }
                         a {
-                            
                             color: $link-color;
                             text-decoration: none;
                             color: $link-color;
                             font-weight: 600;
                             position: relative; 
                             z-index: 1;
-                            outline: none;
-                            border: none;    
+                            @include noOutline;  
                         }
                         a:after {
                             @include lineBehindAfter(0.4vw);
@@ -393,21 +444,68 @@ html {
                             @include lineBehindHover($yellow, 0.5);
                         }
                     }
-                    
                 }
-                .section.art {
-                    display: flex;
-                    flex-direction: column;
+
+                ////  SUB-CATEGORY:  ART // MUSIC  ////
+                #section1.art {
+                    display: unset;
+                    columns: 2;
+                    column-gap: 1vw; 
+                    break-inside: avoid-column;
                     div {
-                        width: 100%;
+                        padding-bottom: 1vw;
+                        
                         img,
-                        video {
+                        video,
+                        span {
                             width: 100%;
+                            border-radius: 5px;
+                            @include noOutline;
                         }
                     }
                 }
+                #section1.music {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    // videos and players
+                    div {
+                        margin-top: 2vw;
+                        span {
+                            iframe {
+                                width: 80vw;
+                                height: calc(80vw * 0.5625)
+                            }
+                        }
+                        h4 {
+                            width: max-content;
+                            position: relative;
+                            z-index: 1;
+                        }
+                        //title
+                        h4:after {
+                            @include lineBehindAfter(0.18em);
+                            @include lineBehindHover($link-portfolio, 0.5);
+                            z-index: -1;
+                        }
+                    }
+                    
+                }
 
-                //// MEDIA QUERIES ////
+                
+                
+
+                
+
+                //// Section  Nackademin
+                .section.about {
+                    margin-left: 15vw;
+                    margin-right: 15vw;
+                    display: flex;
+                }
+                
+
+                ////! MEDIA QUERIES ////
     
                 @media screen and (max-width: 1300px) {
                     .section {
@@ -444,10 +542,9 @@ html {
                     justify-content: center;
                     margin: 15em 0 1.5em 0;
                     i {
-                        color: $primary;
-                        transition: all 0.2s ease-in-out;
-                        border: none;    
-                        outline: none;
+                        @include transition(0.2s);
+                        color: $button-color;
+                        @include noOutline;
                     }
                     i:hover,
                     i:focus,
@@ -457,15 +554,8 @@ html {
                     }
                 }
             }
-            //// om Nackademin
-            .pageContent.about {
-                .section {
-                    margin-left: 15vw;
-                    margin-right: 15vw;
-                    display: flex;
-                }
-            }
         }
+        // on page load
         .backgroundWrapper.firstDisplay {
             margin: 0;
         }
@@ -493,8 +583,132 @@ html {
             clip: auto;
         }
     }
+    // on page load
     body.firstDisplay {
         padding: 0;
+    }
+
+
+    //! MEDIA QUERIES
+    /* Portrait */
+    @media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+        body {
+            padding: 0;
+            .borderImage {
+                width: 100%;
+                height: 10vw;
+                border-top: 12vw solid white;
+            }
+            nav {
+                button.menu_button {
+                    position: fixed;
+                    top: 18vw;
+                    left: unset;
+                    left: 1.5vw;
+                }
+                div.menu {
+                    width: unset;
+                    width: 100vw;
+                    border: none;
+                    display: flex;
+                    justify-content: center;
+                    padding-top: 20vh;
+                    ul {       
+                        display: flex; 
+                        flex-direction: column; 
+                        li {
+                            a {
+                                text-decoration: none;
+                                color: $link-color;
+                                font-size: 10vw;
+                                font-weight: 600;
+                                position: relative; 
+                                z-index: 1;
+                                @include noOutline;
+        
+                                cursor: pointer;
+                            }
+                        }
+                        ul.subMenu {
+                            li {
+                                grid-template-columns: 10vw 15vw;
+
+                                a.subCat {
+                                    font-size: unset;
+                                    font-size: 7vw;
+                                }
+                            }
+                            li:after {
+                                @include lineBehindAfter(1.3vw);
+                            }
+                            li:focus:after,
+                            li:active:after {
+                                @include lineBehindHover($link-portfolio, 0.5, 1em);
+                            }
+                        }
+                    }
+                }
+                // closed menu 
+                .menu.closed {
+                    left: -100%;
+                }
+                .navBorder {
+                    display: none;
+                }
+            }
+            .backgroundWrapper {
+                header {
+                    img {
+                        width: 50vw;
+                        top: 6vw;
+                        left: 25vw;
+                    }
+                }
+                .pageContent {
+                    margin: 5vw;
+                    margin-top: 30vw;
+                    .introWrapper {
+                        display: flex;
+                        flex-direction: column;
+                        height: auto;
+                        .linkWrapper {
+                            margin-top: 10%;
+                            align-self: center;
+                            h4 {
+                                font-size: 0.9em;
+                            }
+                            ul {
+                                li {
+                                    grid-template-columns: 8vw 15vw;
+    
+                                    a {
+                                        font-size: unset;
+                                        font-size: 4vw;
+                                    }
+                                }
+                                li:after {
+                                    @include lineBehindAfter(1.3vw);
+                                }
+                                li:focus:after,
+                                li:active:after {
+                                    @include lineBehindHover($link-portfolio, 0.5, 1em);
+                                }
+                            }
+                        }
+                        .downButton {
+                            margin-top: 10%;
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+            
+        }
+        
     }
     
 
