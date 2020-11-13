@@ -1,13 +1,13 @@
 html {
   scroll-behavior: smooth;
-  /* Portrait */ }
+  /* Portrait Mobile*/ }
   html body {
     background-color: white;
     padding: 0 1.5rem 0 1.5rem;
     height: 100vh;
     width: 100vw; }
     html body .borderImage {
-      background-image: url("../resources/images/grass-slim2.jpeg");
+      background-image: url("../resources/images/grass-slim3.jpeg");
       background-position-y: center;
       background-size: cover;
       width: calc(100% - 3rem);
@@ -31,7 +31,7 @@ html {
     html body .borderImage.firstDisplay:hover,
     html body .borderImage.firstDisplay:focus,
     html body .borderImage.firstDisplay:active {
-      background-image: url("../resources/images/grass-slim2.jpeg");
+      background-image: url("../resources/images/grass-slim3.jpeg");
       background-position-y: center;
       background-size: cover; }
     html body nav button {
@@ -199,7 +199,8 @@ html {
         display: flex;
         flex-direction: column;
         margin: 3.5rem;
-        margin-left: 5.5rem; }
+        margin-left: 5.5rem;
+        margin-top: 4rem; }
         html body .backgroundWrapper .pageContent .introWrapper {
           height: calc(100vh - 20vw);
           display: grid;
@@ -261,7 +262,8 @@ html {
             grid-column: 3 / span 1;
             display: flex;
             flex-direction: column;
-            width: 100%; }
+            width: 100%;
+            max-width: 28vw; }
             html body .backgroundWrapper .pageContent .introWrapper .introImg img {
               width: 100%; }
             html body .backgroundWrapper .pageContent .introWrapper .introImg .imgText {
@@ -323,24 +325,31 @@ html {
             grid-column: 2 / 4; }
           html body .backgroundWrapper .pageContent .introWrapper .downButton:hover {
             color: #f58457; }
-        html body .backgroundWrapper .pageContent .introWrapper.contactIntro h2 {
-          width: max-content;
-          position: relative;
-          z-index: 1; }
-        html body .backgroundWrapper .pageContent .introWrapper.contactIntro h2:after {
-          width: calc(100% + 0.8em);
-          height: 0.5;
-          background-color: rgba(255, 217, 0, 0.733);
-          opacity: 1;
-          z-index: -1; }
-        html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p {
-          margin: 0; }
-        html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div .contactInfoTitle {
-          font-weight: 600; }
-        html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p + .contactInfoTitle {
-          margin-top: 2vh; }
-        html body .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper ul li:after {
-          background-color: rgba(255, 217, 0, 0.733); }
+        html body .backgroundWrapper .pageContent .introWrapper.contactIntro {
+          margin-right: 10vw; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro h2 {
+            width: max-content;
+            position: relative;
+            z-index: 1; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro h2:after {
+            width: calc(100% + 0.8em);
+            height: 0.5;
+            background-color: rgba(255, 217, 0, 0.733);
+            opacity: 1;
+            z-index: -1; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p {
+            margin: 0; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div .contactInfoTitle {
+            font-weight: 600; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p + .contactInfoTitle {
+            margin-top: 2vh; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper {
+            margin-top: 2em;
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+            justify-self: left; }
+            html body .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper ul li:after {
+              background-color: rgba(255, 217, 0, 0.733); }
         html body .backgroundWrapper .pageContent .introWrapper.aboutIntro h2 {
           width: max-content;
           position: relative;
@@ -466,19 +475,6 @@ html {
           margin-left: 15vw;
           margin-right: 15vw;
           display: flex; }
-        @media screen and (max-width: 1300px) {
-          html body .backgroundWrapper .pageContent .section p {
-            font-size: 0.8em; } }
-        @media screen and (max-width: 1120px) {
-          html body .backgroundWrapper .pageContent .section {
-            display: flex;
-            flex-direction: column-reverse; }
-            html body .backgroundWrapper .pageContent .section p {
-              font-size: 1em;
-              margin-bottom: 1em; } }
-        @media screen and (max-width: 800px) {
-          html body .backgroundWrapper .pageContent .section p {
-            font-size: 0.8em; } }
         html body .backgroundWrapper .pageContent footer {
           display: flex;
           justify-content: center;
@@ -587,6 +583,11 @@ html {
           height: auto; }
           html body .backgroundWrapper .pageContent .introWrapper h2:after {
             bottom: 0.7vw; }
+          html body .backgroundWrapper .pageContent .introWrapper .introText {
+            margin-top: 5vw;
+            margin-bottom: 5vw; }
+          html body .backgroundWrapper .pageContent .introWrapper .introImg {
+            max-width: unset; }
           html body .backgroundWrapper .pageContent .introWrapper .linkWrapper {
             margin-top: 10%;
             align-self: center; }
@@ -630,11 +631,31 @@ html {
             height: calc(90vw * 0.5625);
             max-width: 100%;
             min-width: 100%; }
+      html body .backgroundWrapper .portfolio .downButton {
+        display: none; }
       html body .backgroundWrapper .portfolio .section {
-        padding-top: 15vh; }
+        padding-top: 15vh;
+        display: flex; }
         html body .backgroundWrapper .portfolio .section .infoTextWrapper {
           margin-bottom: 4vw; }
+          html body .backgroundWrapper .portfolio .section .infoTextWrapper p {
+            font-size: 0.8em; }
           html body .backgroundWrapper .portfolio .section .infoTextWrapper a {
             font-size: 1em; }
       html body .backgroundWrapper .portfolio footer {
-        margin-top: 10vh; } }
+        margin-top: 10vh; }
+      html body .backgroundWrapper .contact footer {
+        display: none; } }
+  @media screen and (max-width: 1300px) {
+    html .section p {
+      font-size: 0.8em; } }
+  @media screen and (max-width: 1120px) {
+    html .section {
+      display: flex;
+      flex-direction: column-reverse; }
+      html .section p {
+        font-size: 1em;
+        margin-bottom: 1em; } }
+  @media screen and (max-width: 800px) {
+    html .section p {
+      font-size: 0.8em; } }

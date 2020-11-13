@@ -136,17 +136,17 @@ class Page {
             
             //// scroll down button
             let downButton = document.createElement("a");
-            if (subCat.name != "Code") {
-                let icon = document.createElement("i");
-                downButton.appendChild(icon);
-                downButton.className = "downButton";
-                downButton.type = "button";
-                downButton.setAttribute("tabindex", "0");
-                icon.className = "fas fa-angle-down fa-4x";
-    
-                downButton.href = "#section1";
-                introWrapper.appendChild(downButton);
-            }
+            let icon = document.createElement("i");
+            downButton.appendChild(icon);
+            downButton.className = "downButton";
+            downButton.type = "button";
+            downButton.setAttribute("aria-label", "Go to next section of this page");
+            downButton.setAttribute("tabindex", "0");
+            icon.className = "fas fa-angle-down fa-4x";
+
+            downButton.href = "#section1";
+            introWrapper.appendChild(downButton);
+            
 
             //* PORTFOLIO SUB: ART*//
             if (subCat.name == "Art") {
@@ -166,6 +166,19 @@ class Page {
                         img.setAttribute("tabindex", "0");
                         img.src = obj.image.src;
                         img.alt = obj.image.alt;
+
+                        // pause unpause gif
+                        img.addEventListener("click", e => {
+                            if (!img.stopped) {
+                                img.src = obj.image.still;
+                                img.stopped = true;
+                            } else {
+                                img.src = obj.image.src;
+                                img.stopped = false;
+                            }
+                        })
+                        
+                        
                         imgWrapper.appendChild(img);
                     } else if (obj.video) {
                         let video = document.createElement("video");
@@ -226,6 +239,7 @@ class Page {
                         imgWrapper.appendChild(p);
                         
                         let span = document.createElement("span");
+                        span.setAttribute("aria-label", obj.ariaLabel);
                         span.innerHTML = obj.embed;
                         imgWrapper.appendChild(span);
                     }
@@ -346,6 +360,7 @@ class Page {
         this.wrapper.appendChild(footer);
         let upButton = document.createElement("i");
         upButton.type = "button";
+        upButton.setAttribute("aria-label", "Go to top of page");
         upButton.setAttribute("tabindex", "0");
         upButton.className = "fas fa-angle-double-up fa-4x";
         footer.appendChild(upButton);

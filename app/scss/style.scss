@@ -11,7 +11,7 @@ html {
         width: 100vw;
         ////* BORDER *////
         .borderImage {
-            background-image: url("../resources/images/grass-slim2.jpeg");
+            background-image: url("../resources/images/grass-slim3.jpeg");
             background-position-y: center;
             background-size: cover;
             width: calc(100% - 3rem);
@@ -42,7 +42,7 @@ html {
         .borderImage.firstDisplay:hover,
         .borderImage.firstDisplay:focus,
         .borderImage.firstDisplay:active {
-            background-image: url("../resources/images/grass-slim2.jpeg");
+            background-image: url("../resources/images/grass-slim3.jpeg");
             background-position-y: center;
             background-size: cover;
         }
@@ -239,6 +239,7 @@ html {
                 flex-direction: column;
                 margin: 3.5rem;
                 margin-left: 5.5rem;
+                margin-top: 4rem;
                 
                 //// PAGE INTRO ////
                 .introWrapper {
@@ -291,6 +292,7 @@ html {
                         display: flex;
                         flex-direction: column;
                         width: 100%;
+                        max-width: 28vw;
                         img {
                             width: 100%;
                         }
@@ -347,6 +349,9 @@ html {
                 }
                 //// CONTACT INTRO ////
                 .introWrapper.contactIntro {
+                    
+                    margin-right: 10vw;
+
                     h2 {
                         width: max-content;
                         position: relative;
@@ -370,6 +375,10 @@ html {
                         }
                     }
                     .linkWrapper {
+                        margin-top: 2em;
+                        grid-column: 2 / 3;
+                        grid-row: 3 / 4;
+                        justify-self: left;
                         ul {
                             li:after {
                                 background-color: $link-contact;
@@ -510,36 +519,6 @@ html {
                 }
                 
 
-                ////! MEDIA QUERIES ////
-    
-                @media screen and (max-width: 1300px) {
-                    .section {
-                        p {
-                            font-size: 0.8em;
-                        }
-                    }                    
-                    
-                }
-    
-                @media screen and (max-width: 1120px) {
-                    .section {
-                        display: flex;
-                        flex-direction: column-reverse;
-                        p {
-                            font-size: 1em;
-                            margin-bottom: 1em;
-    
-                        }
-                    }
-                    
-                }
-                @media screen and (max-width: 800px) {
-                    .section {
-                        p {
-                            font-size: 0.8em;
-                        }
-                    }
-                }
 
                 //// FOOTER ////
                 footer {
@@ -595,7 +574,7 @@ html {
 
 
     //! MEDIA QUERIES
-    /* Portrait */
+    /* Portrait Mobile*/
     @media only screen 
     and (min-device-width: 320px) 
     and (max-device-width: 480px)
@@ -686,6 +665,14 @@ html {
                         h2:after {
                             bottom: 0.7vw;
                         }
+
+                        .introText{
+                            margin-top: 5vw;
+                            margin-bottom: 5vw;
+                        }
+                        .introImg {
+                            max-width: unset;
+                        }
                         .linkWrapper {
                             margin-top: 10%;
                             align-self: center;
@@ -738,10 +725,17 @@ html {
                     }
                 }
                 .portfolio {
+                    .downButton {
+                        display: none;
+                    }
                     .section {
                         padding-top: 15vh;
+                        display: flex;
                         .infoTextWrapper {
                             margin-bottom: 4vw;
+                            p {
+                                font-size: 0.8em;
+                            }
                             a {
                                 font-size: 1em;
                             }
@@ -751,6 +745,11 @@ html {
                         margin-top: 10vh;
                     }
                 }
+                .contact {
+                    footer {
+                        display: none;
+                    }
+                }
             }
             
         }
@@ -758,4 +757,35 @@ html {
     }
     
 
+    ////! MEDIA QUERIES ////
+    //TODO: fixa...
+
+    @media screen and (max-width: 1300px) {
+        .section {
+            p {
+                font-size: 0.8em;
+            }
+        }                    
+        
+    }
+
+    @media screen and (max-width: 1120px) {
+        .section {
+            display: flex;
+            flex-direction: column-reverse;
+            p {
+                font-size: 1em;
+                margin-bottom: 1em;
+
+            }
+        }
+        
+    }
+    @media screen and (max-width: 800px) {
+        .section {
+            p {
+                font-size: 0.8em;
+            }
+        }
+    }
 }    

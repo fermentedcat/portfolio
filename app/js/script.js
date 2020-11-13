@@ -73,10 +73,12 @@ class Website {
             this.menu.classList.remove("hover");
             this.menu.classList.remove("noDisplay");
             this.loadMenuItems();
+            this.menu_button.setAttribute("aria-label", "Close menu");
 
         } else {
             this.menu_button.innerHTML = "|||";
             this.menu.classList.add("hover");
+            this.menu_button.setAttribute("aria-label", "Open menu");
             setTimeout(() => {
                 while (this.ul.firstChild) {
                     this.ul.removeChild(this.ul.lastChild);

@@ -40,7 +40,7 @@ let pageMenu = [
             {   //// SUB: CODE ////
                 name: "Code",
                 icon: "fas fa-code",
-                intro: ["Here are some of my early works. Scroll down or click here:"],
+                intro: ["Here are some of my early works. Check back in, there will be more soon!"],
                 info: [
                     {   //// QUIZ ////
                         title: "Quiz",
@@ -115,6 +115,7 @@ let pageMenu = [
                         link: "",
                         image: {
                                 src: "resources/images/water-s-maja_thunberg.gif",
+                                still: "resources/images/water-still-maja_thunberg.jpg",
                                 alt: "Animation of face reflecting in the water.",
                                 text: 'From <a href "https://www.youtube.com/watch?v=ekF7mymVYGk">Star Horse - Albatross</a> stop motion music video.'
                             },
@@ -171,10 +172,10 @@ let pageMenu = [
             {   //// SUB: MUSIC ////
                 name: "Music",
                 icon: "fas fa-compact-disc",
-                intro: ['I play in a band called Star Horse - a shoegaze/dream-pop band I started with my friends about 10 years ago.', 'This is where I put most of my musical efforts in these days, so I\'m dedicating this page to my band.'],
+                intro: ['I play in a band called <a href="#section1">Star Horse</a> - a shoegaze/dream-pop band I started with my friends about 10 years ago.', 'This is where I put most of my musical efforts in these days, so I\'m dedicating this page to my band.'],
                 info: [
                     {   //// LINKS ////
-                        text: "You can find us here:",
+                        text: "Find us here:",
                         links: [
                             {
                                 title: "Spotify",
@@ -202,27 +203,32 @@ let pageMenu = [
                         title: "You Said Forever",
                         text: ["Our debut album (2019)"],
                         link: "https://starhorse.bandcamp.com/album/you-said-forever",
+                        ariaLabel: "Music player embedded from Bandcamp",
                         embed: '<iframe style="border: 0; width: 350px; height: 753px;" src="https://bandcamp.com/EmbeddedPlayer/album=686016826/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="https://starhorse.bandcamp.com/album/you-said-forever">You Said Forever by Star Horse</a></iframe>'
                     },
                     {
                         title: "No Memories Before This",
                         text: ["Songs from 2012-2015"],
                         link: "https://starhorse.bandcamp.com/album/you-said-forever",
+                        ariaLabel: "Music player embedded from Bandcamp",
                         embed: '<iframe style="border: 0; width: 350px; height: 786px;" src="https://bandcamp.com/EmbeddedPlayer/album=3333529234/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="https://starhorse.bandcamp.com/album/no-memories-before-this">No Memories Before This by Star Horse</a></iframe>'
                     },
                     {
                         title: "Star Horse - Albatross",
                         text: ["Stop motion video for Albatross (2019, You Said Forever)"],
+                        ariaLabel: "Stop-motion hand painted music video. Girl walks on the beach and watches birds flying over the ocean.",
                         embed: '<iframe src="https://www.youtube.com/embed/ekF7mymVYGk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
                     },
                     {
                         title: "Star Horse - 100 Eyes",
                         text: ["An oldie with a relatively new video."],
+                        ariaLabel: "Music video with overlapping films of snowy forests.",
                         embed: '<iframe src="https://www.youtube.com/embed/nk2ZH_EGZd8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
                     },
                     {
                         title: "Star Horse - Slower Now",
                         text: ["Music video recorded in a quarry in Skövde."],
+                        ariaLabel: "Four-piece band plays music in an abandoned quarry in fall-setting.",
                         embed: '<iframe src="https://www.youtube.com/embed/XN8UkYnsvn0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
                     },
                 ]
