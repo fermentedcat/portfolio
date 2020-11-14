@@ -1,0 +1,79 @@
+====	Scrum	 ====
+
+Scrum är en agil utvecklingsmetod. Det är inte är inte en process eller en teknik, utan ett ramverk för att hantera processer och tekniker för produktutveckling. Istället för en kravspecifikation har man en backlog - en prioriterad och levande lista med önskemål. Det innebär att i ett projekt kan önskemål både kan läggas till och prioriteras ner och falla bort under tiden projektet går. 
+
+Värderingarna och principerna i det agila manifestet är direkt applicerbara i scrum:
+-Individer och samarbete framför processer och verktyg.
+-Fungerande programvara framför omfattande dokumentation. 
+-Samarbete med kunden framför kontraktsförhandlingar.
+-Att förhålla sig till förändring framför att strikt följa en plan. 
+
+
+Man kan använda sig av scrum på olika sätt, men följande beståndsdelar är viktiga för att scrum ska fungera:
+-scrumteamet (produktägaren, utvecklingsteamet och en scrum master)
+-aktiviteter
+-artefakter
+-regler
+
+Reglerna knyter samman aktiviteterna, rollerna och artefakterna och styr hur de relaterar och samverkar med varandra.
+
+Scrumteam är självorganiserande och tvärfunktionella och består av en produktägare, utvecklingsteamet och en scrum master. Teamet kommer själva fram till hur de bäst ska utföra sitt arbete och har alla kompetenser som behövs för att kunna utföra arbetet utan att vara beroende av utomstående. Modellen är utformad för att optimera flexibilitet, kreativitet och produktivitet.
+
+Produktägaren bär ansvaret för att maximera värdet av produkten och utvecklingsteamets arbete och ansvarar för hanteringen av product backlog. 
+
+Scrum har tre huvudsakliga artefakter: Product backlog, sprint backlog och produktinkrement. -Product backlog är en ordnad lista av idéer för produktens fortsatta utveckling, i den ordning i vilken de är tänkta att implementeras. 
+-Sprint backlog är en detaljerad plan för utvecklingen i den kommande sprinten. -Produktinkrementet är resultatet av arbetet i varje sprint. 
+
+
+Scrum använder ett iterativt, inkrementellt tillvägagångssätt för att optimera förutsägbarhet och hantera risk. Detta maximerar möjligheterna till återkoppling. Man fattar beslut baserat på tidigare erfarenheter. Processen bygger på transparens, granskning och anpassning.
+
+Aktiviteterna i scrum är tidsbegränsade och är tillfällen för granskning och anpassning. De används för att skapa regelbundenhet och för att minska behovet av möten som inte definierats i scrum.
+En sprint kan vara mellan 3 och 30 dagar lång, under vilka ett användbart, potentiellt releasebart produktinkrement tas fram. Sprinterna håller vanligtvis samma längd under ett utveckligsinitiativ. När en sprint är över startar nästa direkt efter. När en sprint är påbörjad kan den inte förkortas eller förlängas. 
+Sprinten inleds med en sprint planning och avslutas med en demonstration och genomgång av det som utvecklats under sprinten (Sprint review). Under sprinten sker dagliga Daily scrums och allra sist i en sprint görs en återblick (Sprint retrospective).
+
+-Sprint planning görs med produktägaren, scrum master och utvecklingsteamet som tillsammans går igenom de önskemål som finns. Därefter bryter teamet ned kraven och tidsestimerar. Genom att jämföra de tidsestimerade och prioriterade önskemålen med tillgänglig tid tas en sprint backlog fram som teamet åtar sig att genomföra under följande sprint.
+
+-Daily scrum är ett kort statusmöte (högst 15 min) för utvecklingsteamet. Scrum master ställer följande frågor till varje person:
+1. Vad har jag gjort sedan igår?
+2. Vad ska jag göra till imorgon?
+3. Finns det något som hindrar mig?
+
+-Sprint review är en statusgenomgång av arbetet som genomförts i sprinten samt demonstration av funktionaliteten för produktägare, kunder och andra inbjudna intressenter, där syftet är att alla intressenter ska få bästa möjliga inblick i dagsläget.
+
+-I sprint retrospective går teamet, scrum mastern och produktägaren tillsammans igenom erfarenheter från sprinten och identifierar möjliga förbättringar i arbetssättet. Några punkter väljs ut och åtgärdas i kommande sprint.
+
+Jag tror att det kan vara svårt att att använda sig av om teamet inte engagerar sig i att följa delarna i det. Om man slarvar med att hålla dagliga möten tillexempel, eller om man inte är öppen med sina tankar och bidrar till utvecklingen av hur teamet arbetar. Man kan tycka att mycket tid går åt till möten, men gör man på rätt sätt så undviker man samtidigt oplanerade möten och kan hantera hinder och problem som uppstår och får bra tillfällen för att förbättra arbetet. Dessutom är mötena tidsbegränsade. 
+En fördel med scrum är dess fokus på affärsnytta och möjligheten för projektet att förändras på ett strukturerat sätt. Något som kanske samtidigt kan vara frustrerande som intressent. Sprint backlog ändras inte under en sprint, utan kommer nya önskemål under sprinten kan de istället läggas till i product backlog och tas in i nästa sprint backlog om product owner tycker att den har hög prioritet. Men det fina med det är att man får bättre förutsättningar för att kunna estimera tidsåtgången och metoden är ändå flexibel i och med att krav och önskemål och prioriteringarna mellan dem kan ändras mellan olika sprints. 
+
+
+
+
+====	Grafisk profil	   ====
+
+Genom att vara konsekvent med hur man kommunicerar ett varumärke utåt så skapas igenkänning hos mottagaren. Det blir tydligt vem informationen kommer ifrån och det stärker varumärket. Följer man en bra grafisk profil kan man kommunicera en enhetlig bild av varumärket.
+Man kan säga att en grafisk profil en slags manual för hur kommunaikation ska se ut, på hemsidor, trycksaker, överallt där man vill synas.
+Den kan sammanställas i tex en .pdf som innehåller logotyp i olika format, den kan ha exempel på användning av de olika specifikationerna, regler för vilka färger som ska användas var, textstorlek och typsnitt som ska användas hur, marginaler, placering etc, symboler, mönster eller andra grafiska element som ska ingå i den visuella kommunikationen. 
+
+Jag har svårt att hitta nackdelar med fenomenet grafisk profil, men det kanske skulle kunna vara om ett företag har en strikt sådan som samtidigt är ”dålig” eller svår att använda och förhålla sig till som uppdragstagare. Jag gissar ändå att fördelarna med att ha en grafisk profil över huvud taget överväger eventuella nackdelar med att ha en ”ful” logga och ”dåliga” färgkombinationer (ursäkta överanvändandet av ””, vem bestämmer vad som är bra eller snyggt) då jag skulle tro att igenkänning hos mottagaren är ännu viktigare än att ha en ibland snygg men inkonsekvent kommunikationsstil.
+
+
+====	Tillgänglighet    ====
+
+Genom att tillgänglighetsanpassa en webbsida görs den tillgänglig för alla, oavsett funktionshinder. Det finns även de som inte ser sig själva som funktionshindrade, men som gagnas av en tillgänglighetsanpassad webbplats, du kanske har dålig internetuppkoppling och kan inte ladda en bild, sitter någonstans där du inte kan ha ljud på till en video men vill kunna ta del av innehållet, eller kanske har lite svårare att läsa långa rader med text. Funktionsnedsättningar kan vara tillfälliga eller bestående, men tillgänglighet kan ofta förhindra att en funktionsnedsättning medför funktionshinder.
+
+Med tillgänglighet menas delvis att information och tjänster ska gå att nå (servern åtkomlig, filformatet läsbart, säkerheten god, prestanda acceptabel och så vidare), men framför allt att göra information och tjänster tillgängliga för bredast möjliga spektrum av egenskaper och förmågor. 
+
+Ett bra sätt att tillgänglighetsanpassa kan vara att utgå från den breda variation som finns mellan olika människors förmågor och egenskaper, snarare än att designa för en genomsnittlig användare. Ibland är särlösningar nödvändiga, men det är bra att inkludera så många som möjligt till att kunna ta del av den ordinarie lösningen.
+
+WCAG är riktlinjer för tillgänglighetsanpassning på webben och tar tagits fram av W3C. Vissa av riktlinjerna har bara en eller två nivåer (A, AA och AAA), men de flesta har alla tre. Offentliga webbplatser måste uppfylla minst nivå AA där det är applicerbart.
+
+
+I mitt arbete med portfolion så har jag tänkt på tillgänglighet genom att:
+-göra sidan enkel att navigera i med hjälp av enbart TAB- och Enter-knappen. (2.4.3)/(2.1.1)
+-ge beskrivande sidtitlar (2.4.2). 
+-göra min design konsekvent i färg och utseende - ge element som har liknande innehåll och -funktioner på sidan samma layout och design, för att de ska vara lätta att förstå. (3.2.3)
+-lägga in beskrivningar av innehåll i videos genom aria-labels, och gett alt-taggar till bilder och icke-text element (1.1.1). Även knappar utan synlig text ska gå att läsa av en screen reader. 
+-för att undvika koncentrationssvårigheter hos befolkningen har jag gjort så att all rörlig bild går att pausa, även gif (2.2.2).
+-tillgängliggöra bilder i olika storlekar genom srcsets (54)
+
+

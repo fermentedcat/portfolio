@@ -329,7 +329,8 @@ html {
             align-self: end;
             justify-self: center;
             grid-column: 2 / 4; }
-          html body .backgroundWrapper .pageContent .introWrapper .downButton:hover {
+          html body .backgroundWrapper .pageContent .introWrapper .downButton:hover,
+          html body .backgroundWrapper .pageContent .introWrapper .downButton:focus {
             color: #f58457; }
         html body .backgroundWrapper .pageContent .introWrapper.contactIntro {
           margin-right: 10vw; }

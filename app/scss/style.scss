@@ -344,7 +344,8 @@ html {
                         justify-self: center;
                         grid-column: 2 / 4;
                     }
-                    .downButton:hover {
+                    .downButton:hover,
+                    .downButton:focus {
                         color: $hover-color;
                     }
                 }
