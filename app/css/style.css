@@ -36,7 +36,7 @@ html {
       background-size: cover; }
     html body nav button {
       position: fixed;
-      left: 1.36em;
+      left: 1.35em;
       top: 45%;
       text-decoration: none;
       color: #38384d;
@@ -53,7 +53,7 @@ html {
       outline: none;
       border: none; }
     html body nav button.reveal {
-      left: 1.1rem; }
+      left: 1rem; }
     html body nav button.noDisplay {
       display: none; }
     html body nav .menu {
@@ -274,22 +274,28 @@ html {
             grid-row: 2 / 3;
             justify-self: end; }
             html body .backgroundWrapper .pageContent .introWrapper .linkWrapper h4 {
-              font-size: 1.1em; }
+              font-size: 1.1em;
+              margin-bottom: 0.8em; }
             html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul {
+              margin-left: 0.2em;
               padding: 0; }
               html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li {
                 list-style: none;
                 display: grid;
-                grid-template-columns: 3vw 4vw;
+                grid-template-columns: 1.5em 4em;
                 align-items: center;
                 position: relative;
                 z-index: 1;
+                font-weight: 600;
+                font-size: 0.9em;
                 width: max-content;
+                margin-top: 0.4em;
                 cursor: pointer;
                 outline: none;
                 border: none; }
                 html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li i {
-                  justify-self: center;
+                  justify-self: left;
+                  align-self: center;
                   grid-column: 1 / 2; }
                 html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li a {
                   text-decoration: none;
@@ -299,10 +305,10 @@ html {
                 position: absolute;
                 content: '';
                 height: 0px;
-                bottom: 0.6vw;
+                bottom: 0.53w;
                 z-index: -1;
                 margin: 0 auto;
-                left: 1em;
+                left: 0.8em;
                 right: 0;
                 width: 0%;
                 transition: all .2s ease-in-out; }
@@ -596,35 +602,22 @@ html {
           html body .backgroundWrapper .pageContent .introWrapper .linkWrapper {
             margin-top: 10%;
             align-self: center; }
-            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper h4 {
-              font-size: 0.9em; }
-            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li {
-              grid-template-columns: 8vw 15vw; }
-              html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li a {
-                font-size: unset;
-                font-size: 4vw; }
             html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:after {
-              position: absolute;
-              content: '';
-              height: 0px;
-              bottom: 1.3vw;
-              z-index: -1;
-              margin: 0 auto;
-              left: -0.3em;
-              right: 0;
-              width: 0%;
-              transition: all .2s ease-in-out; }
-            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:focus:after,
-            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:active:after {
               width: calc(100% + 0.8em);
-              height: 1em;
+              height: 0.5em;
               background-color: gold;
-              opacity: 0.5; }
+              opacity: 0; }
           html body .backgroundWrapper .pageContent .introWrapper .downButton {
             margin-top: 10%;
             align-self: center;
             outline: none;
             border: none; }
+        html body .backgroundWrapper .pageContent .introWrapper.contactIntro {
+          margin-right: 0; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper {
+            margin-top: 9vh; }
+            html body .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper ul {
+              padding-left: 1.4em; }
         html body .backgroundWrapper .pageContent #section1.art {
           columns: 1; }
           html body .backgroundWrapper .pageContent #section1.art div {

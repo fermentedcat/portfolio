@@ -51,7 +51,7 @@ html {
         nav {
             button {
                 position: fixed;
-                left: 1.36em;
+                left: 1.35em;
                 top: 45%;
                 text-decoration: none;
                 color: $link-color;
@@ -70,7 +70,7 @@ html {
             }
             // (hover)
             button.reveal {
-                left: 1.1rem;
+                left: 1rem;
             }
             // on page load
             button.noDisplay {
@@ -308,8 +308,10 @@ html {
                         justify-self: end;
                         h4 {
                             font-size: $linkwr-h4-size;
+                            margin-bottom: 0.8em;
                         }
                         ul {
+                            margin-left: 0.2em;
                             padding: 0;
                             li {
                                 @include list-li;
@@ -322,7 +324,7 @@ html {
                                 }
                             }
                             li:after {
-                                @include lineBehindAfter(0.6vw, 1em);
+                                @include lineBehindAfter(0.53w, 0.8em);
                             }
                             li:hover:after,
                             li:focus:after,
@@ -349,7 +351,6 @@ html {
                 }
                 //// CONTACT INTRO ////
                 .introWrapper.contactIntro {
-                    
                     margin-right: 10vw;
 
                     h2 {
@@ -672,7 +673,6 @@ html {
                         h2:after {
                             bottom: 0.7vw;
                         }
-
                         .introText{
                             margin-top: 5vw;
                             margin-bottom: 5vw;
@@ -683,24 +683,9 @@ html {
                         .linkWrapper {
                             margin-top: 10%;
                             align-self: center;
-                            h4 {
-                                font-size: 0.9em;
-                            }
                             ul {
-                                li {
-                                    grid-template-columns: 8vw 15vw;
-    
-                                    a {
-                                        font-size: unset;
-                                        font-size: 4vw;
-                                    }
-                                }
                                 li:after {
-                                    @include lineBehindAfter(1.3vw);
-                                }
-                                li:focus:after,
-                                li:active:after {
-                                    @include lineBehindHover($yellow, 0.5, 1em);
+                                    @include lineBehindHover($yellow, 0);
                                 }
                             }
                         }
@@ -708,6 +693,16 @@ html {
                             margin-top: 10%;
                             align-self: center;
                             @include noOutline;
+                        }
+                    }
+
+                    .introWrapper.contactIntro {
+                        margin-right: 0;
+                        .linkWrapper {
+                            margin-top: 9vh;
+                            ul {
+                                padding-left: 1.4em;
+                            }
                         }
                     }
                     #section1.art {

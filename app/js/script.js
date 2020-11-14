@@ -41,7 +41,7 @@ class Website {
         this.menu_button.onmouseout = () => {
             this.menu.classList.remove("hover");
             if (this.menu.classList.contains("closed")) {
-                this.menu_button.innerHTML = "|||";
+                this.menu_button.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
             }
             this.menu_button.classList.remove("reveal");
         }
@@ -69,14 +69,14 @@ class Website {
     //// TOGGLE NAV MENU ////
     toggleMenu() {
         if (this.menu.classList.contains("closed")) {
-            this.menu_button.innerHTML = "X";
+            this.menu_button.innerHTML = '<i class="fas fa-times fa-lg"></i>';
             this.menu.classList.remove("hover");
             this.menu.classList.remove("noDisplay");
             this.loadMenuItems();
             this.menu_button.setAttribute("aria-label", "Close menu");
 
         } else {
-            this.menu_button.innerHTML = "|||";
+            this.menu_button.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
             this.menu.classList.add("hover");
             this.menu_button.setAttribute("aria-label", "Open menu");
             setTimeout(() => {

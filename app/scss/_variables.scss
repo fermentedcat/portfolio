@@ -62,20 +62,24 @@ $linkwr-h4-size: 1.1em;
 
 
 //// soMe link lists
-@mixin list-li($grid-col: 3vw 4vw) {
+@mixin list-li($grid-col: 1.5em 4em) {
     list-style: none;
     display: grid;
     grid-template-columns: $grid-col;
     align-items: center;
     position: relative; 
     z-index: 1;
+    font-weight: 600;
+    font-size: 0.9em;
     width: max-content;
+    margin-top: 0.4em;
     cursor: pointer;
     @include noOutline;
 }
 
 @mixin list-li-i {
-    justify-self: center;
+    justify-self: left;
+    align-self: center;
     grid-column: 1 / 2;
 }
 @mixin list-li-a($font-size: 1em) {
