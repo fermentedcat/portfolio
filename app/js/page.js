@@ -102,7 +102,18 @@ class Page {
                 text.innerHTML = part.text;
                 contactWrapper.appendChild(title);
                 contactWrapper.appendChild(text);
+
+
+                text.addEventListener("click", e => {
+                    var elem = document.createElement("textarea");
+                    document.body.appendChild(elem);
+                    elem.value = text.innerHTML;
+                    elem.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(elem);
+                })
             }
+
             let linkWrapper = document.createElement("div");
             linkWrapper.className = "linkWrapper";
             introWrapper.appendChild(linkWrapper);
@@ -161,7 +172,7 @@ class Page {
                         let img = document.createElement("img");
                         if (obj.image.srcset) {
                             img.srcset = obj.image.srcset;
-                            img.sizes = obj.image.sizes;
+                            img.sizes = "(min-width: 480px) 50w, 100w";
                         }
                         img.setAttribute("tabindex", "0");
                         img.src = obj.image.src;
@@ -169,12 +180,14 @@ class Page {
 
                         // pause unpause gif
                         img.addEventListener("click", e => {
-                            if (!img.stopped) {
-                                img.src = obj.image.still;
-                                img.stopped = true;
-                            } else {
-                                img.src = obj.image.src;
-                                img.stopped = false;
+                            if (obj.image.still) {
+                                if (!img.stopped) {
+                                    img.src = obj.image.still;
+                                    img.stopped = true;
+                                } else {
+                                    img.src = obj.image.src;
+                                    img.stopped = false;
+                                }
                             }
                         })
                         
@@ -289,7 +302,7 @@ class Page {
                         let img = document.createElement("img");
                         img.src = subCat.info[i].images[j].src;
                         img.setAttribute("srcset", `${subCat.info[i].images[j].srcset}`)
-                        img.setAttribute("sizes", `${subCat.info[i].sizes}`);
+                        img.setAttribute("sizes", "100w");
                         img.className = "d-block";
                         img.alt = subCat.info[i].images[j].alt;
                         carItem.appendChild(img);

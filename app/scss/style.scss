@@ -327,7 +327,7 @@ html {
                             li:hover:after,
                             li:focus:after,
                             li:active:after {
-                                @include lineBehindHover($link-portfolio, 0.5, 0.9vw);
+                                @include lineBehindHover($yellow, 0.5, 0.9vw);
                             }
                         }                        
                     }
@@ -365,12 +365,20 @@ html {
                         div {
                             p {
                                 margin: 0;
+                                max-width: max-content;
                             }
                             .contactInfoTitle {
                                 font-weight: 600;
                             }
                             p + .contactInfoTitle {
                                 margin-top: 2vh;
+                            }
+                            .contactInfoTitle + p:hover {
+                                cursor: url("../resources/images/icons8-copy-30.png"), auto;
+                            }
+                            .contactInfoTitle + p:active {
+                                background-color: rgb(255, 255, 255);
+                                
                             }
                         }
                     }
@@ -437,7 +445,7 @@ html {
                         }
                         h3:after {
                             @include lineBehindAfter(0.18em);
-                            @include lineBehindHover($lightYellow);
+                            @include lineBehindHover($link-portfolio, 0.5);
                             z-index: -1;
                         }
                         a {
@@ -473,7 +481,7 @@ html {
                         video,
                         span {
                             width: 100%;
-                            border-radius: 5px;
+                            border-radius: 2px;
                             @include noOutline;
                         }
                     }
@@ -499,7 +507,7 @@ html {
                         //title
                         h4:after {
                             @include lineBehindAfter(0.18em);
-                            @include lineBehindHover($lightYellow, 0.5);
+                            @include lineBehindHover($link-portfolio, 0.5);
                             z-index: -1;
                         }
                     }
@@ -576,7 +584,6 @@ html {
     //! MEDIA QUERIES
     /* Portrait Mobile*/
     @media only screen 
-    and (min-device-width: 320px) 
     and (max-device-width: 480px)
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: portrait) {
@@ -693,7 +700,7 @@ html {
                                 }
                                 li:focus:after,
                                 li:active:after {
-                                    @include lineBehindHover($link-portfolio, 0.5, 1em);
+                                    @include lineBehindHover($yellow, 0.5, 1em);
                                 }
                             }
                         }

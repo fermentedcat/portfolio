@@ -98,47 +98,37 @@ let pageMenu = [
                                 alt: "Yatzy game, throw dice, screenshot",
                                 text: ""
                             }
-                        ],
-                        //TODO: ÄNDRA efter ändringar
-                        sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -9vw ) * 0.7273)",
+                        ]
                     }
                 ]
             },
             {   //// SUB: ART ////
                 name: "Art",
                 icon: "fas fa-brush",
-                intro: ["In most things I do I like find a way to incorporate creativity. But sometimes there is drawing just for the sake of it.", "Scroll down to find some things I made."],
+                intro: ["In most things I do I like to find a way to put some paint on it. But sometimes there is drawing just for the sake of it.", "Scroll down to find some things I made."],
                 info: [
                     {
                         title: "Water reflection",
-                        text: [""],
-                        link: "",
                         image: {
-                                src: "resources/images/water-s-maja_thunberg.gif",
-                                still: "resources/images/water-still-maja_thunberg.jpg",
-                                alt: "Animation of face reflecting in the water.",
-                                text: 'From <a href "https://www.youtube.com/watch?v=ekF7mymVYGk">Star Horse - Albatross</a> stop motion music video.'
-                            },
-                        sizes: ""
+                            src: "resources/images/water-s-maja_thunberg.gif",
+                            still: "resources/images/water-still-maja_thunberg.jpg",
+                            alt: "Animation of face reflecting in the water.",
+                            text: 'From <a href "https://www.youtube.com/watch?v=ekF7mymVYGk">Star Horse - Albatross</a> stop motion music video.'
+                        }
                     },
                     {
                         title: "Boy",
-                        text: [""],
-                        link: "",
                         image: {
-                            srcset: "",
-                            src: "resources/images/adi.jpg",
+                            srcset: "resources/images/adi-500.jpg 500w, resources/images/adi-800.jpg 800w, resources/images/adi.jpg 1080w",
+                            src: "resources/images/adi-500.jpg",
                             alt: "Colorful drawing of a boy looking tired.",
                             text: ""
-                        },
+                        }
                     },
                     {
                         title: "Sticks and Stones",
-                        text: [""],
-                        link: "",
                         image: {
                             srcset: "resources/images/Sticks-and-stones-600.jpg 600w, resources/images/Sticks-and-stones-1200.jpg 1200w",
-                            sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -9vw ) * 0.7273)",
                             src: "resources/images/Sticks-and-stones-600.jpg",
                             alt: "Green abstract graphic print",
                             text: "Graphic print",
@@ -146,37 +136,29 @@ let pageMenu = [
                     },
                     {
                         title: "Flower field",
-                        text: [""],
-                        link: "",
                         image: {
-                            srcset: "",
-                            src: "resources/images/field.jpg",
+                            srcset: "resources/images/field-500.jpg 500w, resources/images/field-800.jpg 800w, resources/images/field.jpg 1200w",
+                            src: "resources/images/field-500.jpg",
                             alt: "Drawing of a field of flowers.",
                             text: ""
-                        },
+                        }
                     },
                     {
                         title: "Flip-book",
-                        text: [""],
-                        link: "",
                         video: {
-                            srcset: "",
                             src: "resources/images/Pasta.mp4",
                             alt: "Flip-book with animated plate of pasta",
                             text: "Flip-book"
-                        },
+                        }
                     },
                     {
                         title: "Poster Heaven up Here",
-                        text: [""],
-                        link: "",
                         image: {
                             srcset: "resources/images/huh1feb14-600.jpg 600w, resources/images/huh1feb14-1200.jpg 1200w",
                             src: "resources/images/huh1feb14-600.jpg",
                             alt: "Colorful painted poster with text coming out of eyes",
                             text: "Poster for Heaven up Here"
-                        },
-                        sizes: "(max-width: 600px) calc(100vw - 3rem), calc(100vw - 3rem) -9vw ) * 0.7273)",
+                        }
                     }
                 ]
             },
@@ -207,7 +189,7 @@ let pageMenu = [
                                 title: "Facebook",
                                 icon: "fab fa-facebook",
                                 href: "https://www.facebook.com/starhorsemusic/",
-                            },
+                            }
                         ]
                     },
                     {   //// MATERIAL ////
@@ -241,7 +223,7 @@ let pageMenu = [
                         text: ["Music video recorded in a quarry in Skövde."],
                         ariaLabel: "Four-piece band plays music in an abandoned quarry in fall-setting.",
                         embed: '<iframe src="https://www.youtube.com/embed/XN8UkYnsvn0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-                    },
+                    }
                 ]
             }
         ]

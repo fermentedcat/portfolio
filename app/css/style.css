@@ -311,7 +311,7 @@ html {
               html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:active:after {
                 width: calc(100% + 0.8em);
                 height: 0.9vw;
-                background-color: #bdbddd;
+                background-color: gold;
                 opacity: 0.5; }
           html body .backgroundWrapper .pageContent .introWrapper .downButton {
             color: gold;
@@ -338,11 +338,16 @@ html {
             opacity: 1;
             z-index: -1; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p {
-            margin: 0; }
+            margin: 0;
+            max-width: max-content; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div .contactInfoTitle {
             font-weight: 600; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p + .contactInfoTitle {
             margin-top: 2vh; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div .contactInfoTitle + p:hover {
+            cursor: url("../resources/images/icons8-copy-30.png"), auto; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div .contactInfoTitle + p:active {
+            background-color: white; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper {
             margin-top: 2em;
             grid-column: 2 / 3;
@@ -398,8 +403,8 @@ html {
               transition: all .2s ease-in-out;
               width: calc(100% + 0.8em);
               height: 0.5em;
-              background-color: rgba(255, 217, 0, 0.733);
-              opacity: 1;
+              background-color: #bdbddd;
+              opacity: 0.5;
               z-index: -1; }
             html body .backgroundWrapper .pageContent .section .infoTextWrapper a {
               color: #38384d;
@@ -439,7 +444,7 @@ html {
             html body .backgroundWrapper .pageContent #section1.art div video,
             html body .backgroundWrapper .pageContent #section1.art div span {
               width: 100%;
-              border-radius: 5px;
+              border-radius: 2px;
               outline: none;
               border: none; }
         html body .backgroundWrapper .pageContent #section1.music {
@@ -468,7 +473,7 @@ html {
               transition: all .2s ease-in-out;
               width: calc(100% + 0.8em);
               height: 0.5em;
-              background-color: rgba(255, 217, 0, 0.733);
+              background-color: #bdbddd;
               opacity: 0.5;
               z-index: -1; }
         html body .backgroundWrapper .pageContent .section.about {
@@ -510,7 +515,7 @@ html {
       clip: auto; }
   html body.firstDisplay {
     padding: 0; }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     html body {
       padding: 0; }
       html body .borderImage {
@@ -613,7 +618,7 @@ html {
             html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:active:after {
               width: calc(100% + 0.8em);
               height: 1em;
-              background-color: #bdbddd;
+              background-color: gold;
               opacity: 0.5; }
           html body .backgroundWrapper .pageContent .introWrapper .downButton {
             margin-top: 10%;
