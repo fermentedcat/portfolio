@@ -14,23 +14,30 @@ class Website {
             this.pages.push(new Page(page))
         }
 
-        
         this.menu_button = document.querySelector(".menu_button");
         this.menu_button.setAttribute("tabindex", "0");
         this.menu = document.querySelector(".menu");
         this.ul = document.querySelector(".menu_list");
         
+
+        //* MENU BUTTON *//
+        //// Tab from ////
+        this.menu_button.addEventListener("keydown", e => {
+            e.preventDefault();
+            this.tabFromMenuBtn(e);
+        })
+
+        //// Tab to ////
         this.menu_button.addEventListener("keyup", e => {
             e.preventDefault();
-            if (e.keyCode == 9) {
-                this.toggleMenu();
-            }
+            this.tabToMenuBtn(e);
         })
+        //// Click on ////
         this.menu_button.addEventListener("click", e => {
             this.toggleMenu();
         })
 
-        //// NAV BUTTON HOVER ////
+        //// Hover on ////
         this.menu_button.onmouseover = () => {
             if (this.menu.classList.contains("closed")) {
                 this.menu.classList.add("hover");
@@ -38,6 +45,7 @@ class Website {
                 this.menu_button.innerHTML = "= menu";
             }
         }
+        //// Leave hover ////
         this.menu_button.onmouseout = () => {
             this.menu.classList.remove("hover");
             if (this.menu.classList.contains("closed")) {
@@ -47,24 +55,60 @@ class Website {
         }
 
         //// click on landing page title to open menu
+        this.border = document.querySelector(".borderImage");
 
-        document.querySelector(".borderImage").addEventListener("click", e => {
-            let firstClass = document.querySelectorAll(".firstDisplay");
-            for (let elem of firstClass) {
-                elem.classList.remove("firstDisplay");
-            }
-            this.toggleMenu();
+        this.border.addEventListener("click", e => {
+            this.enterPage();
         })
-        document.querySelector(".borderImage").addEventListener("keyup", e => {
+        this.border.addEventListener("keyup", e => {
             e.preventDefault();
             if (e.code == "Enter") {
-                let firstClass = document.querySelectorAll(".firstDisplay");
-                for (let elem of firstClass) {
-                    elem.classList.remove("firstDisplay");
-                }
-                this.toggleMenu();
+                this.enterPage();
             }
         })
+    }
+    enterPage() {
+        //// ENTER PAGE from landing ////
+        let firstClass = document.querySelectorAll(".firstDisplay");
+        for (let elem of firstClass) {
+            elem.classList.remove("firstDisplay");
+        }
+        this.border.removeAttribute("tabindex");
+        this.border.removeAttribute("role");
+        this.toggleMenu();
+    }
+    tabFromMenuBtn(e) {
+        //// ENTER ////
+        if (e.key == "Enter") { //// OPEN OR CLOSE MENU
+            this.toggleMenu();
+            this.menu_button.classList.remove("reveal");
+            this.menu.classList.remove("hover");
+            console.log("enter 33");
+        }
+        //// TAB ////
+        if (e.keyCode == 9) {   //// IF MENU CLOSED 
+            if (this.menu.classList.contains("closed")) {
+                this.menu_button.blur();  // release focus to go into page
+                if (this.menu.classList.contains("closed")) { //// if menu "hover" -  
+                    this.menu_button.classList.remove("reveal");     //// leave "hover" state
+                    this.menu.classList.remove("hover");
+                    this.menu_button.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+                    console.log("leave hover state");
+                }
+            } else {    //// IF MENU OPEN - GO TO TOP MENU ITEM
+                this.ul.firstChild.firstChild.focus();
+            }
+        }
+    }
+    tabToMenuBtn(e) {
+        if (e.keyCode == 9) { //// TAB TO MENU BUTTON - REVEAL MENU
+            if (!this.menu.classList.contains("hover") && this.menu.classList.contains("closed")) {
+                this.menu_button.classList.add("reveal"); 
+                this.menu.classList.add("hover");
+                this.menu_button.innerHTML = "= menu";
+                console.log("REVEAL MENU");
+            }
+        }  
     }
     //// TOGGLE NAV MENU ////
     toggleMenu() {
@@ -114,6 +158,17 @@ class Website {
             a.addEventListener("click", e => {
                 menuAction(this);
             });
+            if (!this.menu_button.classList.contains("noDisplay")) {
+                if (page.class == "contact") {
+                    a.addEventListener("keydown", e => {
+                        console.log("hello");
+                        if (e.keyCode == 9) { //! kolla annat key ord
+                            e.preventDefault();
+                            this.menu_button.focus();
+                        }
+                    })
+                }
+            }
 
             //// CLICK ON MENU ITEM ////
             function menuAction(website) {

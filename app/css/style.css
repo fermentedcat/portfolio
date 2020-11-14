@@ -47,11 +47,11 @@ html {
       transition: all 0.5s ease-in-out;
       outline: none;
       border: none; }
-    html body nav button:hover {
-      color: #f7672e; }
+    html body nav button:hover,
     html body nav button:focus {
       outline: none;
-      border: none; }
+      border: none;
+      color: #f7672e; }
     html body nav button.reveal {
       left: 1rem; }
     html body nav button.noDisplay {
@@ -217,7 +217,7 @@ html {
             position: absolute;
             content: '';
             height: 0px;
-            bottom: 1.4em;
+            bottom: calc(1.3em);
             z-index: -1;
             margin: 0 auto;
             left: -0.3em;

@@ -62,11 +62,10 @@ html {
                 @include transition(0.5s);
                 @include noOutline;
             }
-            button:hover {
-                color: $menuBtn-hover-color;
-            }
+            button:hover,
             button:focus {
                 @include noOutline;
+                color: $menuBtn-hover-color;    
             }
             // (hover)
             button.reveal {
@@ -258,7 +257,7 @@ html {
                     }
                     // header shadow
                     h2:after {
-                        @include lineBehindAfter(1.4em);
+                        @include lineBehindAfter(calc(1.3em));
                         @include lineBehindHover($link-portfolio);
                         z-index: -1;
                     }
