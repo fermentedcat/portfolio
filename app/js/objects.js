@@ -12,7 +12,7 @@ let pageMenu = [
             ],
             info: [
                 {   //// INFO NACKADEMIN ////
-                    title: "About Nackademin",
+                    title: "Nackademin",
                     text: [
                         "Web Developer Full Stack Open Source is a 2-year program at Nackademin which provides a broad competence in programming, both backend and frontend. As a student, you learn to develop interactive web applications in, among others, NodeJS, PHP and JavaScript for complex environments with regard to performance and large amounts of data. You also learn to develop modern applications using HTML, CSS and various JavaScript libraries. The education provides knowledge of the specific development environments, programming languages and guidelines that the web requires today.",
                         "In addition to this, you also learn to collaborate in agile projects, from coding to implementation. You become used to working in a solution-oriented way, both independently and in development teams.",

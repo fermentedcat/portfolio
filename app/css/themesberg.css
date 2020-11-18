@@ -1,3 +1,348 @@
+.light {
+  color: black;
+  background-color: white; }
+  .light .backgroundWrapper {
+    background-color: #f8f8f8; }
+    .light .backgroundWrapper .borderImage {
+      border-top-color: white; }
+      .light .backgroundWrapper .borderImage.firstDisplay {
+        background-color: #bdbddd; }
+    .light .backgroundWrapper header img.title.default {
+      display: unset; }
+    .light .backgroundWrapper header img.title.inverted {
+      display: none; }
+    .light .backgroundWrapper header .colorSwitches #light {
+      display: none; }
+    .light .backgroundWrapper header .colorSwitches .colorSwitch:hover {
+      opacity: 0.5;
+      cursor: pointer; }
+    .light .backgroundWrapper header .colorSwitches .colorSwitch:active {
+      opacity: 1; }
+    .light .backgroundWrapper nav button {
+      color: #38384d; }
+      .light .backgroundWrapper nav button:hover, .light .backgroundWrapper nav button:focus {
+        color: #f7672e; }
+    .light .backgroundWrapper nav .menu {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-right-color: #e6e6e6; }
+      .light .backgroundWrapper nav .menu a {
+        color: #38384d; }
+        .light .backgroundWrapper nav .menu a.nav-portfolio:hover:after, .light .backgroundWrapper nav .menu a.nav-portfolio:focus:after, .light .backgroundWrapper nav .menu a.nav-portfolio:active:after {
+          width: calc(100% + 0.8em);
+          height: 0.5em;
+          background-color: #bdbddd;
+          opacity: 1;
+          z-index: -1; }
+        .light .backgroundWrapper nav .menu a.nav-about:hover:after, .light .backgroundWrapper nav .menu a.nav-about:focus:after, .light .backgroundWrapper nav .menu a.nav-about:active:after {
+          width: calc(100% + 0.8em);
+          height: 0.5em;
+          background-color: #f8936b;
+          opacity: 1;
+          z-index: -1; }
+        .light .backgroundWrapper nav .menu a.nav-contact:hover:after, .light .backgroundWrapper nav .menu a.nav-contact:focus:after, .light .backgroundWrapper nav .menu a.nav-contact:active:after {
+          width: calc(100% + 0.8em);
+          height: 0.5em;
+          background-color: rgba(255, 217, 0, 0.733);
+          opacity: 1;
+          z-index: -1; }
+      .light .backgroundWrapper nav .menu ul.subMenu li:hover:after, .light .backgroundWrapper nav .menu ul.subMenu li:focus:after, .light .backgroundWrapper nav .menu ul.subMenu li:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.9vw;
+        background-color: #bdbddd;
+        opacity: 0.5;
+        z-index: -1; }
+    .light .backgroundWrapper nav .navBorder {
+      background-color: white; }
+    .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro h2:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .h2:after {
+      position: absolute;
+      content: '';
+      height: 0px;
+      bottom: calc(2em - 1.8vw);
+      z-index: -1;
+      margin: 0 auto;
+      left: -0.3em;
+      right: 0;
+      width: 0%;
+      transition: all .2s ease-in-out;
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #bdbddd;
+      opacity: 1;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a {
+      color: #38384d; }
+      .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a:hover:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a:focus:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        background-color: gold;
+        opacity: 0.5;
+        z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li:focus:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li:hover:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li:active:after {
+      width: calc(100% + 0.8em);
+      height: 0.9vw;
+      background-color: gold;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li a {
+      color: #38384d; }
+    .light .backgroundWrapper .pageContent .introWrapper.aboutIntro h2:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .h2:after {
+      position: absolute;
+      content: '';
+      height: 0px;
+      bottom: calc(2em - 1.8vw);
+      z-index: -1;
+      margin: 0 auto;
+      left: -0.3em;
+      right: 0;
+      width: 0%;
+      transition: all .2s ease-in-out;
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #f8936b;
+      opacity: 1;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a {
+      color: #38384d; }
+      .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a:hover:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a:focus:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        background-color: gold;
+        opacity: 0.5;
+        z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li:focus:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li:hover:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li:active:after {
+      width: calc(100% + 0.8em);
+      height: 0.9vw;
+      background-color: gold;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li a {
+      color: #38384d; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro h2:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .h2:after {
+      position: absolute;
+      content: '';
+      height: 0px;
+      bottom: calc(2em - 1.8vw);
+      z-index: -1;
+      margin: 0 auto;
+      left: -0.3em;
+      right: 0;
+      width: 0%;
+      transition: all .2s ease-in-out;
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: rgba(255, 217, 0, 0.733);
+      opacity: 1;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a {
+      color: #38384d; }
+      .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a:hover:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a:focus:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        background-color: gold;
+        opacity: 0.5;
+        z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText .contactInfoTitle + p:active {
+      background-color: white; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li:focus:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li:hover:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li:active:after {
+      width: calc(100% + 0.8em);
+      height: 0.9vw;
+      background-color: gold;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li a {
+      color: #38384d; }
+    .light .backgroundWrapper .pageContent .downButton {
+      color: gold; }
+      .light .backgroundWrapper .pageContent .downButton:hover, .light .backgroundWrapper .pageContent .downButton:focus {
+        color: #f58457; }
+      .light .backgroundWrapper .pageContent .downButton:active {
+        color: #f7672e; }
+    .light .backgroundWrapper .pageContent .section .infoTextWrapper h3:after, .light .backgroundWrapper .pageContent .section .infoTextWrapper .h3:after {
+      position: absolute;
+      content: '';
+      height: 0px;
+      bottom: 0.18em;
+      z-index: -1;
+      margin: 0 auto;
+      left: -0.3em;
+      right: 0;
+      width: 0%;
+      transition: all .2s ease-in-out;
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #f8936b;
+      opacity: 1;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .section .infoTextWrapper a {
+      color: #38384d; }
+      .light .backgroundWrapper .pageContent .section .infoTextWrapper a:hover:after, .light .backgroundWrapper .pageContent .section .infoTextWrapper a:focus:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        background-color: gold;
+        opacity: 0.5;
+        z-index: -1; }
+      .light .backgroundWrapper .pageContent .section .infoTextWrapper a:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        opacity: 1;
+        z-index: -1; }
+    .light .backgroundWrapper .pageContent .section .carousel .carousel-indicators li {
+      background-color: #e6e6e6; }
+      .light .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
+        background-color: gold; }
+    .light .backgroundWrapper .pageContent.portfolio .section div h4:after, .light .backgroundWrapper .pageContent.portfolio .section div .h4:after,
+    .light .backgroundWrapper .pageContent #section1.music div h4:after,
+    .light .backgroundWrapper .pageContent #section1.music div .h4:after {
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #bdbddd;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent.portfolio .section div h3:after, .light .backgroundWrapper .pageContent.portfolio .section div .h3:after,
+    .light .backgroundWrapper .pageContent #section1.music div h3:after,
+    .light .backgroundWrapper .pageContent #section1.music div .h3:after {
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #bdbddd;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent footer i {
+      color: gold; }
+      .light .backgroundWrapper .pageContent footer i:hover, .light .backgroundWrapper .pageContent footer i:focus {
+        color: #f58457; }
+      .light .backgroundWrapper .pageContent footer i:active {
+        color: #f7672e; }
+
+.dark {
+  color: #e4e4e4;
+  background-color: #323838; }
+  .dark .backgroundWrapper {
+    background-color: #3a4041; }
+    .dark .backgroundWrapper .borderImage {
+      border-top-color: #323838; }
+      .dark .backgroundWrapper .borderImage.firstDisplay {
+        background-color: #f58457; }
+    .dark .backgroundWrapper header img.title.inverted {
+      display: unset; }
+    .dark .backgroundWrapper header img.title.default {
+      display: none; }
+    .dark .backgroundWrapper header .colorSwitches #dark {
+      display: none; }
+    .dark .backgroundWrapper header .colorSwitches .colorSwitch:after {
+      content: "";
+      width: 2.12vw;
+      height: 2.12vw;
+      left: .18vw;
+      bottom: .18vw;
+      position: absolute;
+      background-color: #e4e4e4;
+      border-radius: 100%;
+      z-index: -1; }
+    .dark .backgroundWrapper header .colorSwitches .colorSwitch:hover {
+      opacity: 0.5;
+      cursor: pointer; }
+    .dark .backgroundWrapper header .colorSwitches .colorSwitch:active {
+      opacity: 1; }
+    .dark .backgroundWrapper nav button {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper nav button:hover, .dark .backgroundWrapper nav button:focus {
+        color: #f58457; }
+      .dark .backgroundWrapper nav button:active {
+        color: #f7672e; }
+    .dark .backgroundWrapper nav .menu {
+      background-color: rgba(50, 56, 56, 0.7);
+      border-right-color: #262b2c; }
+      .dark .backgroundWrapper nav .menu a {
+        color: #f8f8f8; }
+        .dark .backgroundWrapper nav .menu a.nav-about:hover, .dark .backgroundWrapper nav .menu a.nav-about:focus {
+          color: #78b5ee; }
+        .dark .backgroundWrapper nav .menu a.nav-about:active {
+          color: #4b9ce8; }
+        .dark .backgroundWrapper nav .menu a.nav-portfolio:hover, .dark .backgroundWrapper nav .menu a.nav-portfolio:focus {
+          color: #f58457; }
+        .dark .backgroundWrapper nav .menu a.nav-portfolio:active {
+          color: #f26127; }
+        .dark .backgroundWrapper nav .menu a.nav-contact:hover, .dark .backgroundWrapper nav .menu a.nav-contact:focus {
+          color: gold; }
+        .dark .backgroundWrapper nav .menu a.nav-contact:active {
+          color: #ccac00; }
+      .dark .backgroundWrapper nav .menu ul.subMenu li:hover, .dark .backgroundWrapper nav .menu ul.subMenu li:focus {
+        /* 
+                                    i {
+                                        color: map-get(map-get($colors, "categories"), "portfolio");
+                                    } */ }
+        .dark .backgroundWrapper nav .menu ul.subMenu li:hover a, .dark .backgroundWrapper nav .menu ul.subMenu li:focus a {
+          color: #f58457; }
+      .dark .backgroundWrapper nav .menu ul.subMenu li:active {
+        color: #f26127; }
+    .dark .backgroundWrapper nav .navBorder {
+      background-color: #323838; }
+    .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro h2, .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .h2 {
+      color: #78b5ee;
+      text-decoration: underline; }
+    .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a:hover {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li a:hover, .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li a:focus {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro h2, .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .h2 {
+      color: #f58457;
+      text-decoration: underline; }
+    .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a:hover {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li a:hover, .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li a:focus {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.contactIntro h2, .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .h2 {
+      color: gold;
+      text-decoration: underline; }
+    .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a:hover {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .introText .contactInfoTitle + p:active {
+      background-color: #f8f8f8; }
+    .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li a:hover, .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li a:focus {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .downButton {
+      color: gold; }
+      .dark .backgroundWrapper .pageContent .downButton:hover, .dark .backgroundWrapper .pageContent .downButton:focus {
+        color: #f58457; }
+      .dark .backgroundWrapper .pageContent .downButton:active {
+        color: #f7672e; }
+    .dark .backgroundWrapper .pageContent .section .infoTextWrapper h3, .dark .backgroundWrapper .pageContent .section .infoTextWrapper .h3 {
+      color: #78b5ee; }
+    .dark .backgroundWrapper .pageContent .section .infoTextWrapper a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .section .infoTextWrapper a:hover, .dark .backgroundWrapper .pageContent .section .infoTextWrapper a:focus {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .section .carousel .carousel-indicators li {
+      background-color: #262b2c; }
+      .dark .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
+        background-color: gold; }
+    .dark .backgroundWrapper .pageContent.portfolio .section div h4, .dark .backgroundWrapper .pageContent.portfolio .section div .h4,
+    .dark .backgroundWrapper .pageContent #section1.music div h4,
+    .dark .backgroundWrapper .pageContent #section1.music div .h4 {
+      color: #f58457; }
+    .dark .backgroundWrapper .pageContent.portfolio .section div h3, .dark .backgroundWrapper .pageContent.portfolio .section div .h3,
+    .dark .backgroundWrapper .pageContent #section1.music div h3,
+    .dark .backgroundWrapper .pageContent #section1.music div .h3 {
+      color: #f58457; }
+    .dark .backgroundWrapper .pageContent footer i {
+      color: gold; }
+      .dark .backgroundWrapper .pageContent footer i:hover, .dark .backgroundWrapper .pageContent footer i:focus {
+        color: #f58457; }
+      .dark .backgroundWrapper .pageContent footer i:active {
+        color: #f7672e; }
+
 /*!
  * Bootstrap v5.0.0-alpha2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10,7 +355,7 @@
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
   --bs-red: #f7672e;
-  --bs-orange: #fd7e14;
+  --bs-orange: #ffaf37;
   --bs-yellow: gold;
   --bs-green: #198754;
   --bs-teal: #20c997;

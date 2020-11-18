@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css\style.css">
     <title>Maja Thunberg</title>
 </head>
-<body class="firstDisplay">
+<body class="body firstDisplay">
     <div class="backgroundWrapper firstDisplay">
         <div class="borderImage firstDisplay" role="button" tabindex="0" aria-label="Load page">
         </div>
@@ -24,8 +24,21 @@
                         resources/images/maja_thunberg-large.png 1200w"
                 sizes="(min-width: 480px)60w, 40w"
                 alt="Maja Thunberg" 
-                class="firstDisplay"
+                class="firstDisplay title default"
             />
+            <img 
+                src="resources/images/maja_thunberg-inv.png"                    
+                alt="Maja Thunberg" 
+                class="firstDisplay title inverted"
+            />
+            <div class="colorSwitches">
+                <div aria-label="Switch to light mode" id="light" class="colorSwitch" disabled>
+                    <img class="colorSwitch" src="resources/images/a-light.png" alt="Letter A on light background">
+                </div>
+                <div aria-label="Switch to dark mode" id="dark" class="colorSwitch">
+                    <img class="colorSwitch" src="resources/images/a-dark.png" alt="Letter A on dark background">
+                </div>
+            </div>
         </header>
         <nav>
             <button class="menu_button noDisplay" aria-label="Open menu">

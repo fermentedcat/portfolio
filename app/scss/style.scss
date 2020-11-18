@@ -1,215 +1,70 @@
 @import 'variables';
+
+
 html {
     scroll-behavior: smooth;
     //// BODY ////
 
-    
+    // on page load
+    body.firstDisplay {
+        padding: 0;
+    }
     body {
-        background-color: $background-color;
+        // background-color: $background-color;
         padding: 0 1.5rem 0 1.5rem;
         height: 100vh;
         width: 100vw;
-        ////* BORDER *////
-        .borderImage {
-            background-image: url("../resources/images/grass-slim3.jpeg");
-            background-position-y: center;
-            background-size: cover;
-            width: calc(100% - 3rem);
-            height: $borderHeight;
-            position: fixed;
-            top: 0px;
-            border-top: $topHeight solid $background-color;
-            z-index: 4;
-            box-sizing: content-box;
-            outline: none;
-
-        }
         
-        //// border: entering page ////
-        .borderImage.firstDisplay {
-            position: absolute;
-            top: 41.7%;
-            z-index: 8;
-            width: 70vw;
-            left: 15vw;
-            height: 6vw;
-            border: none;
-            background-color: $link-portfolio;
-            background-image: unset;
-            //tabba
-        }
-        //// border: entering page ////
-        .borderImage.firstDisplay:hover,
-        .borderImage.firstDisplay:focus,
-        .borderImage.firstDisplay:active {
-            background-image: url("../resources/images/grass-slim3.jpeg");
-            background-position-y: center;
-            background-size: cover;
-        }
-
-        ////* NAV MENU *////
-        nav {
-            button {
-                position: fixed;
-                left: 1.35em;
-                top: 45%;
-                text-decoration: none;
-                color: $link-color;
-                font-size: 1.5em;
-                font-weight: 900;
-                background-color: transparent;
-                z-index: 6;
-                @include transition(0.5s);
-                @include noOutline;
-            }
-            button:hover,
-            button:focus {
-                @include noOutline;
-                color: $menuBtn-hover-color;    
-            }
-            // (hover)
-            button.reveal {
-                left: 1rem;
-            }
-            // on page load
-            button.noDisplay {
-                display: none;
-            }
-    
-            //// MENU DIV ////
-            .menu {
-                position: fixed;
-                left: 0;
-                width: calc(100vw - 1.5rem);
-                height: 100%;
-                z-index: 3;
-                background-color: $background-color;
-                border-right: 8rem solid $menu-color;
-                
-                display: grid;
-                grid-template-columns: 1fr 12vw 1fr;
-                grid-template-rows: 20vh 1fr 10vh;
-                @include transition;
-                
-                //// MENU ITEMS ////
-                ul {
-                    grid-column: 2;
-                    grid-row: 2;
-                    list-style-type: none;
-                    padding: 0;
-                    a {
-                        text-decoration: none;
-                        color: $link-color;
-                        font-size: 3vw;
-                        font-weight: 600;
-                        position: relative; 
-                        z-index: 1;
-                        @include noOutline;
-
-                        cursor: pointer;
-                    }
-                    
-                    
-                    //// Color behind links on hover / active 
-                    a:after {
-                        @include lineBehindAfter;
-                    }
-                    a.nav-home:hover:after,
-                    a.nav-home:focus:after,
-                    a.nav-home:active:after {
-                        @include lineBehindHover($link-home);
-                    }
-                    a.nav-portfolio:hover:after,
-                    a.nav-portfolio:focus:after,
-                    a.nav-portfolio:active:after {
-                        @include lineBehindHover($link-portfolio);
-                    }
-                    a.nav-about:hover:after,
-                    a.nav-about:focus:after,
-                    a.nav-about:active:after {
-                        @include lineBehindHover($link-about);
-                    }
-                    a.nav-contact:hover:after,
-                    a.nav-contact:focus:after,
-                    a.nav-contact:hover:after {
-                        @include lineBehindHover($link-contact);
-                    }
-                    //// sub menu for portfolio ///
-                    ul.subMenu {
-                        li {
-                            display: grid;
-                            grid-template-columns: 3vw 4vw;
-                            align-items: center;
-                            position: relative; 
-                            z-index: 1;
-                            width: max-content;
-                            cursor: pointer;
-
-                            @include noOutline;
-
-                            i {
-                                justify-self: center;
-                                grid-column: 1 / 2;
-                            }
-                            a {
-                                grid-column: 2 / 3;
-                                font-size: 1.5vw;
-                            }
-                        }
-                        li:after {
-                            @include lineBehindAfter(0.6vw, 0em);
-                        }
-                        li:hover:after,
-                        li:focus:after,
-                        li:active:after {
-                            @include lineBehindHover($link-portfolio, 0.5, 0.9vw);
-                        }
-                    }
-                }
-            }
-            // closed menu 
-            .closed {
-                left: calc((-100vw - 1.5rem) + 6.5rem);
-            }
-            // on button hover
-            .hover {
-                left: calc((-100vw - 1.5rem) + 8rem);
-            }
-            // on page load
-            .menu.noDisplay {
-                border: 0px;
-                left: -100vw;
-            }
-            //// left white border to cover nav
-            .navBorder {
-                z-index: 5;
-                height: 100%;
-                width: 1.5rem;
-                position: fixed;
-                background-color: $background-color;
-                left: 0;
-            }
-            // on page load
-            .navBorder.firstDisplay {
-                width: 0px;
-            }
-            
-            
-        }
         //// OUTER WRAPPER ////
+        .backgroundWrapper.firstDisplay {
+            margin: 0;  // on page load
+        }
         .backgroundWrapper {
             margin-top: calc(6.5vw + 1.2em);
             box-sizing: border-box;
-            background-color: $mainBackground;
             width: 100%;
             min-height: 100%;
             float: right;
+        
 
-            //// HEADER ////
-            header {  
-                //// lägg till knappar uppe till höger  
-                //// language / accessibility           
-                
+                ////* BORDER *////
+            .borderImage {
+                background-image: url("../resources/images/grass-slim3.jpeg");
+                background-position-y: center;
+                background-size: cover;
+                width: calc(100% - 3rem);
+                height: $borderHeight;
+                position: fixed;
+                top: 0px;
+                border-top-width: $topHeight;
+                border-top-style: solid;
+                z-index: 4;
+                box-sizing: content-box;
+                outline: none;
+
+            }
+            //// border: entering page ////
+            .borderImage.firstDisplay {
+                position: absolute;
+                top: 41.7%;
+                z-index: 8;
+                width: 70vw;
+                left: 15vw;
+                height: 6vw;
+                border: none;
+                background-image: unset;
+                &:hover,
+                &:focus,
+                &:active {
+                    background-image: url("../resources/images/grass-slim3.jpeg");
+                    background-position-y: center;
+                    background-size: cover;
+                }
+            }
+            
+
+            ////* HEADER *////
+            header {
                 img {
                     width: 28%;
                     margin: 0 auto;
@@ -230,7 +85,148 @@ html {
                     border: none;
                     pointer-events: none;
                 }
+                div.colorSwitches {
+                    position: fixed;
+                    top: 3.6vw;
+                    right: 1.5rem;
+                    width: 2.5vw;
+                    height: 2.5vw;
+                    z-index: 8;
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    div.colorSwitch {
+                        width: 100%;
+                        position: relative;
+                        
+                        img.colorSwitch {
+                            position: unset;
+                            width: unset;
+                            max-width: 100%;
+                            max-height: 100%;
+                            display: block;
+                            pointer-events: none;
+                        }
+                    }
+                }
             }
+
+            ////* NAV MENU *////
+            nav {
+                button {
+                    position: fixed;
+                    left: 1.35em;
+                    top: 45%;
+                    text-decoration: none;
+                    font-size: 1.5em;
+                    font-weight: 900;
+                    background-color: transparent;
+                    z-index: 6;
+                    @include transition(0.5s);
+                    @include noOutline;
+                    &:hover,
+                    &:focus {
+                        @include noOutline;
+                    }
+                    // (hover)
+                    &.reveal {
+                        left: 1rem;
+                    }
+                    // on page load
+                    &.noDisplay {
+                        display: none;
+                    }
+                }
+                
+                //// MENU DIV ////
+                .menu {
+                    position: fixed;
+                    left: 0;
+                    width: calc(100vw - 1.5rem);
+                    height: 100%;
+                    z-index: 3;
+                    border-right-style: solid;
+                    border-right-width: 8rem;                    
+                    display: grid;
+                    grid-template-columns: 1fr 12vw 1fr;
+                    grid-template-rows: 20vh 1fr 10vh;
+                    @include transition;
+                    
+                    //// MENU ITEMS ////
+                    ul {
+                        grid-column: 2;
+                        grid-row: 2;
+                        list-style-type: none;
+                        padding: 0;
+                        a {
+                            text-decoration: none;
+                            font-size: 3vw;
+                            font-weight: 600;
+                            position: relative; 
+                            z-index: 1;
+                            @include noOutline;
+                            cursor: pointer;
+                        }
+                        
+                        //// Color behind links on hover / active 
+                        a:after {
+                            @include lineBehindAfter;
+                        }
+                        //// sub menu for portfolio ///
+                        ul.subMenu {
+                            li {
+                                display: grid;
+                                grid-template-columns: 3vw 4vw;
+                                align-items: center;
+                                position: relative; 
+                                z-index: 1;
+                                width: max-content;
+                                cursor: pointer;
+
+                                @include noOutline;
+
+                                i {
+                                    justify-self: center;
+                                    grid-column: 1 / 2;
+                                }
+                                a {
+                                    grid-column: 2 / 3;
+                                    font-size: 1.5vw;
+                                }
+                            }
+                            li:after {
+                                @include lineBehindAfter(0.6vw, 0em);
+                            }
+                        }
+                    }
+                }
+                // closed menu 
+                .closed {
+                    left: calc((-100vw - 1.5rem) + 6.5rem);
+                }
+                // on button hover
+                .hover {
+                    left: calc((-100vw - 1.5rem) + 8rem);
+                }
+                // on page load
+                .menu.noDisplay {
+                    border: 0px;
+                    left: -100vw;
+                }
+                //// left white border to cover nav
+                .navBorder {
+                    z-index: 5;
+                    height: 100%;
+                    width: 1.5rem;
+                    position: fixed;
+                    left: 0;
+                }
+                // on page load
+                .navBorder.firstDisplay {
+                    width: 0px;
+                }
+            }
+
 
             ////*     MAIN PAGE CONTENT    *////
             .pageContent {
@@ -255,20 +251,12 @@ html {
                         position: relative;
                         z-index: 1;
                     }
-                    // header shadow
-                    h2:after {
-                        @include lineBehindAfter(calc(1.3em));
-                        @include lineBehindHover($link-portfolio);
-                        z-index: -1;
-                    }
 
                     //// INTRO (general)////
                     .introText {
                         grid-column: 2 / span 1;
                         a {
-                            color: $link-color;
                             text-decoration: none;
-                            color: $link-color;
                             font-weight: 600;
                             position: relative; 
                             z-index: 1;
@@ -276,11 +264,6 @@ html {
                         }
                         a:after {
                             @include lineBehindAfter(0.4vw);
-                        }
-                        a:hover:after,
-                        a:focus:after,
-                        a:active:after {
-                            @include lineBehindHover($yellow, 0.5);
                         }
                     }
                     
@@ -314,7 +297,7 @@ html {
                             padding: 0;
                             li {
                                 @include list-li;
-    
+
                                 i {
                                     @include list-li-i;
                                 }
@@ -325,29 +308,11 @@ html {
                             li:after {
                                 @include lineBehindAfter(0.53w, 0.8em);
                             }
-                            li:hover:after,
-                            li:focus:after,
-                            li:active:after {
-                                @include lineBehindHover($yellow, 0.5, 0.9vw);
-                            }
                         }                        
                     }
                     
-                    //// scroll down button
-                    .downButton {
-                        color: $button-color;
-                        width: max-content;
-                        height: max-content;
-                        @include transition(0.2s);
-                        @include noOutline;
-                        align-self: end;
-                        justify-self: center;
-                        grid-column: 2 / 4;
-                    }
-                    .downButton:hover,
-                    .downButton:focus {
-                        color: $hover-color;
-                    }
+                
+                    
                 }
                 //// CONTACT INTRO ////
                 .introWrapper.contactIntro {
@@ -358,15 +323,12 @@ html {
                         position: relative;
                         z-index: 1;
                     }
-                    h2:after {
-                        @include lineBehindHover($link-contact, 1, 0.5);
-                        z-index: -1;
-                    }
                     .introText {
                         div {
                             p {
                                 margin: 0;
                                 max-width: max-content;
+                                transition: all .6s ease-in-out;
                             }
                             .contactInfoTitle {
                                 font-weight: 600;
@@ -377,9 +339,8 @@ html {
                             .contactInfoTitle + p:hover {
                                 cursor: url("../resources/images/icons8-copy-30.png"), auto;
                             }
-                            .contactInfoTitle + p:active {
-                                background-color: rgb(255, 255, 255);
-                                
+                            p:active {
+                                transition-duration: .15s;
                             }
                         }
                     }
@@ -395,6 +356,7 @@ html {
                         }
                     }
                 }
+
                 //// CONTACT INTRO ////
                 .introWrapper.aboutIntro {
                     h2 {
@@ -402,11 +364,20 @@ html {
                         position: relative;
                         z-index: 1;
                     }
-                    h2:after {
-                        @include lineBehindHover($link-about, 1, 0.5);
-                        z-index: -1;
-                    }
                 }
+
+                //// scroll down button
+                .downButton {
+                    width: max-content;
+                    height: max-content;
+                    @include transition(0.2s);
+                    @include noOutline;
+                    align-self: end;
+                    justify-self: center;
+                    grid-column: 2 / 4;
+                }
+
+
                 ////* SECTIONS *////
                 .section {
                     grid-column: 2 / span 1;
@@ -414,8 +385,30 @@ html {
                     display: grid;
                     grid-column-gap: 2em;
                     grid-template-columns: 4fr 1.5fr;
+
+                    //// SECTION TEXT ////
+                    .infoTextWrapper {
+                        grid-column: 2 / span 1;
+                        h3 {
+                            width: max-content;
+                            position: relative;
+                            z-index: 1;
+                            margin-bottom: .5em;
+                            
+                        }
+                        a {
+                            text-decoration: none;
+                            font-weight: 600;
+                            position: relative; 
+                            z-index: 1;
+                            @include noOutline;  
+                            &:after {
+                                @include lineBehindAfter(0.4vw);
+                            }
+                        }
+                    }
                     
-                    //// IMAGES ////
+                    //// IMAGES (sub-category code) ////
                     .carousel {
                         grid-column: 1 / span 1;
                         grid-row: 1 / span 1;
@@ -424,52 +417,19 @@ html {
                         }
                         .carousel-indicators {
                             li {
-                                background-color: rgb(211, 211, 211);
                                 opacity: 0.5;
+                                &.active {
+                                    opacity: 0.5;
+                                }
+                                &:hover {
+                                    opacity: 1;
+                                }
                             }
-                            li.active {
-                                background-color: $primary;
-                                opacity: 0.5;
-                            }
-                            li:hover {
-                                opacity: 1;
-                            }
-                        }
-                    }
-                    //// SECTION TEXT ////
-                    .infoTextWrapper {
-                        grid-column: 2 / span 1;
-                        h3 {
-                            width: max-content;
-                            position: relative;
-                            z-index: 1;
-                        }
-                        h3:after {
-                            @include lineBehindAfter(0.18em);
-                            @include lineBehindHover($link-portfolio, 0.5);
-                            z-index: -1;
-                        }
-                        a {
-                            color: $link-color;
-                            text-decoration: none;
-                            color: $link-color;
-                            font-weight: 600;
-                            position: relative; 
-                            z-index: 1;
-                            @include noOutline;  
-                        }
-                        a:after {
-                            @include lineBehindAfter(0.4vw);
-                        }
-                        a:hover:after,
-                        a:focus:after,
-                        a:active:after {
-                            @include lineBehindHover($yellow, 0.5);
                         }
                     }
                 }
                     
-                ////  SUB-CATEGORY:  ART // MUSIC  ////
+                ////  SUB-CATEGORY:  ART  ////
                 #section1.art {
                     display: unset;
                     columns: 2;
@@ -487,6 +447,7 @@ html {
                         }
                     }
                 }
+                ////  SUB-CATEGORY:  MUSIC  ////
                 #section1.music {
                     display: flex;
                     flex-wrap: wrap;
@@ -508,25 +469,17 @@ html {
                         //title
                         h4:after {
                             @include lineBehindAfter(0.18em);
-                            @include lineBehindHover($link-portfolio, 0.5);
-                            z-index: -1;
                         }
                     }
-                    
                 }
 
-                
-                
-
-                
-
-                //// Section  Nackademin
+                //// ABOUT Section: Nackademin
                 .section.about {
                     margin-left: 15vw;
                     margin-right: 15vw;
                     display: flex;
                 }
-                
+                    
 
 
                 //// FOOTER ////
@@ -536,22 +489,16 @@ html {
                     margin: 15em 0 1.5em 0;
                     i {
                         @include transition(0.2s);
-                        color: $button-color;
                         @include noOutline;
                     }
                     i:hover,
                     i:focus,
                     i:active {
-                        color: $hover-color;
                         cursor: pointer;
                     }
                 }
             }
-        }
-        // on page load
-        .backgroundWrapper.firstDisplay {
-            margin: 0;
-        }
+        }    
     
         
         //// screen reader only
@@ -576,10 +523,6 @@ html {
             clip: auto;
         }
     }
-    // on page load
-    body.firstDisplay {
-        padding: 0;
-    }
 
 
     //! MEDIA QUERIES
@@ -590,68 +533,6 @@ html {
     and (orientation: portrait) {
         body {
             padding: 0;
-            .borderImage {
-                width: 100%;
-                height: 10vw;
-                border-top: 12vw solid $background-color;
-            }
-            nav {
-                button.menu_button {
-                    position: fixed;
-                    top: 18vw;
-                    left: unset;
-                    left: 1.5vw;
-                }
-                div.menu {
-                    width: unset;
-                    width: 100vw;
-                    border: none;
-                    display: flex;
-                    justify-content: center;
-                    padding-top: 20vh;
-                    ul {       
-                        display: flex; 
-                        flex-direction: column; 
-                        li {
-                            a {
-                                text-decoration: none;
-                                color: $link-color;
-                                font-size: 10vw;
-                                font-weight: 600;
-                                position: relative; 
-                                z-index: 1;
-                                @include noOutline;
-        
-                                cursor: pointer;
-                            }
-                        }
-                        ul.subMenu {
-                            li {
-                                grid-template-columns: 10vw 15vw;
-
-                                a.subCat {
-                                    font-size: unset;
-                                    font-size: 7vw;
-                                }
-                            }
-                            li:after {
-                                @include lineBehindAfter(1.3vw);
-                            }
-                            li:focus:after,
-                            li:active:after {
-                                @include lineBehindHover($link-portfolio, 0.5, 1em);
-                            }
-                        }
-                    }
-                }
-                // closed menu 
-                .menu.closed {
-                    left: -100%;
-                }
-                .navBorder {
-                    display: none;
-                }
-            }
             .backgroundWrapper {
                 header {
                     img {
@@ -663,9 +544,74 @@ html {
                         top: 40.4%;
                     }
                 }
+                .borderImage {
+                    width: 100%;
+                    height: 10vw;
+                    border-top-width: 12vw;
+                    border-top-style: solid;
+                }
+                nav {
+                    button.menu_button {
+                        position: fixed;
+                        top: 18vw;
+                        left: unset;
+                        left: 1.5vw;
+                    }
+                    div.menu {
+                        width: unset;
+                        width: 100vw;
+                        border: none;
+                        display: flex;
+                        justify-content: center;
+                        padding-top: 20vh;
+                        ul {       
+                            display: flex; 
+                            flex-direction: column; 
+                            li {
+                                a {
+                                    text-decoration: none;
+                                    font-size: 10vw;
+                                    font-weight: 600;
+                                    position: relative; 
+                                    z-index: 1;
+                                    @include noOutline;
+            
+                                    cursor: pointer;
+                                }
+                            }
+                            ul.subMenu {
+                                li {
+                                    grid-template-columns: 10vw 15vw;
+    
+                                    a.subCat {
+                                        font-size: unset;
+                                        font-size: 7vw;
+                                    }
+                                }
+                                li:after {
+                                    @include lineBehindAfter(1.3vw);
+                                }
+                                li:focus:after,
+                                li:active:after {
+                                    @include lineBehindHover($link-portfolio, 0.5, 1em);
+                                }
+                            }
+                        }
+                    }
+                    // closed menu 
+                    .menu.closed {
+                        left: -100%;
+                    }
+                    .navBorder {
+                        display: none;
+                    }
+                }
                 .pageContent {
                     margin: 8vw;
                     margin-top: 30vw;
+
+                    &.portfolio .introWrapper.portfolioIntro,
+                    &.contact .introWrapper.contactIntro,
                     .introWrapper {
                         display: flex;
                         flex-direction: column;
@@ -684,8 +630,15 @@ html {
                             margin-top: 10%;
                             align-self: center;
                             ul {
-                                li:after {
-                                    @include lineBehindHover($yellow, 0);
+                                li {
+
+                                    &:after,
+                                    &:hover:after,
+                                    &:active:after,
+                                    &:focus:after,
+                                    &:visited:after {  
+                                        @include lineBehindHover(white, 0, 0);
+                                    }
                                 }
                             }
                         }
@@ -704,6 +657,10 @@ html {
                                 padding-left: 1.4em;
                             }
                         }
+                    }
+                    .section.about {
+                        margin: 6vw;
+                        padding-top: 12vh;
                     }
                     #section1.art {
                         columns: 1;

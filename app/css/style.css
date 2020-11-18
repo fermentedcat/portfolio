@@ -1,184 +1,387 @@
-html {
-  scroll-behavior: smooth;
-  /* Portrait Mobile*/ }
-  html body {
-    background-color: white;
-    padding: 0 1.5rem 0 1.5rem;
-    height: 100vh;
-    width: 100vw; }
-    html body .borderImage {
-      background-image: url("../resources/images/grass-slim3.jpeg");
-      background-position-y: center;
-      background-size: cover;
-      width: calc(100% - 3rem);
-      height: 1.2em;
-      position: fixed;
-      top: 0px;
-      border-top: 6.5vw solid white;
-      z-index: 4;
-      box-sizing: content-box;
-      outline: none; }
-    html body .borderImage.firstDisplay {
-      position: absolute;
-      top: 41.7%;
-      z-index: 8;
-      width: 70vw;
-      left: 15vw;
-      height: 6vw;
-      border: none;
-      background-color: #bdbddd;
-      background-image: unset; }
-    html body .borderImage.firstDisplay:hover,
-    html body .borderImage.firstDisplay:focus,
-    html body .borderImage.firstDisplay:active {
-      background-image: url("../resources/images/grass-slim3.jpeg");
-      background-position-y: center;
-      background-size: cover; }
-    html body nav button {
-      position: fixed;
-      left: 1.35em;
-      top: 45%;
-      text-decoration: none;
-      color: #38384d;
-      font-size: 1.5em;
-      font-weight: 900;
-      background-color: transparent;
-      z-index: 6;
-      transition: all 0.5s ease-in-out;
-      outline: none;
-      border: none; }
-    html body nav button:hover,
-    html body nav button:focus {
-      outline: none;
-      border: none;
-      color: #f7672e; }
-    html body nav button.reveal {
-      left: 1rem; }
-    html body nav button.noDisplay {
+.light {
+  color: black;
+  background-color: white; }
+  .light .backgroundWrapper {
+    background-color: #f8f8f8; }
+    .light .backgroundWrapper .borderImage {
+      border-top-color: white; }
+      .light .backgroundWrapper .borderImage.firstDisplay {
+        background-color: #bdbddd; }
+    .light .backgroundWrapper header img.title.default {
+      display: unset; }
+    .light .backgroundWrapper header img.title.inverted {
       display: none; }
-    html body nav .menu {
-      position: fixed;
-      left: 0;
-      width: calc(100vw - 1.5rem);
-      height: 100%;
-      z-index: 3;
-      background-color: white;
-      border-right: 8rem solid #e6e6e6;
-      display: grid;
-      grid-template-columns: 1fr 12vw 1fr;
-      grid-template-rows: 20vh 1fr 10vh;
-      transition: all 0.5s ease-in-out; }
-      html body nav .menu ul {
-        grid-column: 2;
-        grid-row: 2;
-        list-style-type: none;
-        padding: 0; }
-        html body nav .menu ul a {
-          text-decoration: none;
-          color: #38384d;
-          font-size: 3vw;
-          font-weight: 600;
-          position: relative;
-          z-index: 1;
-          outline: none;
-          border: none;
-          cursor: pointer; }
-        html body nav .menu ul a:after {
-          position: absolute;
-          content: '';
-          height: 0px;
-          bottom: 0.7vw;
-          z-index: -1;
-          margin: 0 auto;
-          left: -0.3em;
-          right: 0;
-          width: 0%;
-          transition: all .2s ease-in-out; }
-        html body nav .menu ul a.nav-home:hover:after,
-        html body nav .menu ul a.nav-home:focus:after,
-        html body nav .menu ul a.nav-home:active:after {
-          width: calc(100% + 0.8em);
-          height: 0.5em;
-          background-color: #f8936b;
-          opacity: 1; }
-        html body nav .menu ul a.nav-portfolio:hover:after,
-        html body nav .menu ul a.nav-portfolio:focus:after,
-        html body nav .menu ul a.nav-portfolio:active:after {
+    .light .backgroundWrapper header .colorSwitches #light {
+      display: none; }
+    .light .backgroundWrapper header .colorSwitches .colorSwitch:hover {
+      opacity: 0.5;
+      cursor: pointer; }
+    .light .backgroundWrapper header .colorSwitches .colorSwitch:active {
+      opacity: 1; }
+    .light .backgroundWrapper nav button {
+      color: #38384d; }
+      .light .backgroundWrapper nav button:hover, .light .backgroundWrapper nav button:focus {
+        color: #f7672e; }
+    .light .backgroundWrapper nav .menu {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-right-color: #e6e6e6; }
+      .light .backgroundWrapper nav .menu a {
+        color: #38384d; }
+        .light .backgroundWrapper nav .menu a.nav-portfolio:hover:after, .light .backgroundWrapper nav .menu a.nav-portfolio:focus:after, .light .backgroundWrapper nav .menu a.nav-portfolio:active:after {
           width: calc(100% + 0.8em);
           height: 0.5em;
           background-color: #bdbddd;
-          opacity: 1; }
-        html body nav .menu ul a.nav-about:hover:after,
-        html body nav .menu ul a.nav-about:focus:after,
-        html body nav .menu ul a.nav-about:active:after {
+          opacity: 1;
+          z-index: -1; }
+        .light .backgroundWrapper nav .menu a.nav-about:hover:after, .light .backgroundWrapper nav .menu a.nav-about:focus:after, .light .backgroundWrapper nav .menu a.nav-about:active:after {
           width: calc(100% + 0.8em);
           height: 0.5em;
           background-color: #f8936b;
-          opacity: 1; }
-        html body nav .menu ul a.nav-contact:hover:after,
-        html body nav .menu ul a.nav-contact:focus:after,
-        html body nav .menu ul a.nav-contact:hover:after {
+          opacity: 1;
+          z-index: -1; }
+        .light .backgroundWrapper nav .menu a.nav-contact:hover:after, .light .backgroundWrapper nav .menu a.nav-contact:focus:after, .light .backgroundWrapper nav .menu a.nav-contact:active:after {
           width: calc(100% + 0.8em);
           height: 0.5em;
           background-color: rgba(255, 217, 0, 0.733);
-          opacity: 1; }
-        html body nav .menu ul ul.subMenu li {
-          display: grid;
-          grid-template-columns: 3vw 4vw;
-          align-items: center;
-          position: relative;
-          z-index: 1;
-          width: max-content;
-          cursor: pointer;
-          outline: none;
-          border: none; }
-          html body nav .menu ul ul.subMenu li i {
-            justify-self: center;
-            grid-column: 1 / 2; }
-          html body nav .menu ul ul.subMenu li a {
-            grid-column: 2 / 3;
-            font-size: 1.5vw; }
-        html body nav .menu ul ul.subMenu li:after {
-          position: absolute;
-          content: '';
-          height: 0px;
-          bottom: 0.6vw;
-          z-index: -1;
-          margin: 0 auto;
-          left: 0em;
-          right: 0;
-          width: 0%;
-          transition: all .2s ease-in-out; }
-        html body nav .menu ul ul.subMenu li:hover:after,
-        html body nav .menu ul ul.subMenu li:focus:after,
-        html body nav .menu ul ul.subMenu li:active:after {
-          width: calc(100% + 0.8em);
-          height: 0.9vw;
-          background-color: #bdbddd;
-          opacity: 0.5; }
-    html body nav .closed {
-      left: calc((-100vw - 1.5rem) + 6.5rem); }
-    html body nav .hover {
-      left: calc((-100vw - 1.5rem) + 8rem); }
-    html body nav .menu.noDisplay {
-      border: 0px;
-      left: -100vw; }
-    html body nav .navBorder {
-      z-index: 5;
-      height: 100%;
-      width: 1.5rem;
-      position: fixed;
-      background-color: white;
-      left: 0; }
-    html body nav .navBorder.firstDisplay {
-      width: 0px; }
+          opacity: 1;
+          z-index: -1; }
+      .light .backgroundWrapper nav .menu ul.subMenu li:hover:after, .light .backgroundWrapper nav .menu ul.subMenu li:focus:after, .light .backgroundWrapper nav .menu ul.subMenu li:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.9vw;
+        background-color: #bdbddd;
+        opacity: 0.5;
+        z-index: -1; }
+    .light .backgroundWrapper nav .navBorder {
+      background-color: white; }
+    .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro h2:after {
+      position: absolute;
+      content: '';
+      height: 0px;
+      bottom: calc(2em - 1.8vw);
+      z-index: -1;
+      margin: 0 auto;
+      left: -0.3em;
+      right: 0;
+      width: 0%;
+      transition: all .2s ease-in-out;
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #bdbddd;
+      opacity: 1;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a {
+      color: #38384d; }
+      .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a:hover:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a:focus:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        background-color: gold;
+        opacity: 0.5;
+        z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li:focus:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li:hover:after, .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li:active:after {
+      width: calc(100% + 0.8em);
+      height: 0.9vw;
+      background-color: gold;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li a {
+      color: #38384d; }
+    .light .backgroundWrapper .pageContent .introWrapper.aboutIntro h2:after {
+      position: absolute;
+      content: '';
+      height: 0px;
+      bottom: calc(2em - 1.8vw);
+      z-index: -1;
+      margin: 0 auto;
+      left: -0.3em;
+      right: 0;
+      width: 0%;
+      transition: all .2s ease-in-out;
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #f8936b;
+      opacity: 1;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a {
+      color: #38384d; }
+      .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a:hover:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a:focus:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        background-color: gold;
+        opacity: 0.5;
+        z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li:focus:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li:hover:after, .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li:active:after {
+      width: calc(100% + 0.8em);
+      height: 0.9vw;
+      background-color: gold;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li a {
+      color: #38384d; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro h2:after {
+      position: absolute;
+      content: '';
+      height: 0px;
+      bottom: calc(2em - 1.8vw);
+      z-index: -1;
+      margin: 0 auto;
+      left: -0.3em;
+      right: 0;
+      width: 0%;
+      transition: all .2s ease-in-out;
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: rgba(255, 217, 0, 0.733);
+      opacity: 1;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a {
+      color: #38384d; }
+      .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a:hover:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a:focus:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        background-color: gold;
+        opacity: 0.5;
+        z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro .introText .contactInfoTitle + p:active {
+      background-color: white; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li:focus:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li:hover:after, .light .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li:active:after {
+      width: calc(100% + 0.8em);
+      height: 0.9vw;
+      background-color: gold;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li a {
+      color: #38384d; }
+    .light .backgroundWrapper .pageContent .downButton {
+      color: gold; }
+      .light .backgroundWrapper .pageContent .downButton:hover, .light .backgroundWrapper .pageContent .downButton:focus {
+        color: #f58457; }
+      .light .backgroundWrapper .pageContent .downButton:active {
+        color: #f7672e; }
+    .light .backgroundWrapper .pageContent .section .infoTextWrapper h3:after {
+      position: absolute;
+      content: '';
+      height: 0px;
+      bottom: 0.18em;
+      z-index: -1;
+      margin: 0 auto;
+      left: -0.3em;
+      right: 0;
+      width: 0%;
+      transition: all .2s ease-in-out;
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #f8936b;
+      opacity: 1;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent .section .infoTextWrapper a {
+      color: #38384d; }
+      .light .backgroundWrapper .pageContent .section .infoTextWrapper a:hover:after, .light .backgroundWrapper .pageContent .section .infoTextWrapper a:focus:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        background-color: gold;
+        opacity: 0.5;
+        z-index: -1; }
+      .light .backgroundWrapper .pageContent .section .infoTextWrapper a:active:after {
+        width: calc(100% + 0.8em);
+        height: 0.5em;
+        opacity: 1;
+        z-index: -1; }
+    .light .backgroundWrapper .pageContent .section .carousel .carousel-indicators li {
+      background-color: #e6e6e6; }
+      .light .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
+        background-color: gold; }
+    .light .backgroundWrapper .pageContent.portfolio .section div h4:after,
+    .light .backgroundWrapper .pageContent #section1.music div h4:after {
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #bdbddd;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent.portfolio .section div h3:after,
+    .light .backgroundWrapper .pageContent #section1.music div h3:after {
+      width: calc(100% + 0.8em);
+      height: 0.5em;
+      background-color: #bdbddd;
+      opacity: 0.5;
+      z-index: -1; }
+    .light .backgroundWrapper .pageContent footer i {
+      color: gold; }
+      .light .backgroundWrapper .pageContent footer i:hover, .light .backgroundWrapper .pageContent footer i:focus {
+        color: #f58457; }
+      .light .backgroundWrapper .pageContent footer i:active {
+        color: #f7672e; }
+
+.dark {
+  color: #e4e4e4;
+  background-color: #323838; }
+  .dark .backgroundWrapper {
+    background-color: #3a4041; }
+    .dark .backgroundWrapper .borderImage {
+      border-top-color: #323838; }
+      .dark .backgroundWrapper .borderImage.firstDisplay {
+        background-color: #f58457; }
+    .dark .backgroundWrapper header img.title.inverted {
+      display: unset; }
+    .dark .backgroundWrapper header img.title.default {
+      display: none; }
+    .dark .backgroundWrapper header .colorSwitches #dark {
+      display: none; }
+    .dark .backgroundWrapper header .colorSwitches .colorSwitch:after {
+      content: "";
+      width: 2.12vw;
+      height: 2.12vw;
+      left: .18vw;
+      bottom: .18vw;
+      position: absolute;
+      background-color: #e4e4e4;
+      border-radius: 100%;
+      z-index: -1; }
+    .dark .backgroundWrapper header .colorSwitches .colorSwitch:hover {
+      opacity: 0.5;
+      cursor: pointer; }
+    .dark .backgroundWrapper header .colorSwitches .colorSwitch:active {
+      opacity: 1; }
+    .dark .backgroundWrapper nav button {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper nav button:hover, .dark .backgroundWrapper nav button:focus {
+        color: #f58457; }
+      .dark .backgroundWrapper nav button:active {
+        color: #f7672e; }
+    .dark .backgroundWrapper nav .menu {
+      background-color: rgba(50, 56, 56, 0.7);
+      border-right-color: #262b2c; }
+      .dark .backgroundWrapper nav .menu a {
+        color: #f8f8f8; }
+        .dark .backgroundWrapper nav .menu a.nav-about:hover, .dark .backgroundWrapper nav .menu a.nav-about:focus {
+          color: #78b5ee; }
+        .dark .backgroundWrapper nav .menu a.nav-about:active {
+          color: #4b9ce8; }
+        .dark .backgroundWrapper nav .menu a.nav-portfolio:hover, .dark .backgroundWrapper nav .menu a.nav-portfolio:focus {
+          color: #f58457; }
+        .dark .backgroundWrapper nav .menu a.nav-portfolio:active {
+          color: #f26127; }
+        .dark .backgroundWrapper nav .menu a.nav-contact:hover, .dark .backgroundWrapper nav .menu a.nav-contact:focus {
+          color: gold; }
+        .dark .backgroundWrapper nav .menu a.nav-contact:active {
+          color: #ccac00; }
+      .dark .backgroundWrapper nav .menu ul.subMenu li:hover, .dark .backgroundWrapper nav .menu ul.subMenu li:focus {
+        /* 
+                                    i {
+                                        color: map-get(map-get($colors, "categories"), "portfolio");
+                                    } */ }
+        .dark .backgroundWrapper nav .menu ul.subMenu li:hover a, .dark .backgroundWrapper nav .menu ul.subMenu li:focus a {
+          color: #f58457; }
+      .dark .backgroundWrapper nav .menu ul.subMenu li:active {
+        color: #f26127; }
+    .dark .backgroundWrapper nav .navBorder {
+      background-color: #323838; }
+    .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro h2 {
+      color: #78b5ee;
+      text-decoration: underline; }
+    .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .introText a:hover {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li a:hover, .dark .backgroundWrapper .pageContent .introWrapper.aboutIntro .linkWrapper li a:focus {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro h2 {
+      color: #f58457;
+      text-decoration: underline; }
+    .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .introText a:hover {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li a:hover, .dark .backgroundWrapper .pageContent .introWrapper.portfolioIntro .linkWrapper li a:focus {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.contactIntro h2 {
+      color: gold;
+      text-decoration: underline; }
+    .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .introText a:hover {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .introText .contactInfoTitle + p:active {
+      background-color: #f8f8f8; }
+    .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li a:hover, .dark .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper li a:focus {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .downButton {
+      color: gold; }
+      .dark .backgroundWrapper .pageContent .downButton:hover, .dark .backgroundWrapper .pageContent .downButton:focus {
+        color: #f58457; }
+      .dark .backgroundWrapper .pageContent .downButton:active {
+        color: #f7672e; }
+    .dark .backgroundWrapper .pageContent .section .infoTextWrapper h3 {
+      color: #78b5ee; }
+    .dark .backgroundWrapper .pageContent .section .infoTextWrapper a {
+      color: #f8f8f8; }
+      .dark .backgroundWrapper .pageContent .section .infoTextWrapper a:hover, .dark .backgroundWrapper .pageContent .section .infoTextWrapper a:focus {
+        color: gold; }
+    .dark .backgroundWrapper .pageContent .section .carousel .carousel-indicators li {
+      background-color: #262b2c; }
+      .dark .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
+        background-color: gold; }
+    .dark .backgroundWrapper .pageContent.portfolio .section div h4,
+    .dark .backgroundWrapper .pageContent #section1.music div h4 {
+      color: #f58457; }
+    .dark .backgroundWrapper .pageContent.portfolio .section div h3,
+    .dark .backgroundWrapper .pageContent #section1.music div h3 {
+      color: #f58457; }
+    .dark .backgroundWrapper .pageContent footer i {
+      color: gold; }
+      .dark .backgroundWrapper .pageContent footer i:hover, .dark .backgroundWrapper .pageContent footer i:focus {
+        color: #f58457; }
+      .dark .backgroundWrapper .pageContent footer i:active {
+        color: #f7672e; }
+
+html {
+  scroll-behavior: smooth;
+  /* Portrait Mobile*/ }
+  html body.firstDisplay {
+    padding: 0; }
+  html body {
+    padding: 0 1.5rem 0 1.5rem;
+    height: 100vh;
+    width: 100vw; }
+    html body .backgroundWrapper.firstDisplay {
+      margin: 0; }
     html body .backgroundWrapper {
       margin-top: calc(6.5vw + 1.2em);
       box-sizing: border-box;
-      background-color: #f8f8f8;
       width: 100%;
       min-height: 100%;
       float: right; }
+      html body .backgroundWrapper .borderImage {
+        background-image: url("../resources/images/grass-slim3.jpeg");
+        background-position-y: center;
+        background-size: cover;
+        width: calc(100% - 3rem);
+        height: 1.2em;
+        position: fixed;
+        top: 0px;
+        border-top-width: 6.5vw;
+        border-top-style: solid;
+        z-index: 4;
+        box-sizing: content-box;
+        outline: none; }
+      html body .backgroundWrapper .borderImage.firstDisplay {
+        position: absolute;
+        top: 41.7%;
+        z-index: 8;
+        width: 70vw;
+        left: 15vw;
+        height: 6vw;
+        border: none;
+        background-image: unset; }
+        html body .backgroundWrapper .borderImage.firstDisplay:hover, html body .backgroundWrapper .borderImage.firstDisplay:focus, html body .backgroundWrapper .borderImage.firstDisplay:active {
+          background-image: url("../resources/images/grass-slim3.jpeg");
+          background-position-y: center;
+          background-size: cover; }
       html body .backgroundWrapper header img {
         width: 28%;
         margin: 0 auto;
@@ -195,6 +398,123 @@ html {
         left: 20vw;
         border: none;
         pointer-events: none; }
+      html body .backgroundWrapper header div.colorSwitches {
+        position: fixed;
+        top: 3.6vw;
+        right: 1.5rem;
+        width: 2.5vw;
+        height: 2.5vw;
+        z-index: 8;
+        display: flex;
+        justify-content: space-between; }
+        html body .backgroundWrapper header div.colorSwitches div.colorSwitch {
+          width: 100%;
+          position: relative; }
+          html body .backgroundWrapper header div.colorSwitches div.colorSwitch img.colorSwitch {
+            position: unset;
+            width: unset;
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            pointer-events: none; }
+      html body .backgroundWrapper nav button {
+        position: fixed;
+        left: 1.35em;
+        top: 45%;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-weight: 900;
+        background-color: transparent;
+        z-index: 6;
+        transition: all 0.5s ease-in-out;
+        outline: none;
+        border: none; }
+        html body .backgroundWrapper nav button:hover, html body .backgroundWrapper nav button:focus {
+          outline: none;
+          border: none; }
+        html body .backgroundWrapper nav button.reveal {
+          left: 1rem; }
+        html body .backgroundWrapper nav button.noDisplay {
+          display: none; }
+      html body .backgroundWrapper nav .menu {
+        position: fixed;
+        left: 0;
+        width: calc(100vw - 1.5rem);
+        height: 100%;
+        z-index: 3;
+        border-right-style: solid;
+        border-right-width: 8rem;
+        display: grid;
+        grid-template-columns: 1fr 12vw 1fr;
+        grid-template-rows: 20vh 1fr 10vh;
+        transition: all 0.5s ease-in-out; }
+        html body .backgroundWrapper nav .menu ul {
+          grid-column: 2;
+          grid-row: 2;
+          list-style-type: none;
+          padding: 0; }
+          html body .backgroundWrapper nav .menu ul a {
+            text-decoration: none;
+            font-size: 3vw;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            outline: none;
+            border: none;
+            cursor: pointer; }
+          html body .backgroundWrapper nav .menu ul a:after {
+            position: absolute;
+            content: '';
+            height: 0px;
+            bottom: 0.7vw;
+            z-index: -1;
+            margin: 0 auto;
+            left: -0.3em;
+            right: 0;
+            width: 0%;
+            transition: all .2s ease-in-out; }
+          html body .backgroundWrapper nav .menu ul ul.subMenu li {
+            display: grid;
+            grid-template-columns: 3vw 4vw;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            width: max-content;
+            cursor: pointer;
+            outline: none;
+            border: none; }
+            html body .backgroundWrapper nav .menu ul ul.subMenu li i {
+              justify-self: center;
+              grid-column: 1 / 2; }
+            html body .backgroundWrapper nav .menu ul ul.subMenu li a {
+              grid-column: 2 / 3;
+              font-size: 1.5vw; }
+          html body .backgroundWrapper nav .menu ul ul.subMenu li:after {
+            position: absolute;
+            content: '';
+            height: 0px;
+            bottom: 0.6vw;
+            z-index: -1;
+            margin: 0 auto;
+            left: 0em;
+            right: 0;
+            width: 0%;
+            transition: all .2s ease-in-out; }
+      html body .backgroundWrapper nav .closed {
+        left: calc((-100vw - 1.5rem) + 6.5rem); }
+      html body .backgroundWrapper nav .hover {
+        left: calc((-100vw - 1.5rem) + 8rem); }
+      html body .backgroundWrapper nav .menu.noDisplay {
+        border: 0px;
+        left: -100vw; }
+      html body .backgroundWrapper nav .navBorder {
+        z-index: 5;
+        height: 100%;
+        width: 1.5rem;
+        position: fixed;
+        left: 0; }
+      html body .backgroundWrapper nav .navBorder.firstDisplay {
+        width: 0px; }
       html body .backgroundWrapper .pageContent {
         display: flex;
         flex-direction: column;
@@ -213,28 +533,10 @@ html {
             width: max-content;
             position: relative;
             z-index: 1; }
-          html body .backgroundWrapper .pageContent .introWrapper h2:after {
-            position: absolute;
-            content: '';
-            height: 0px;
-            bottom: calc(1.3em);
-            z-index: -1;
-            margin: 0 auto;
-            left: -0.3em;
-            right: 0;
-            width: 0%;
-            transition: all .2s ease-in-out;
-            width: calc(100% + 0.8em);
-            height: 0.5em;
-            background-color: #bdbddd;
-            opacity: 1;
-            z-index: -1; }
           html body .backgroundWrapper .pageContent .introWrapper .introText {
             grid-column: 2 / span 1; }
             html body .backgroundWrapper .pageContent .introWrapper .introText a {
-              color: #38384d;
               text-decoration: none;
-              color: #38384d;
               font-weight: 600;
               position: relative;
               z-index: 1;
@@ -251,13 +553,6 @@ html {
               right: 0;
               width: 0%;
               transition: all .2s ease-in-out; }
-            html body .backgroundWrapper .pageContent .introWrapper .introText a:hover:after,
-            html body .backgroundWrapper .pageContent .introWrapper .introText a:focus:after,
-            html body .backgroundWrapper .pageContent .introWrapper .introText a:active:after {
-              width: calc(100% + 0.8em);
-              height: 0.5em;
-              background-color: gold;
-              opacity: 0.5; }
           html body .backgroundWrapper .pageContent .introWrapper .introImg {
             grid-column: 3 / span 1;
             display: flex;
@@ -312,49 +607,24 @@ html {
                 right: 0;
                 width: 0%;
                 transition: all .2s ease-in-out; }
-              html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:hover:after,
-              html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:focus:after,
-              html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:active:after {
-                width: calc(100% + 0.8em);
-                height: 0.9vw;
-                background-color: gold;
-                opacity: 0.5; }
-          html body .backgroundWrapper .pageContent .introWrapper .downButton {
-            color: gold;
-            width: max-content;
-            height: max-content;
-            transition: all 0.2s ease-in-out;
-            outline: none;
-            border: none;
-            align-self: end;
-            justify-self: center;
-            grid-column: 2 / 4; }
-          html body .backgroundWrapper .pageContent .introWrapper .downButton:hover,
-          html body .backgroundWrapper .pageContent .introWrapper .downButton:focus {
-            color: #f58457; }
         html body .backgroundWrapper .pageContent .introWrapper.contactIntro {
           margin-right: 10vw; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro h2 {
             width: max-content;
             position: relative;
             z-index: 1; }
-          html body .backgroundWrapper .pageContent .introWrapper.contactIntro h2:after {
-            width: calc(100% + 0.8em);
-            height: 0.5;
-            background-color: rgba(255, 217, 0, 0.733);
-            opacity: 1;
-            z-index: -1; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p {
             margin: 0;
-            max-width: max-content; }
+            max-width: max-content;
+            transition: all .6s ease-in-out; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div .contactInfoTitle {
             font-weight: 600; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p + .contactInfoTitle {
             margin-top: 2vh; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div .contactInfoTitle + p:hover {
             cursor: url("../resources/images/icons8-copy-30.png"), auto; }
-          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div .contactInfoTitle + p:active {
-            background-color: white; }
+          html body .backgroundWrapper .pageContent .introWrapper.contactIntro .introText div p:active {
+            transition-duration: .15s; }
           html body .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper {
             margin-top: 2em;
             grid-column: 2 / 3;
@@ -366,80 +636,57 @@ html {
           width: max-content;
           position: relative;
           z-index: 1; }
-        html body .backgroundWrapper .pageContent .introWrapper.aboutIntro h2:after {
-          width: calc(100% + 0.8em);
-          height: 0.5;
-          background-color: #f8936b;
-          opacity: 1;
-          z-index: -1; }
+        html body .backgroundWrapper .pageContent .downButton {
+          width: max-content;
+          height: max-content;
+          transition: all 0.2s ease-in-out;
+          outline: none;
+          border: none;
+          align-self: end;
+          justify-self: center;
+          grid-column: 2 / 4; }
         html body .backgroundWrapper .pageContent .section {
           grid-column: 2 / span 1;
           padding-top: 25vh;
           display: grid;
           grid-column-gap: 2em;
           grid-template-columns: 4fr 1.5fr; }
+          html body .backgroundWrapper .pageContent .section .infoTextWrapper {
+            grid-column: 2 / span 1; }
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper h3 {
+              width: max-content;
+              position: relative;
+              z-index: 1;
+              margin-bottom: .5em; }
+            html body .backgroundWrapper .pageContent .section .infoTextWrapper a {
+              text-decoration: none;
+              font-weight: 600;
+              position: relative;
+              z-index: 1;
+              outline: none;
+              border: none; }
+              html body .backgroundWrapper .pageContent .section .infoTextWrapper a:after {
+                position: absolute;
+                content: '';
+                height: 0px;
+                bottom: 0.4vw;
+                z-index: -1;
+                margin: 0 auto;
+                left: -0.3em;
+                right: 0;
+                width: 0%;
+                transition: all .2s ease-in-out; }
           html body .backgroundWrapper .pageContent .section .carousel {
             grid-column: 1 / span 1;
             grid-row: 1 / span 1; }
             html body .backgroundWrapper .pageContent .section .carousel img {
               width: 100%; }
             html body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li {
-              background-color: lightgray;
               opacity: 0.5; }
-            html body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
-              background-color: gold;
-              opacity: 0.5; }
-            html body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li:hover {
-              opacity: 1; }
-          html body .backgroundWrapper .pageContent .section .infoTextWrapper {
-            grid-column: 2 / span 1; }
-            html body .backgroundWrapper .pageContent .section .infoTextWrapper h3 {
-              width: max-content;
-              position: relative;
-              z-index: 1; }
-            html body .backgroundWrapper .pageContent .section .infoTextWrapper h3:after {
-              position: absolute;
-              content: '';
-              height: 0px;
-              bottom: 0.18em;
-              z-index: -1;
-              margin: 0 auto;
-              left: -0.3em;
-              right: 0;
-              width: 0%;
-              transition: all .2s ease-in-out;
-              width: calc(100% + 0.8em);
-              height: 0.5em;
-              background-color: #bdbddd;
-              opacity: 0.5;
-              z-index: -1; }
-            html body .backgroundWrapper .pageContent .section .infoTextWrapper a {
-              color: #38384d;
-              text-decoration: none;
-              color: #38384d;
-              font-weight: 600;
-              position: relative;
-              z-index: 1;
-              outline: none;
-              border: none; }
-            html body .backgroundWrapper .pageContent .section .infoTextWrapper a:after {
-              position: absolute;
-              content: '';
-              height: 0px;
-              bottom: 0.4vw;
-              z-index: -1;
-              margin: 0 auto;
-              left: -0.3em;
-              right: 0;
-              width: 0%;
-              transition: all .2s ease-in-out; }
-            html body .backgroundWrapper .pageContent .section .infoTextWrapper a:hover:after,
-            html body .backgroundWrapper .pageContent .section .infoTextWrapper a:focus:after,
-            html body .backgroundWrapper .pageContent .section .infoTextWrapper a:active:after {
-              width: calc(100% + 0.8em);
-              height: 0.5em;
-              background-color: gold;
-              opacity: 0.5; }
+              html body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li.active {
+                opacity: 0.5; }
+              html body .backgroundWrapper .pageContent .section .carousel .carousel-indicators li:hover {
+                opacity: 1; }
         html body .backgroundWrapper .pageContent #section1.art {
           display: unset;
           columns: 2;
@@ -477,12 +724,7 @@ html {
               left: -0.3em;
               right: 0;
               width: 0%;
-              transition: all .2s ease-in-out;
-              width: calc(100% + 0.8em);
-              height: 0.5em;
-              background-color: #bdbddd;
-              opacity: 0.5;
-              z-index: -1; }
+              transition: all .2s ease-in-out; }
         html body .backgroundWrapper .pageContent .section.about {
           margin-left: 15vw;
           margin-right: 15vw;
@@ -493,16 +735,12 @@ html {
           margin: 15em 0 1.5em 0; }
           html body .backgroundWrapper .pageContent footer i {
             transition: all 0.2s ease-in-out;
-            color: gold;
             outline: none;
             border: none; }
           html body .backgroundWrapper .pageContent footer i:hover,
           html body .backgroundWrapper .pageContent footer i:focus,
           html body .backgroundWrapper .pageContent footer i:active {
-            color: #f58457;
             cursor: pointer; }
-    html body .backgroundWrapper.firstDisplay {
-      margin: 0; }
     html body .sr-only {
       position: absolute;
       width: 1px;
@@ -520,33 +758,37 @@ html {
       margin: 0;
       overflow: visible;
       clip: auto; }
-  html body.firstDisplay {
-    padding: 0; }
   @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     html body {
       padding: 0; }
-      html body .borderImage {
+      html body .backgroundWrapper header img {
+        width: 50vw;
+        top: 6vw;
+        left: 25vw; }
+      html body .backgroundWrapper header img.firstDisplay {
+        top: 40.4%; }
+      html body .backgroundWrapper .borderImage {
         width: 100%;
         height: 10vw;
-        border-top: 12vw solid white; }
-      html body nav button.menu_button {
+        border-top-width: 12vw;
+        border-top-style: solid; }
+      html body .backgroundWrapper nav button.menu_button {
         position: fixed;
         top: 18vw;
         left: unset;
         left: 1.5vw; }
-      html body nav div.menu {
+      html body .backgroundWrapper nav div.menu {
         width: unset;
         width: 100vw;
         border: none;
         display: flex;
         justify-content: center;
         padding-top: 20vh; }
-        html body nav div.menu ul {
+        html body .backgroundWrapper nav div.menu ul {
           display: flex;
           flex-direction: column; }
-          html body nav div.menu ul li a {
+          html body .backgroundWrapper nav div.menu ul li a {
             text-decoration: none;
-            color: #38384d;
             font-size: 10vw;
             font-weight: 600;
             position: relative;
@@ -554,12 +796,12 @@ html {
             outline: none;
             border: none;
             cursor: pointer; }
-          html body nav div.menu ul ul.subMenu li {
+          html body .backgroundWrapper nav div.menu ul ul.subMenu li {
             grid-template-columns: 10vw 15vw; }
-            html body nav div.menu ul ul.subMenu li a.subCat {
+            html body .backgroundWrapper nav div.menu ul ul.subMenu li a.subCat {
               font-size: unset;
               font-size: 7vw; }
-          html body nav div.menu ul ul.subMenu li:after {
+          html body .backgroundWrapper nav div.menu ul ul.subMenu li:after {
             position: absolute;
             content: '';
             height: 0px;
@@ -570,44 +812,62 @@ html {
             right: 0;
             width: 0%;
             transition: all .2s ease-in-out; }
-          html body nav div.menu ul ul.subMenu li:focus:after,
-          html body nav div.menu ul ul.subMenu li:active:after {
+          html body .backgroundWrapper nav div.menu ul ul.subMenu li:focus:after,
+          html body .backgroundWrapper nav div.menu ul ul.subMenu li:active:after {
             width: calc(100% + 0.8em);
             height: 1em;
             background-color: #bdbddd;
-            opacity: 0.5; }
-      html body nav .menu.closed {
+            opacity: 0.5;
+            z-index: -1; }
+      html body .backgroundWrapper nav .menu.closed {
         left: -100%; }
-      html body nav .navBorder {
+      html body .backgroundWrapper nav .navBorder {
         display: none; }
-      html body .backgroundWrapper header img {
-        width: 50vw;
-        top: 6vw;
-        left: 25vw; }
-      html body .backgroundWrapper header img.firstDisplay {
-        top: 40.4%; }
       html body .backgroundWrapper .pageContent {
         margin: 8vw;
         margin-top: 30vw; }
+        html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro,
+        html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro,
         html body .backgroundWrapper .pageContent .introWrapper {
           display: flex;
           flex-direction: column;
           height: auto; }
+          html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro h2:after,
+          html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro h2:after,
           html body .backgroundWrapper .pageContent .introWrapper h2:after {
             bottom: 0.7vw; }
+          html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .introText,
+          html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .introText,
           html body .backgroundWrapper .pageContent .introWrapper .introText {
             margin-top: 5vw;
             margin-bottom: 5vw; }
+          html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .introImg,
+          html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .introImg,
           html body .backgroundWrapper .pageContent .introWrapper .introImg {
             max-width: unset; }
+          html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .linkWrapper,
+          html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .linkWrapper,
           html body .backgroundWrapper .pageContent .introWrapper .linkWrapper {
             margin-top: 10%;
             align-self: center; }
-            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:after {
+            html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .linkWrapper ul li:after, html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .linkWrapper ul li:hover:after, html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .linkWrapper ul li:active:after, html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .linkWrapper ul li:focus:after, html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .linkWrapper ul li:visited:after,
+            html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .linkWrapper ul li:after,
+            html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .linkWrapper ul li:hover:after,
+            html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .linkWrapper ul li:active:after,
+            html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .linkWrapper ul li:focus:after,
+            html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .linkWrapper ul li:visited:after,
+            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:after,
+            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:hover:after,
+            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:active:after,
+            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:focus:after,
+            html body .backgroundWrapper .pageContent .introWrapper .linkWrapper ul li:visited:after {
               width: calc(100% + 0.8em);
-              height: 0.5em;
-              background-color: gold;
-              opacity: 0; }
+              height: 0;
+              background-color: white;
+              opacity: 0;
+              z-index: -1; }
+          html body .backgroundWrapper .pageContent.portfolio .introWrapper.portfolioIntro .downButton,
+          html body .backgroundWrapper .pageContent.contact .introWrapper.contactIntro .downButton,
           html body .backgroundWrapper .pageContent .introWrapper .downButton {
             margin-top: 10%;
             align-self: center;
@@ -619,6 +879,9 @@ html {
             margin-top: 9vh; }
             html body .backgroundWrapper .pageContent .introWrapper.contactIntro .linkWrapper ul {
               padding-left: 1.4em; }
+        html body .backgroundWrapper .pageContent .section.about {
+          margin: 6vw;
+          padding-top: 12vh; }
         html body .backgroundWrapper .pageContent #section1.art {
           columns: 1; }
           html body .backgroundWrapper .pageContent #section1.art div {

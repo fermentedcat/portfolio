@@ -1,11 +1,15 @@
 $primary: gold;
-$yellow: gold;
+$yellow: rgb(255, 215, 0);
 $lightYellow: rgba(255, 217, 0, 0.733);
 $red: rgb(247, 103, 46);
 $lightRed: rgb(245, 132, 87);
 $lighterRed: rgb(248, 147, 107);
+$orange: rgb(255, 175, 55);
 $blueGray: rgb(189, 189, 221);
 $dkBlue: rgb(56, 56, 77);
+$darkMain: rgb(61, 61, 71);
+$darkBg: rgb(82, 82, 100);
+
 
 $lightGray: rgb(230, 230, 230);
 $almostWhite: rgb(248, 248, 248);
@@ -28,6 +32,8 @@ $background-color: white;
 $topHeight: 6.5vw;
 $borderHeight: 1.2em;
 $linkwr-h4-size: 1.1em;
+
+
 
 @mixin transition($time: 0.5s) {
     transition: all $time ease-in-out;
@@ -58,6 +64,7 @@ $linkwr-h4-size: 1.1em;
     height: $height;
     background-color: $color;
     opacity: $opacity;
+    z-index: -1;
 }
 
 
@@ -87,3 +94,368 @@ $linkwr-h4-size: 1.1em;
     grid-column: 2 / 3;
     font-size: $font-size;
 }
+
+
+//* COLOR THEMES *//
+//// LIGHT ////
+// light category colors //
+$light-categories: (
+    portfolio: $blueGray,
+    about: $lighterRed,
+    contact: $lightYellow
+);
+
+
+$light-theme: (
+    primary: black,
+    background: white,
+    main-bg: $almostWhite,
+    copy-bg: white,
+    menu-border: $lightGray,
+    menu-btn: $dkBlue,
+    menu-btn-hover: $red,
+    button: $yellow,
+    btn-hover: $lightRed,
+    btn-active: $red,
+    link: $dkBlue,
+    link-hover: $yellow,
+    categories: $light-categories
+);
+//// DARK ////
+// light category colors //
+$dark-categories: (
+    about: rgb(120, 181, 238),
+    portfolio: $lightRed,
+    contact: $yellow
+);
+
+$dark-theme: (
+    primary: rgb(228, 228, 228),
+    background: rgb(50, 56, 56),
+    main-bg: rgb(58, 64, 65),
+    copy-bg: rgb(248, 248, 248),
+    menu-border: rgb(38, 43, 44),
+    menu-btn: rgb(248, 248, 248),
+    menu-btn-active: $red,
+    menu-btn-hover: $lightRed,
+    button: $yellow,
+    btn-hover: $lightRed,
+    btn-active: $red,
+    link: rgb(248, 248, 248),
+    link-hover: $yellow,
+    categories: $dark-categories
+);
+
+
+$themes: (
+    light: $light-theme,
+    dark: $dark-theme
+);
+
+//// MIXIN THEMES ////
+@mixin themes($name, $colors) {
+    .#{$name} {
+        color: map-get($colors, "primary");
+        background-color: map-get($colors, "background");
+        .backgroundWrapper {
+            background-color: map-get($colors, "main-bg");
+            .borderImage {
+                border-top-color: map-get($colors, "background");
+                &.firstDisplay {
+                    background-color: map-get(map-get($colors, "categories"), "portfolio");
+                }
+            }
+            header {
+                img.title {
+                    @if ($name == light) {
+                        &.default {
+                            display: unset;
+                        }
+                        &.inverted {
+                            display: none;
+                        }
+                    }
+                    @if ($name == dark) {
+                        &.inverted {
+                            display: unset;
+                        }
+                        &.default {
+                            display: none;
+                        }
+                    }
+                }
+                .colorSwitches {
+                    ##{$name} {
+                        display: none;
+                    }
+                    @if ($name == dark) {
+                        .colorSwitch:after {
+                            content: "";
+                            width: 2.12vw;
+                            height: 2.12vw;
+                            left: .18vw;
+                            bottom: .18vw;
+                            position: absolute;
+                            background-color: map-get($colors, "primary");
+                            border-radius: 100%;
+                            z-index: -1;
+                        }
+                    }
+                    .colorSwitch:hover {
+                        opacity: 0.5;
+                        cursor: pointer;
+                    }
+                    .colorSwitch:active {
+                        opacity: 1;
+                    }
+                }
+            }
+            nav {
+                button {
+                    color: map-get($colors, "link");
+                    &:hover,
+                    &:focus {
+                        color: map-get($colors, "menu-btn-hover");
+                    }
+                    &:active {
+                        color: map-get($colors, "menu-btn-active")
+                    }
+                }
+                .menu {
+                    background-color: transparentize(map-get($colors, "background"), 0.3);
+                    border-right-color: map-get($colors, "menu-border");
+                    a {
+                        color: map-get($colors, "link");
+                        
+                        @each $key, $value in map-get($colors, "categories") {
+                            &.nav-#{$key} {
+                                @if ($name == light) {
+                                    &:hover:after,
+                                    &:focus:after,
+                                    &:active:after {
+                                        @include lineBehindHover($value);
+                                    }
+                                }
+                                @if ($name == dark) {
+                                    &:hover,
+                                    &:focus {
+                                        color: $value;
+                                    }
+                                    &:active {
+                                        color: darken($value, 10%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ul.subMenu {
+                        li {
+                            @if ($name == light) {
+                                &:hover:after,
+                                &:focus:after,
+                                &:active:after {
+                                    @include lineBehindHover(map-get(map-get($colors, "categories"), "portfolio"), 0.5, 0.9vw);
+                                }
+                            }
+                            @if ($name == dark) {
+                                &:hover,
+                                &:focus {
+                                    a {
+                                        color: map-get(map-get($colors, "categories"), "portfolio");
+                                    }/* 
+                                    i {
+                                        color: map-get(map-get($colors, "categories"), "portfolio");
+                                    } */
+                                }
+                                &:active {
+                                    color: darken(map-get(map-get($colors, "categories"), "portfolio"), 10%);
+                                }
+                            }
+                        }
+                    }
+                }
+                .navBorder {
+                    background-color: map-get($colors, "background");
+                }
+            }
+            .pageContent {
+                .introWrapper {
+                    @each $key, $value in map-get($colors, "categories") {
+                        &.#{$key}Intro {
+                            @if ($name == light) {
+                                h2:after {
+                                    @include lineBehindAfter(calc(2em - 1.8vw));
+                                    @include lineBehindHover($value, 1, 0.5em);
+                                }
+                                .introText {
+                                    a {
+                                        color: map-get($colors, "link");
+                                        &:hover:after,
+                                        &:focus:after,
+                                        &:active:after {
+                                            @include lineBehindHover(map-get($colors, "link-hover"), 0.5);
+                                        }
+                                    }
+                                    @if ($key == contact) {
+                                        .contactInfoTitle + p:active {
+                                            background-color: map-get($colors, "copy-bg");
+                                        }
+                                    }
+                                }
+                                .linkWrapper {
+                                    li {
+                                        &:focus:after,
+                                        &:hover:after,
+                                        &:active:after {
+                                            @include lineBehindHover(map-get($colors, "link-hover"), 0.5, 0.9vw);
+                                        }
+                                        a {
+                                            color: map-get($colors, "link");
+                                        }
+                                    }
+                                }                                
+                            }
+                            @if ($name == dark) {
+                                h2 {
+                                    color: $value;
+                                    text-decoration: underline;
+                                }
+                                .introText {                                    
+                                    a {
+                                        color: map-get($colors, "link"); 
+                                        &:hover {
+                                            color: map-get($colors, "link-hover");
+                                        }  
+                                        &:active {
+                                            color: map-get($colors, "link-active");
+                                        }                                     
+                                    }
+                                    @if ($key == contact) {
+                                        .contactInfoTitle + p:active {
+                                            background-color: map-get($colors, "copy-bg");
+                                        }
+                                    }
+                                }
+                                .linkWrapper {
+                                    li {
+                                        a {
+                                            color: map-get($colors, "link");
+                                            &:hover,
+                                            &:focus {
+                                                color:map-get($colors, "link-hover");
+                                            }
+                                            &:active {
+                                                color: map-get($colors, "link-active");
+                                            }
+                                        }
+                                    }
+                                } 
+                            }
+                            
+                            
+                        }
+                    }
+
+                }
+                .downButton {
+                    color: map-get($colors, "button");
+                    &:hover,
+                    &:focus {
+                        color: map-get($colors, "btn-hover");
+                    }
+                    &:active {
+                        color: map-get($colors, "btn-active");
+                    }
+                }
+                .section {
+                    .infoTextWrapper {
+                        @if ($name == light) {
+                            h3:after {
+                                @include lineBehindAfter(0.18em);
+                                @include lineBehindHover(map-get(map-get($colors, "categories"), "about"));
+                            }
+                            
+                            a {
+                                color: map-get($colors, "link");
+                                &:hover:after,
+                                &:focus:after {
+                                    @include lineBehindHover(map-get($colors, "link-hover"), 0.5);
+                                }
+                                &:active:after {
+                                    @include lineBehindHover(map-get($colors, "link-active"), 1);
+                                }
+                            }                        
+                        }
+                        @if ($name == dark) {
+                            h3 {
+                                color: map-get(map-get($colors, "categories"), "about");
+                            }
+                            a {
+                                color: map-get($colors, "link");
+                                &:hover,
+                                &:focus {
+                                    color: map-get($colors, "link-hover");
+                                }
+                                &:active {
+                                    color: map-get($colors, "link-active");
+                                }
+                            }
+                        }
+                    }
+                    .carousel {
+                        .carousel-indicators {
+                            li {
+                                background-color: map-get($colors, "menu-border");
+                                &.active {
+                                    background-color: map-get($colors, "button");
+                                }
+                            }
+                        }
+                    }
+                }
+                &.portfolio .section,
+                #section1.music {
+                    @if ($name == light) {
+                        div {
+                            h4:after {
+                                @include lineBehindHover(map-get(map-get($colors, "categories"), "portfolio"), 0.5);
+                            }
+                            h3:after {
+                                @include lineBehindHover(map-get(map-get($colors, "categories"), "portfolio"), 0.5);
+                            }
+                        }
+                    }
+                    @if ($name == dark) {
+                        div {
+                            h4 {
+                                color: map-get(map-get($colors, "categories"), "portfolio");
+                            }
+                            h3 {
+                                color: map-get(map-get($colors, "categories"), "portfolio");
+                            }
+                        }
+                    }
+                }
+
+                footer {
+                    i {
+                        color: map-get($colors, "button");
+                        &:hover,
+                        &:focus {
+                            color: map-get($colors, "btn-hover");
+                        }
+                        &:active {
+                            color: map-get($colors, "btn-active");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//// activate all themes
+@each $key, $value in $themes {
+    @include themes($key, $value);
+}
+

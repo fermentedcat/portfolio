@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(e) {
 
     new Website();
+    
 
 });
 
@@ -13,7 +14,12 @@ class Website {
         for (let page of pageMenu) {
             this.pages.push(new Page(page))
         }
-
+        //// get theme from local storage
+        if (localStorage.getItem("color-theme")) {
+            document.querySelector("body").classList.add(localStorage.getItem("color-theme"));
+        } else {
+            document.querySelector("body").classList.add("light");
+        }
         this.menu_button = document.querySelector(".menu_button");
         this.menu_button.setAttribute("tabindex", "0");
         this.menu = document.querySelector(".menu");
@@ -66,9 +72,35 @@ class Website {
                 this.enterPage();
             }
         })
+
+
+        this.toggleColorTheme();
     }
+
+    //* TOGGLE COLOR-THEME *//
+    toggleColorTheme() {
+        let buttons = document.querySelectorAll(".colorSwitch");
+        let body = document.querySelector(".body");
+        //// button click
+        for (let button of buttons) {
+            button.addEventListener("click", e => {
+                ////remove previous settings
+                for (let btn of buttons) {
+                if (body.classList.contains(btn.id)) {
+                    body.classList.remove(btn.id);
+                }
+                btn.removeAttribute("disabled");
+                }
+                //// add new settings
+                e.target.setAttribute("disabled", "true");
+                body.classList.add(e.target.id);
+                //// add to local storage
+                localStorage.setItem("color-theme", e.target.id);
+            })
+        }
+    }
+    //* ENTER PAGE from landing *//
     enterPage() {
-        //// ENTER PAGE from landing ////
         let firstClass = document.querySelectorAll(".firstDisplay");
         for (let elem of firstClass) {
             elem.classList.remove("firstDisplay");
@@ -110,7 +142,7 @@ class Website {
             }
         }  
     }
-    //// TOGGLE NAV MENU ////
+    //* TOGGLE NAV MENU *//
     toggleMenu() {
         if (this.menu.classList.contains("closed")) {
             this.menu_button.innerHTML = '<i class="fas fa-times fa-lg"></i>';
@@ -131,13 +163,13 @@ class Website {
         }
         this.menu.classList.toggle("closed");
     }
-    //// CHANGE BROWSER TITLE ////
+    //* CHANGE BROWSER TITLE *//
     static changeTitle(page) {
         let title = document.getElementsByTagName("title")[0];
         title.innerHTML = "Maja Thunberg - " + page;
     }
 
-    //// LOAD MENU ITEMS ////
+    //* LOAD MENU ITEMS *//
     loadMenuItems() {
         for (let page of this.pages) {
             let li = document.createElement("li");
@@ -173,6 +205,7 @@ class Website {
             //// CLICK ON MENU ITEM ////
             function menuAction(website) {
                 if (page.name == "Portfolio" && !a.classList.contains("clicked")) {
+                    
                     loadSubMenu(page.content, website);
                     a.classList.add("clicked");
                 } else if (page.name == "Portfolio" && a.classList.contains("clicked")) {
